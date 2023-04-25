@@ -17,12 +17,14 @@ import { UserSubmitComponent } from './home_page/user-submit/user-submit.compone
 import { HomeComponent } from './home_page/home.component';
 import { MenuPageComponent } from './menu_page/menu-page.component';
 import { HeaderUserComponent } from './header-user/header-user.component';
+import { OrganizationPageComponent } from './menu_page/organization-page/organization-page.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'menu', component: MenuPageComponent },
+  { path: 'menu/organization', component: OrganizationPageComponent },
 ]; 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ const routes: Routes = [
     HomeComponent,
     MenuPageComponent,
     HeaderUserComponent,
+    OrganizationPageComponent,
   ],
 
   imports: [
