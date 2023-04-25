@@ -4,10 +4,10 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap');
 
-html{
+html,body,pre{
     font-size: calc(60% + 0.8vmin);
-    font-family: 'Kanit', sans-serif;
+    font-family:  Roboto,'Kanit', sans-serif;
 }
 
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
