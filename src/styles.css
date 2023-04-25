@@ -8,3 +8,6 @@ html{
     font-size: calc(60% + 0.8vmin);
     font-family: 'Kanit', sans-serif;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,7 +38,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    [RouterModule.forRoot(routes)]
+    MatSlideToggleModule,
+    [RouterModule.forRoot(routes)
+  ]
   ],
   providers: [],
   bootstrap: [AppComponent],
