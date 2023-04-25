@@ -16,6 +16,7 @@ import { QuoteComponent } from './home_page/quote/quote.component';
 import { UserSubmitComponent } from './home_page/user-submit/user-submit.component';
 import { HomeComponent } from './home_page/home.component';
 import { MenuPageComponent } from './menu_page/menu-page.component';
+import { HeaderUserComponent } from './header-user/header-user.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
     UserSubmitComponent,
     HomeComponent,
     MenuPageComponent,
+    HeaderUserComponent,
   ],
 
   imports: [
