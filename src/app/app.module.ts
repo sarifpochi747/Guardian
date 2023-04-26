@@ -14,6 +14,7 @@ import { PurposeComponent } from './home_page/purpose/purpose.component';
 import { StandardComponent } from './home_page/standard/standard.component';
 import { QuoteComponent } from './home_page/quote/quote.component';
 import { UserSubmitComponent } from './home_page/user-submit/user-submit.component';
+import { FooterComponent } from './home_page/footer/footer.component';
 import { HomeComponent } from './home_page/home.component';
 import { MenuPageComponent } from './menu_page/menu-page.component';
 import { HeaderUserComponent } from './header-user/header-user.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'menu', component: MenuPageComponent },
   { path: 'menu/organization', component: OrganizationPageComponent },
-]; 
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ const routes: Routes = [
     StandardComponent,
     QuoteComponent,
     UserSubmitComponent,
+    FooterComponent,
     HomeComponent,
     MenuPageComponent,
     HeaderUserComponent,
