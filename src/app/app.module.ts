@@ -19,6 +19,7 @@ import { HomeComponent } from './home_page/home.component';
 import { MenuPageComponent } from './menu_page/menu-page.component';
 import { HeaderUserComponent } from './header-user/header-user.component';
 import { OrganizationPageComponent } from './menu_page/organization-page/organization-page.component';
+import { UserPageComponent } from './menu_page/user-page/user-page.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'menu', component: MenuPageComponent },
   { path: 'menu/organization', component: OrganizationPageComponent },
+  { path: 'menu/user', component: UserPageComponent },
 ];
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ const routes: Routes = [
     MenuPageComponent,
     HeaderUserComponent,
     OrganizationPageComponent,
+    UserPageComponent,
   ],
 
   imports: [
