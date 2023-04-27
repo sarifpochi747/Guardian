@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon'
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,8 +56,8 @@ const routes: Routes = [
     AppRoutingModule,
     MatSlideToggleModule,
     MatIconModule,
-    [RouterModule.forRoot(routes)
-  ]
+    [RouterModule.forRoot(routes)],
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

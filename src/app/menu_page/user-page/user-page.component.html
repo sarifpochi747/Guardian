@@ -26,63 +26,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-black-1 border-2 border-red-1" >
-                        <td scope="row" class="px-6 py-4 font-sm whitespace-nowrap "> ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...
-                        </td>
-                        <td class="px-6 py-4">
-                            Savannah Miles
-                        </td>
-                        <td class="px-6 py-4">
-                            brand manager
-                        </td>
-                        <td>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-1 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-1"></div>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr class="text-black-1 border-2 border-red-1" >
-                        <td scope="row" class="px-6 py-4 font-sm whitespace-nowrap "> ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...
-                        </td>
-                        <td class="px-6 py-4">
-                            Savannah Miles
-                        </td>
-                        <td class="px-6 py-4">
-                            brand manager
-                        </td>
-                        <td>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-1 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-1"></div>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr class="text-black-1 border-2 border-red-1" >
-                        <td scope="row" class="px-6 py-4 font-sm whitespace-nowrap "> ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...
-                        </td>
-                        <td class="px-6 py-4">
-                            Savannah Miles
-                        </td>
-                        <td class="px-6 py-4">
-                            brand manager
-                        </td>
-                        <td>
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-1 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-1"></div>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr class="text-black-1 border-2 border-red-1" >
-                        <td scope="row" class="px-6 py-4 font-sm whitespace-nowrap "> ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...
-                        </td>
-                        <td class="px-6 py-4">
-                            Savannah Miles
-                        </td>
-                        <td class="px-6 py-4">
-                            brand manager
-                        </td>
+                    <tr class="text-black-1 border-2 border-red-1" *ngFor="let post of data | paginate:{
+                        itemsPerPage: tableSize,
+                        currentPage:page,
+                        totalItems:count
+
+                    }" >
+                        <td scope="row" class="px-6 py-4 font-sm whitespace-nowrap ">{{post.comment}}</td>
+                        <td class="px-6 py-4">{{post.company}}</td>
+                        <td class="px-6 py-4">{{post.brandManager}}</td>
                         <td>
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer">
@@ -92,35 +44,16 @@
                     </tr>
                 </tbody>
             </table>
-            <nav class="flex items-center justify-end pt-4" aria-label="Table navigation">
-                <ul class="inline-flex items-center -space-x-px">
-                    <li>
-                        <a href="/menu" class="block px-3 py-2 ml-0 leading-tight text-black rounded-lg  ">
-                            <span>Previous</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"  class="px-3 py-2 leading-tight text-white rounded-lg  bg-red-1 ">1</a>
-                    </li>
-                    <li>
-                        <a href="#" class="px-3 py-2 leading-tight text-black  rounded-lg   ">2</a>
-                    </li>
-                    <li>
-                        <a href="#"  class="z-10 px-3 py-2 leading-tight  ">3</a>
-                    </li>
-                    <li>
-                        <a href="#" class="px-3 py-2 leading-tight text-black  rounded-lg   ">...</a>
-                    </li>
-                    <li>
-                        <a href="#" class="px-3 py-2 leading-tight text-black  rounded-lg   ">10</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-3 py-2 leading-tight text-black   rounded-lg  ">
-                            <span class="">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="pagination pt-[20px] pb-[51px] flex justify-end ">
+                <pagination-controls
+                    
+                    previousLabel="Prev"
+                    nextLabel="Next"
+                    (pageChange)="onTableDataChange($event)"
+                >
+
+                </pagination-controls>
+            </div>
         </div>
         
     </div>
