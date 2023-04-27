@@ -1,26 +1,32 @@
 <app-header-user></app-header-user>
-
 <div class="px-[103px] pt-[40px]">
-    <div class="px-[46px] py-[16px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-        <div class="text-[1.354vw]">USER</div>
-        <div class=" py-[18px] ">
-            <table class="table-auto w-full text-[19px] text-left ">
+    <div class="table-auto px-[46px] py-[16px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
+        <div class="lg:text-[26px] md:text-[18px]">USER</div>
+        <div class="relative overflow-x-auto py-[18px] ">
+            <table class="w-full text-[19px] text-left ">
                 <thead class="text-lg text-white bg-red-1 border-2 border-red-1 rounded-lg">
                     <tr>
-                        <td scope="col" class="px-6 py-3">
-                        Comment
-                        </td>
-                        <td scope="col" class="px-6 py-3">
-                            <div class="flex items-center">
-                                Company
+                        <td class="px-6 py-3 flex justify-between">
+                            Comment
+                            <div>
+                                <i class="ri-arrow-up-down-fill"></i>
                             </div>
                         </td>
-                        <td scope="col" class="px-6 py-3">
-                            <div class="flex items-center">
-                                Brand Manager
+                        <td class="px-6 py-3 ">
+                            <div class="flex justify-between">
+                                <div>Company</div>                         
+                                <div>
+                                    <i class="ri-arrow-up-down-fill"></i>
+                                </div>
                             </div>
                         </td>
-                        <td scope="col" class="px-6 py-3">
+                        <td class="px-6 py-3 flex justify-between">
+                            Brand Manager
+                            <div>
+                                <i class="ri-arrow-up-down-fill"></i>
+                            </div>
+                        </td>
+                        <td class="px-6 py-3">
                             <span class="sr-only">Action</span>
                         </td>
                     </tr>
@@ -44,16 +50,16 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="pagination pt-[20px] pb-[51px] flex justify-end ">
-                <pagination-controls
-                    
-                    previousLabel="Prev"
-                    nextLabel="Next"
-                    (pageChange)="onTableDataChange($event)"
-                >
+        </div>
+        <div class="pagination pt-[2px] pb-[51px] flex justify-end ">
+            <pagination-controls
+                
+                previousLabel="Prev"
+                nextLabel="Next"
+                (pageChange)="onTableDataChange($event)"
+            >
 
-                </pagination-controls>
-            </div>
+            </pagination-controls>
         </div>
         
     </div>
