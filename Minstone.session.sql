@@ -1,17 +1,8 @@
 -- @block
-CREATE TABLE Profiles(
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  descrip TEXT
+CREATE TABLE Addpro (
+  id INT NOT NULL AUTO_INCREMENT,
+  Title TEXT NOT NULL,
+  Descript TEXT NOT NULL,
+  Images BLOB NULL,
+  PRIMARY KEY (id)
 );
-
--- @block
-INSERT INTO Profiles (title,descrip)
-VALUES (
-  'FIRST PUBLIC',
-  'HI, WORLD'
-);
-
--- @block
-SELECT * FROM profiles
-

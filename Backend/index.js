@@ -13,7 +13,6 @@ app.use(cors({
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-app.use('/',profileRoute);
+app.use(profileRoute);
 
 app.listen(5000, () => console.log("Server is running"));
