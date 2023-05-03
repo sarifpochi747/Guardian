@@ -8,13 +8,22 @@ const getAllAddProfiles = async (req, res) => {
 };
 
 const createAllAddProfiles = async (req, res) => {
-  const { Title,Descript, } = req.body;
+  const { id,Title,Descript, } = req.body;
   if (!req.file) {
     return res.status(req.file).send('No file uploaded');
   }
   const Images = req.file.filename;
-  await AddProfiles.create(Title,Descript,Images);
+  await AddProfiles.create(id,Title,Descript,Images);
   res.status(201).send('Profile created successfully');
 };
 
-module.exports = {getAllAddProfiles, createAllAddProfiles};
+const UpdateAllAddProfiles = async (req, res) => {
+  const { id,Title,Descript, } = req.body;
+  if (!req.file) {
+    return res.status(req.file).send('No file uploaded');
+  }
+  const Images = req.file.filename;
+  await AddProfiles.update(id,Title,Descript,Images);
+  res.status(201).send('Profile created successfully');
+}
+module.exports = {getAllAddProfiles, createAllAddProfiles,UpdateAllAddProfiles};

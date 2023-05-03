@@ -11,14 +11,21 @@ AddProfiles.fetchAll = function() {
   return db.execute('SELECT * FROM addpro');
 };
 
-AddProfiles.create = function(Title,Descript,Images) {
+AddProfiles.create = function(id,Title,Descript,Images) {
   if(Images == undefined){
     Images = null;
   }
   return db.execute(
-    'INSERT INTO addpro (Title,Descript,Images) VALUES (?, ?, ?)',
-    [Title,Descript,Images]
+    'INSERT INTO addpro (id,Title,Descript,Images) VALUES (?,?, ?, ?)',
+    [id,Title,Descript,Images]
   );
+};
+
+AddProfiles.update = function(id,Title,Descript,Images) {
+    return db.execute(
+      'UPDATE addpro SET Title=?, Descript= ?, Images= ? where id = ?',
+      [Title,Descript,Images, id]
+    );
 };
 
 
