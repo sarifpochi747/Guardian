@@ -5,14 +5,8 @@ const {getAllAddProfiles, createAllAddProfiles,UpdateAllAddProfiles} = require('
 const multer = require('multer');
 const path = require('path');
 
-const storage = multer.diskStorage({
-  destination: './uploads',
-  filename:(req,file,cb) => {
-    return cb(null, `${file.fieldname}_${req.body.id}${path.extname(file.originalname)}`);
-  }
-});
-
-const upload = multer({ storage: storage});
+const storage = multer.memoryStorage();
+const upload = multer({ dest: 'uploads/',storage: storage});
 
 const router = express.Router();
 router.get('/addProfiles', getAllAddProfiles);
