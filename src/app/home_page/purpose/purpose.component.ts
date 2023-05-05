@@ -3,6 +3,7 @@ import { Hero } from 'src/app/hero_type';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 
+
 @Component({
   selector: 'app-purpose',
   templateUrl: './purpose.component.html',

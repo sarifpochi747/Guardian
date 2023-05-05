@@ -22,7 +22,7 @@ import { HeaderUserComponent } from './header-user/header-user.component';
 import { OrganizationPageComponent } from './menu_page/organization-page/organization-page.component';
 import { ProfileComponent } from './menu_page/profile/profile.component';
 import { UserPageComponent } from './menu_page/user-page/user-page.component';
-import { OurStandardComponent } from './our-standard/our-standard.component';
+import { OurStandardComponent } from './menu_page/our-standard/our-standard.component';
 
 
 const routes: Routes = [
