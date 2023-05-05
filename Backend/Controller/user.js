@@ -9,21 +9,27 @@ const getAllAddProfiles = async (req, res) => {
 const createAllAddProfiles = async (req, res) => {
   const { id,Title,Descript, } = req.body;
   if (!req.file) {
-    return res.status(req.file).send('No file uploaded');
+    await AddProfiles.create(id,Title,Descript,null);
+    res.status(201).send('Profile created successfully');
   }
-  const Images = req.file.buffer.toString('base64');
-  await AddProfiles.create(id,Title,Descript,Images);
-  res.status(201).send('Profile created successfully');
+  else{
+    const Images = req.file.buffer.toString('base64');
+    await AddProfiles.create(id,Title,Descript,Images);
+    res.status(201).send('Profile created successfully');
+  }
 };
 
 const UpdateAllAddProfiles = async (req, res) => {
-  const { id, Title, Descript } = req.body;
+  const { id,Title,Descript, } = req.body;
   if (!req.file) {
-    return res.status(400).send('No file uploaded');
+    await AddProfiles.update(id,Title,Descript,null);
+    res.status(201).send('Profile updated successfully');
   }
-  const Images = req.file.buffer.toString('base64');
-  await AddProfiles.update(id, Title, Descript, Images);
-  res.status(201).send('Profile created successfully');
+  else{
+    const Images = req.file.buffer.toString('base64');
+    await AddProfiles.update(id,Title,Descript,Images);
+    res.status(201).send('Profile updated successfully');
+  }
 }
 
 //AddGoals
@@ -35,21 +41,27 @@ const getAllAddGoals = async (req, res) => {
 const createAllAddGoals = async (req, res) => {
   const { id,Title,Descript, } = req.body;
   if (!req.file) {
-    return res.status(req.file).send('No file uploaded');
+    await AddGoals.create(id,Title,Descript,null);
+    res.status(201).send('Profile created successfully');
   }
-  const Images = req.file.buffer.toString('base64');
-  await AddGoals.create(id,Title,Descript,Images);
-  res.status(201).send('Profile created successfully');
+  else{
+    const Images = req.file.buffer.toString('base64');
+    await AddGoals.create(id,Title,Descript,Images);
+    res.status(201).send('Profile created successfully');
+  }
 };
 
 const UpdateAllAddGoals = async (req, res) => {
-  const { id, Title, Descript } = req.body;
+  const { id,Title,Descript, } = req.body;
   if (!req.file) {
-    return res.status(400).send('No file uploaded');
+    await AddGoals.update(id,Title,Descript,null);
+    res.status(201).send('Profile updated successfully');
   }
-  const Images = req.file.buffer.toString('base64');
-  await AddGoals.update(id, Title, Descript, Images);
-  res.status(201).send('Profile created successfully');
+  else{
+    const Images = req.file.buffer.toString('base64');
+    await AddGoals.update(id,Title,Descript,Images);
+    res.status(201).send('Profile updated successfully');
+  }
 }
 
 //AddStandard
@@ -61,21 +73,27 @@ const getAllAddStandard = async (req, res) => {
 const createAllAddStandard = async (req, res) => {
   const { id,Title,Descript, } = req.body;
   if (!req.file) {
-    return res.status(req.file).send('No file uploaded');
+    await AddStandard.create(id,Title,Descript,null);
+    res.status(201).send('Profile created successfully');
   }
-  const Images = req.file.buffer.toString('base64');
-  await AddStandard.create(id,Title,Descript,Images);
-  res.status(201).send('Profile created successfully');
+  else{
+    const Images = req.file.buffer.toString('base64');
+    await AddStandard.create(id,Title,Descript,Images);
+    res.status(201).send('Profile created successfully');
+  }
 };
 
 const UpdateAllAddStandard = async (req, res) => {
-  const { id, Title, Descript } = req.body;
+  const { id,Title,Descript, } = req.body;
   if (!req.file) {
-    return res.status(400).send('No file uploaded');
+    await AddStandard.update(id,Title,Descript,null);
+    res.status(201).send('Profile updated successfully');
   }
-  const Images = req.file.buffer.toString('base64');
-  await AddStandard.update(id, Title, Descript, Images);
-  res.status(201).send('Profile created successfully');
+  else{
+    const Images = req.file.buffer.toString('base64');
+    await AddStandard.update(id,Title,Descript,Images);
+    res.status(201).send('Profile updated successfully');
+  }
 }
 
 //Export module

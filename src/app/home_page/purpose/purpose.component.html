@@ -9,42 +9,41 @@
         <div id = "L_Content" class="w-1/3 flex flex-col items-center">
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-28 mt-[72px]">
-              <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">เทคโนโลยีสนับสนุนการทำงาน</div></div>
-              <div id="Msg_description" class="text-[16px] text-gray-500 ml-2 text-[1vw]">เราไม่หยุดนิ่งที่จะนำเทคโนโลยีที่ทันสมัย เข้ามาผสมผสานกับการทำงานอย่างต่อเนื่อง เพื่อยกระดับให้เป็นบริษัทรักษาความปลอดภัยชั้นนำ</div>
+              <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[1].title }}</div></div>
+              <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[1].descript }}</div>
           </div>
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-0 mt-[72px] ">
-            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">กำลังพลสำรองทดแทน</div></div>
-            <div id="Msg_description" class="text-[16px] text-gray-500 ml-2 text-[1vw]">พนักงานขาดจุดถือว่าเป็นปัญหาใหญ่ของงานซึ่งจะส่งผลให้สถานที่มีปัญหาด้านความปลอดภัย ด้านคุณภาพ และการให้บริการเราจึงจัดกำลังพลสำรองเพียงพอ
-                เพื่อทดแทนการลาฉุกเฉิน</div>
+            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[2].title }}</div></div>
+            <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[2].descript }}</div>
           </div>
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-28 mt-[72px]">
-            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">การฝึกอบรม</div></div>
-            <div id="Msg_description" class=" text-gray-500 ml-2 text-[1vw]">ให้ความสำคัญเกี่ยวกับการฝึกอบรมโดยพนักงานทุกคนต้องได้รับการฝึกอบรมก่อนลงงานและส่งทีมครูฝึกเข้าฝึกอบรมที่หน่วย งานอย่างต่อเนื่อง เพื่อเป็นการทบทวน และเพิ่มทักษะในการทำงาน</div>
+            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[3].title }}</div></div>
+            <div id="Msg_description" class=" text-gray-500 ml-2 text-[1vw]">{{ heroes[3].descript }}</div>
           </div>
 
         </div>
 
       <div id="M_content" class=" mt-[65px] flex items-center">
-          <img class="w-[546px] h-[544px] px-5" src="http://www.justinmaller.com/img/projects/thumbnail/THUMB__zpki.jpg">
+          <img class="w-[100%] h-[100%] px-5 " [src]="heroes[0].Images">
       </div>
 
       <div id = "R_Content" class="w-1/3 flex flex-col items-center">
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-0 mt-[72px]">
-            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">ให้บริการระดับสากล</div></div>
-            <div id="Msg_description" class="text-[16px] text-gray-500 ml-2 text-[1vw]">สร้างความเป็นเอกลักษณ์ของพนักงานด้วยการปลูกฝังแนวคิด ในการใส่ใจการบริการ</div>
+            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[4].title }}</div></div>
+            <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[4].descript }}</div>
           </div>
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-24 mt-[72px]">
-            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">ยกระดับความพึงพอใจในการใช้บริการ</div></div>
-            <div id="Msg_description" class="text-[16px] text-gray-500 ml-2 text-[1vw]">ให้บริการด้วยความเต็มใจ และ ลดปัญหาในการให้บริการให้น้อยที่สุด</div>
+            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[5].title }}</div></div>
+            <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[5].descript }}</div>
           </div>
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-0 mt-[72px]">
-            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">บุคลากรที่มีคุณภาพ</div></div>
-            <div id="Msg_description" class="text-[16px] text-gray-500 ml-2 text-[1vw]">สร้างความเป็นเอกลักษณ์ของพนักงานรักษาความปลอดภัยด้วยการปลูกฝังแนวคิด ให้เกิดความ “มีวินัย ซื่อตรง ใส่ใจบริการ”</div>
+            <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[6].title }}</div></div>
+            <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[6].descript }}</div>
           </div>
 
       </div>

@@ -5,35 +5,35 @@
   </div>
 
   <div class="flex flex-wrap justify-center items-center mb-16 content-center">
-    <div class="w-full md:w-1/4 p-4 text-center flex flex-col">
-      <img class="w-32 h-32 md:w-48 md:h-48 mx-auto mb-2" src="http://www.justinmaller.com/img/projects/thumbnail/THUMB__zpki.jpg" alt="">
+    <div class="w-full md:w-1/4 p-4 text-center flex flex-col items-center justify-center">
+      <img class="w-1/2 h-1/2 md:w-1/2 md:h-1/2 mb-2" [src]="heroes[0].Images" alt="">
       <div>
-        <h2 class="text-xl md:text-2xl text-black-1">ISO9001</h2>
-        <h5 class="text-sm md:text-lg text-grey-3">ระบบมาตรฐานการบริหารงานคุณภาพ</h5>
+        <h2 class="text-xl md:text-2xl text-black-1">{{ heroes[0].title }}</h2>
+        <h5 class="text-sm md:text-lg text-grey-3">{{ heroes[0].descript }}</h5>
       </div>
     </div>
 
-    <div class="w-full md:w-1/4 p-4 text-center flex flex-col">
-      <img class="w-32 h-32 md:w-48 md:h-48 mx-auto mb-2" src="http://www.justinmaller.com/img/projects/thumbnail/THUMB__zpki.jpg" alt="">
+    <div class="w-full md:w-1/4 p-4 text-center flex flex-col items-center justify-center">
+      <img class="w-1/2 h-1/2 md:w-1/2 md:h-1/2 mb-2" [src]="heroes[1].Images" alt="">
       <div>
-        <h2 class="text-xl md:text-2xl text-black-1">ISO14001</h2>
-        <h5 class="text-sm md:text-lg text-grey-3">ระบบมาตรฐานการจัดการสิ่งแวดล้อม</h5>
+        <h2 class="text-xl md:text-2xl text-black-1">{{ heroes[1].title }}</h2>
+        <h5 class="text-sm md:text-lg text-grey-3">{{ heroes[1].descript }}</h5>
       </div>
     </div>
 
-    <div class="w-full md:w-1/4 p-4 text-center flex flex-col">
-      <img class="w-32 h-32 md:w-48 md:h-48 mx-auto mb-2" src="http://www.justinmaller.com/img/projects/thumbnail/THUMB__zpki.jpg" alt="">
+    <div class="w-full md:w-1/4 p-4 text-center flex flex-col items-center justify-center">
+      <img class="w-1/2 h-1/2 md:w-1/2 md:h-1/2 mb-2" [src]="heroes[2].Images" alt="">
       <div>
-        <h2 class="text-xl md:text-2xl text-black-1">OHSAS18001:(ISO45001)</h2>
-        <h5 class="text-sm md:text-lg text-grey-3">ระบบมาตรฐานการจัดการ อาชีวอนามัย และความปลอดภัย</h5>
+        <h2 class="text-xl md:text-2xl text-black-1">{{ heroes[2].title }}</h2>
+        <h5 class="text-sm md:text-lg text-grey-3">{{ heroes[2].descript }}</h5>
       </div>
     </div>
 
-    <div class="w-full md:w-1/4 p-4 text-center flex flex-col">
-      <img class="w-32 h-32 md:w-48 md:h-48 mx-auto mb-2" src="http://www.justinmaller.com/img/projects/thumbnail/THUMB__zpki.jpg" alt="">
+    <div class="w-full md:w-1/4 p-4 text-center flex flex-col items-center justify-center">
+      <img class="w-1/2 h-1/2 md:w-1/2 md:h-1/2 mb-2 object-cover" [src]="heroes[3].Images" alt="">
       <div>
-        <h2 class="text-xl md:text-2xl text-black-1">THAI SME-GP</h2>
-        <h5 class="text-sm md:text-lg text-grey-3">หนังสือรับรองการขึ้นทะเบียนผู้ประกอบการ SME เพื่อการจัดซื้อจัดจ้างภาครัฐ</h5>
+        <h2 class="text-xl md:text-2xl text-black-1">{{ heroes[3].title }}</h2>
+        <h5 class="text-sm md:text-lg text-grey-3">{{ heroes[3].descript }}</h5>
       </div>
     </div>
 
