@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/hero_type';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Buffer } from 'buffer';
 
 @Component({
   selector: 'app-hero-section',

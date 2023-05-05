@@ -1,7 +1,6 @@
-const {AddProfiles} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard} = require('../Model/user');
 
 // AddProfiles
-
 const getAllAddProfiles = async (req, res) => {
   const [ alladdprofiles ] = await AddProfiles.fetchAll();
   res.status(200).json(alladdprofiles);
@@ -26,4 +25,68 @@ const UpdateAllAddProfiles = async (req, res) => {
   await AddProfiles.update(id, Title, Descript, Images);
   res.status(201).send('Profile created successfully');
 }
-module.exports = {getAllAddProfiles, createAllAddProfiles,UpdateAllAddProfiles};
+
+//AddGoals
+const getAllAddGoals = async (req, res) => {
+  const [ alladdgoals ] = await AddGoals.fetchAll();
+  res.status(200).json(alladdgoals);
+};
+
+const createAllAddGoals = async (req, res) => {
+  const { id,Title,Descript, } = req.body;
+  if (!req.file) {
+    return res.status(req.file).send('No file uploaded');
+  }
+  const Images = req.file.buffer.toString('base64');
+  await AddGoals.create(id,Title,Descript,Images);
+  res.status(201).send('Profile created successfully');
+};
+
+const UpdateAllAddGoals = async (req, res) => {
+  const { id, Title, Descript } = req.body;
+  if (!req.file) {
+    return res.status(400).send('No file uploaded');
+  }
+  const Images = req.file.buffer.toString('base64');
+  await AddGoals.update(id, Title, Descript, Images);
+  res.status(201).send('Profile created successfully');
+}
+
+//AddStandard
+const getAllAddStandard = async (req, res) => {
+  const [ alladdStandard ] = await AddStandard.fetchAll();
+  res.status(200).json(alladdStandard);
+};
+
+const createAllAddStandard = async (req, res) => {
+  const { id,Title,Descript, } = req.body;
+  if (!req.file) {
+    return res.status(req.file).send('No file uploaded');
+  }
+  const Images = req.file.buffer.toString('base64');
+  await AddStandard.create(id,Title,Descript,Images);
+  res.status(201).send('Profile created successfully');
+};
+
+const UpdateAllAddStandard = async (req, res) => {
+  const { id, Title, Descript } = req.body;
+  if (!req.file) {
+    return res.status(400).send('No file uploaded');
+  }
+  const Images = req.file.buffer.toString('base64');
+  await AddStandard.update(id, Title, Descript, Images);
+  res.status(201).send('Profile created successfully');
+}
+
+//Export module
+module.exports = {
+  getAllAddProfiles,
+  createAllAddProfiles,
+  UpdateAllAddProfiles,
+  getAllAddGoals,
+  createAllAddGoals,
+  UpdateAllAddGoals,
+  getAllAddStandard,
+  createAllAddStandard,
+  UpdateAllAddStandard
+};
