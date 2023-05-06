@@ -37,7 +37,7 @@ export class OrganizationPageComponent implements OnInit  {
 
   onRemove(event:any,id:any) {
 		this.files.splice(id, 1,null);
-    this.showPrev.splice(id, 1);
+    this.showPrev.splice(id, 1,null);
 	}
 
   updateForm() {

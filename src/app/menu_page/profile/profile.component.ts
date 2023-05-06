@@ -28,8 +28,8 @@ export class ProfileComponent implements OnInit  {
           this.imtemp = this.heroes[0][fieldname];
           this.files[i-1] = this.imtemp;
         }
-        this.heroes[0].title = "";
-        this.heroes[0].descript = "";
+        // this.heroes[0].title = "";
+        // this.heroes[0].descript = "";
     })
   }
 
@@ -50,7 +50,7 @@ export class ProfileComponent implements OnInit  {
 
 	onRemove(event:any,id:any) {
 		this.files.splice(id, 1,null);
-    this.showPrev.splice(id, 1);
+    this.showPrev.splice(id, 1,null);
 	}
 
   updateForm() {
