@@ -113,8 +113,8 @@
 
                         </div>
 
-                      <div class="flex justify-end w-full h-full items-end content-end">
-                        <div class="up-left" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false" >
+                      <div class="flex justify-end w-full h-full items-end content-end max-sm:items-start">
+                        <div class="up-left " ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false" >
                           <!-- <img src = "https://cdn-icons-png.flaticon.com/502/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                           <ngx-dropzone-label>
                           <div>
@@ -137,14 +137,14 @@
                     <!-- Right side -->
                     <div class="flex flex-row h-full w-1/2  max-sm:flex-col max-sm:w-full max-sm:h-[600px] max-sm:space-y-2">
                       <!-- Long img -->
-                      <div class="h-full w-1/2 pr-2">
+                      <div class="h-full w-1/2 pr-2 max-sm:w-full max-sm:h-[200px] max-sm:pr-0">
                         <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
                           <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                           <ngx-dropzone-label>
                             <div>
                               <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                             </div>
-                            <div class="mt-1">
+                            <div class="mt-1 max-md:text-[12px]">
                               Drag & Drop
                             </div>
                           </ngx-dropzone-label>
@@ -157,15 +157,15 @@
                       </div>
 
                       <!--  2 each -->
-                      <div class="h-full w-1/2 flex flex-col">
-                        <div class="h-1/2 pb-1">
+                      <div class="h-full w-1/2 flex flex-col max-sm:w-full max-sm:h-[200px]">
+                        <div class="h-1/2 pb-1 max-sm:h-full">
                           <div class="two-each" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,2)" [multiple]="false">
                             <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                             <ngx-dropzone-label>
                               <div>
                                 <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                               </div>
-                              <div class="mt-1">
+                              <div class="mt-1 max-md:text-[12px]">
                                 Drag & Drop
                               </div>
                             </ngx-dropzone-label>
@@ -176,14 +176,14 @@
                             </div>
                           </div>
                         </div>
-                        <div class="h-1/2 pt-1">
+                        <div class="h-1/2 pt-1  max-sm:h-[200px]">
                           <div class="two-each" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,3)" [multiple]="false">
                             <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                             <ngx-dropzone-label>
                               <div>
                                 <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                               </div>
-                              <div class="mt-1">
+                              <div class="mt-1 max-md:text-[12px]">
                                 Drag & Drop
                               </div>
                             </ngx-dropzone-label>
@@ -201,14 +201,14 @@
                   <!-- Down side -->
                   <div class="flex flex-row h-1/3 w-full max-sm:flex-col max-sm:h-[300px] max-sm:space-y-2">
                     <!-- Left side -->
-                    <div class="w-1/2 flex h-full pr-2">
+                    <div class="w-1/2 flex h-full pr-2 max-sm:flex-col max-sm:w-full max-sm:pr-0 max-sm:space-y-2">
                       <div class="bot-left" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,4)" [multiple]="false">
                         <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                         <ngx-dropzone-label>
                           <div>
                             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                           </div>
-                          <div class="mt-1">
+                          <div class="mt-1 max-md:text-[12px]">
                             Drag & Drop
                           </div>
                         </ngx-dropzone-label>
@@ -224,7 +224,7 @@
                           <div>
                             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                           </div>
-                          <div class="mt-1">
+                          <div class="mt-1 max-md:text-[12px]">
                             Drag & Drop
                           </div>
                         </ngx-dropzone-label>
@@ -236,14 +236,14 @@
                       </div>
                     </div>
                     <!-- right side -->
-                    <div class="w-1/2 h-full">
+                    <div class="w-1/2 h-full max-sm:w-full">
                       <div class="bot-right" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,6)" [multiple]="false">
                         <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                         <ngx-dropzone-label>
                           <div>
                             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                           </div>
-                          <div class="mt-1">
+                          <div class="mt-1 max-md:text-[12px]">
                             Drag & Drop
                           </div>
                         </ngx-dropzone-label>
@@ -258,15 +258,12 @@
               </div>
             </div>
 
-            <!-- Button Back & Save -->
-            <div class="pt-[25px] flex items-center space-x-[18px] ">
-                <a routerLink="../">
-                    <div class= " bg-white h-[50px] w-[166px] border-2 border-red-1 rounded-md text-red-1 text-lg  flex items-center justify-center cursor-pointer ">
-                        <i class="ri-arrow-left-circle-line"></i>BACK
-                    </div>
-                </a>
-                <button type="submit" class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg">SAVE</button>
-            </div>
+             <!-- Button Back & Save -->
+             <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
+                
+              <button class="bg-white h-[50px] w-[166px]  text-red-1 rounded-md  border-2 border-red-1 text-lg max-md:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+              <button class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]">SAVE</button>
+          </div>
         </form>
     </div>
 </div>
