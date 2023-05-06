@@ -1,108 +1,108 @@
 <app-header-user></app-header-user>
-<div class=" py-[40px] px-[103px]">
-    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-        <div class="lg:text-[26px] md:text-[18px]">
+<div class=" py-[40px] px-[103px] max-md:px-[40px] max-sm:px-6">
+    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-sm:px-6">
+        <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
             OUR STANDARD
         </div>
         <form class="overflow-y-scroll max-h-[890px]">
             <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">Title</label>
+                <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  required
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
-            <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">Description</label>
-                <div class="pt-[8px] w-3/4">
-                  <!-- Tool bar -->
-                  <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
-                    <!-- font -->
-                    <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                      <!-- label -->
-                      <div class="text-[1vw]">
-                        font
+              <!-- Description Input -->
+              <div class=" pt-[18px] pr-2">
+                <label  class="text-[16px] leading-6 text-grey-5  max-md:text-[14px] ">Description</label>
+                <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
+                    <!-- Tool bar -->
+                    <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
+                      <!-- font -->
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
+                        <!-- label -->
+                        <div class="text-[1vw]">
+                          font
+                        </div>
+                        <!-- down button -->
+                        <div class="ml-7">
+                          <i class="fa-solid fa-caret-down"></i>
+                        </div>
                       </div>
-                      <!-- down button -->
-                      <div class="ml-7">
-                        <i class="fa-solid fa-caret-down"></i>
+                      <!-- normal -->
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
+                        <!-- label -->
+                        <div class="text-[1vw]">
+                          normal
+                        </div>
+                        <!-- down button -->
+                        <div class="ml-7">
+                          <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                      </div>
+                      <!-- size -->
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:border-0  ">
+                        <!-- label -->
+                        <div class="text-[1vw]">
+                          size
+                        </div>
+                        <!-- down button -->
+                        <div class="ml-7">
+                          <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                      </div>
+                      <!-- undo -->
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden">
+                        <!-- label -->
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-arrow-left mr-1" style="font-size: 1vw;"></i>
+                          <i class="fa-solid fa-arrow-left ml-1 fa-rotate-180" style="font-size: 1vw;"></i>
+                        </div>
+                      </div>
+                      <!-- font SM -->
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden">
+                        <!-- label -->
+                        <div class="text-[1vw]">
+                          Aa
+                        </div>
+                      </div>
+                      <!-- font style -->
+                      <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center max-sm:hidden">
+                        <!-- label -->
+                        <div>
+                          <i class="fa-sharp fa-solid fa-bold mr-3" style="font-size: 1vw;"></i>
+                          <i class="fas fa-italic mr-3" style="font-size: 1vw;"></i>
+                          <i class="fa-solid fa-underline mr-3" style="font-size: 1vw;"></i>
+                          <i class="fa-solid fa-strikethrough" style="font-size: 1vw;"></i>
+                        </div>
+                      </div>
+                      <!-- Aling text -->
+                      <div class="flex h-full items-center p-2 border-[#707070] justify-center  max-sm:hidden">
+                        <!-- label -->
+                        <div class="flex flex-wrap">
+                          <i class="fa-solid fa-align-left mr-3 " style="font-size: 1vw;"></i>
+                          <i class="fa-solid fa-align-center mr-3 " style="font-size: 1vw;"></i>
+                          <i class="fa-solid fa-align-right mr-3 " style="font-size: 1vw;"></i>
+                          <i class="fa-solid fa-align-justify " style="font-size: 1vw;"></i>
+                        </div>
                       </div>
                     </div>
-                    <!-- normal -->
-                    <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                      <!-- label -->
-                      <div class="text-[1vw]">
-                        normal
-                      </div>
-                      <!-- down button -->
-                      <div class="ml-7">
-                        <i class="fa-solid fa-caret-down"></i>
-                      </div>
-                    </div>
-                    <!-- size -->
-                    <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                      <!-- label -->
-                      <div class="text-[1vw]">
-                        size
-                      </div>
-                      <!-- down button -->
-                      <div class="ml-7">
-                        <i class="fa-solid fa-caret-down"></i>
-                      </div>
-                    </div>
-                    <!-- undo -->
-                    <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                      <!-- label -->
-                      <div class="flex items-center">
-                        <i class="fa-solid fa-arrow-left mr-1" style="font-size: 1vw;"></i>
-                        <i class="fa-solid fa-arrow-left ml-1 fa-rotate-180" style="font-size: 1vw;"></i>
-                      </div>
-                    </div>
-                    <!-- font SM -->
-                    <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                      <!-- label -->
-                      <div class="text-[1vw]">
-                        Aa
-                      </div>
-                    </div>
-                    <!-- font style -->
-                    <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center">
-                      <!-- label -->
-                      <div>
-                        <i class="fa-sharp fa-solid fa-bold mr-3" style="font-size: 1vw;"></i>
-                        <i class="fas fa-italic mr-3" style="font-size: 1vw;"></i>
-                        <i class="fa-solid fa-underline mr-3" style="font-size: 1vw;"></i>
-                        <i class="fa-solid fa-strikethrough" style="font-size: 1vw;"></i>
-                      </div>
-                    </div>
-                    <!-- Aling text -->
-                    <div class="flex h-full items-center p-2 border-[#707070] justify-center ">
-                      <!-- label -->
-                      <div class="flex flex-wrap">
-                        <i class="fa-solid fa-align-left mr-3 " style="font-size: 1vw;"></i>
-                        <i class="fa-solid fa-align-center mr-3 " style="font-size: 1vw;"></i>
-                        <i class="fa-solid fa-align-right mr-3 " style="font-size: 1vw;"></i>
-                        <i class="fa-solid fa-align-justify " style="font-size: 1vw;"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Text -->
-                  <input  name="username" type="text"  required
-                  class="w-full h-[91px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center">
-              </div>
+                    <!-- Text -->
+                    <input  name="username" type="text"  required
+                    class="w-full h-[91px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center">
+                </div>
             </div>
             <!-- Form 1 -->
             <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">1. Title (sub)</label>
+                <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">1. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  required
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
-
             <!-- Drag and drop -->
-            <div class="pt-[40px]">
-              <div class="border-2 border-dashed border-grey-4 w-[27.552vw] h-[181px] flex justify-center items-center rounded-md ">
+            <div class="pt-[40px] pr-2">
+              <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
                   <div class="text-center">
                       <input type="file" hidden>
                       <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
@@ -111,52 +111,52 @@
                       </div>
                   </div>
               </div>
-          </div>
+            </div>
             <!-- Form 2 -->
             <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">2. Title (sub)</label>
+                <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">2. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  required
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">Description (sub)</label>
+                <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  required
-                    class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+                    class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
             <!-- Drag and drop -->
-            <div class="pt-[40px]">
-              <div class="border-2 border-dashed border-grey-4 w-[27.552vw] h-[181px] flex justify-center items-center rounded-md ">
-                  <div class="text-center">
-                      <input type="file" hidden>
-                      <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
-                      <div class="mt-1">
-                        Drag & Drop
-                      </div>
-                  </div>
-              </div>
-          </div>
+          <div class="pt-[40px] pr-2">
+            <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
+                <div class="text-center">
+                    <input type="file" hidden>
+                    <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
+                    <div class="mt-1">
+                      Drag & Drop
+                    </div>
+                </div>
+            </div>
+        </div>
           <!-- Form 3 -->
           <div class=" pt-[18px]">
-            <label  class="text-[0.9vw] leading-6 text-grey-5">3. Title (sub)</label>
+            <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">3. Title (sub)</label>
             <div class="pt-[8px]">
                 <input  name="username" type="text"  required
-                class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+                class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
             </div>
         </div>
         <div class=" pt-[18px]">
-            <label  class="text-[0.9vw] leading-6 text-grey-5">Description (sub)</label>
+            <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
             <div class="pt-[8px]">
                 <input  name="username" type="text"  required
-                class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+                class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
             </div>
         </div>
         <!-- Drag and drop -->
-        <div class="pt-[40px]">
-          <div class="border-2 border-dashed border-grey-4 w-[27.552vw] h-[181px] flex justify-center items-center rounded-md ">
+        <div class="pt-[40px] pr-2">
+          <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
               <div class="text-center">
                   <input type="file" hidden>
                   <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
@@ -168,22 +168,22 @@
       </div>
       <!-- Form 4 -->
       <div class=" pt-[18px]">
-        <label  class="text-[0.9vw] leading-6 text-grey-5">4. Title (sub)</label>
+        <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">4. Title (sub)</label>
         <div class="pt-[8px]">
             <input  name="username" type="text"  required
-            class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+            class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
         </div>
     </div>
     <div class=" pt-[18px]">
-        <label  class="text-[0.9vw] leading-6 text-grey-5">Description (sub)</label>
+        <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
         <div class="pt-[8px]">
             <input  name="username" type="text"  required
-            class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-1">
+            class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
         </div>
     </div>
     <!-- Drag and drop -->
-    <div class="pt-[40px]">
-      <div class="border-2 border-dashed border-grey-4 w-[27.552vw] h-[181px] flex justify-center items-center rounded-md ">
+    <div class="pt-[40px] pr-2">
+      <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
           <div class="text-center">
               <input type="file" hidden>
               <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
@@ -194,15 +194,12 @@
       </div>
   </div>
 
-            <!-- Button  -->
-            <div class="pt-[45px] flex items-center space-x-[18px]  ">
-                <a routerLink="../">
-                    <div class= " bg-white h-[50px] w-[166px] border-2 border-red-1 rounded-md text-red-1 text-lg  flex items-center justify-center cursor-pointer ">
-                        <i class="ri-arrow-left-circle-line"></i>BACK
-                    </div>
-                </a>
-                <button class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg">SAVE</button>
-            </div>
+            <!-- Button Back & Save -->
+            <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
+                
+              <button class="bg-white h-[50px] w-[166px]  text-red-1 rounded-md  border-2 border-red-1 text-lg max-md:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+              <button class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]">SAVE</button>
+          </div>
         </form>
     </div>
 </div>

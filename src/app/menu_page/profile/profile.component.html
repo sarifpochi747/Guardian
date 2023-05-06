@@ -2,15 +2,15 @@
 
 
 
-<div class=" py-[40px] px-[103px]">
-    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-        <div class="lg:text-[26px] md:text-[18px]">
+<div class=" py-[40px] px-[103px] max-md:px-[40px] max-sm:px-6">
+    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-sm:px-6">
+        <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
             Profile
         </div>
         <form #myForm="ngForm" (ngSubmit)="updateForm()">
           <!-- Title Input -->
             <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">Title</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
                     <input  name="title" type="text"
                     class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].title">
@@ -18,8 +18,8 @@
             </div>
             <!-- Description Input -->
             <div class=" pt-[18px]">
-                <label  class="text-[0.9vw] leading-6 text-grey-5">Description</label>
-                <div class="pt-[8px] w-3/4">
+                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description</label>
+                <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
                     <!-- Tool bar -->
                     <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
                       <!-- font -->
@@ -45,7 +45,7 @@
                         </div>
                       </div>
                       <!-- size -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:border-0  ">
                         <!-- label -->
                         <div class="text-[1vw]">
                           size
@@ -56,7 +56,7 @@
                         </div>
                       </div>
                       <!-- undo -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden">
                         <!-- label -->
                         <div class="flex items-center">
                           <i class="fa-solid fa-arrow-left mr-1" style="font-size: 1vw;"></i>
@@ -64,14 +64,14 @@
                         </div>
                       </div>
                       <!-- font SM -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
+                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden">
                         <!-- label -->
                         <div class="text-[1vw]">
                           Aa
                         </div>
                       </div>
                       <!-- font style -->
-                      <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center">
+                      <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center max-sm:hidden">
                         <!-- label -->
                         <div>
                           <i class="fa-sharp fa-solid fa-bold mr-3" style="font-size: 1vw;"></i>
@@ -81,7 +81,7 @@
                         </div>
                       </div>
                       <!-- Aling text -->
-                      <div class="flex h-full items-center p-2 border-[#707070] justify-center ">
+                      <div class="flex h-full items-center p-2 border-[#707070] justify-center  max-sm:hidden">
                         <!-- label -->
                         <div class="flex flex-wrap">
                           <i class="fa-solid fa-align-left mr-3 " style="font-size: 1vw;"></i>
@@ -98,18 +98,18 @@
             </div>
 
             <!-- Image Layout -->
-            <div class="flex justify-center px-12 min-h-[805px] py-12">
+            <div class="flex justify-center px-12 min-h-[805px] py-12 max-md:px-8">
 
               <div class="flex flex-col w-full">
                   <!-- Upper side  -->
-                  <div class="w-full flex flex-row h-2/3 pb-7">
+                  <div class="w-full flex flex-row h-2/3 pb-7  max-sm:flex-col max-sm:h-[600px] max-sm:space-y-2">
                     <!-- Left side -->
-                    <div class="flex flex-col h-full w-1/2 pr-2">
-                        <div class="subject">
+                    <div class="flex flex-col h-full w-1/2 pr-2  max-sm:w-full max-sm:h-[200px] max-sm:pr-0 ">
+                        <div class="subject ">
 
                         </div>
 
-                        <div class=" text-[1.4vw] font-light text-grey-2 w-full">
+                        <div class=" text-[1.4vw] font-light text-grey-2 w-full ">
 
                         </div>
 
@@ -120,7 +120,7 @@
                           <div>
                             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                           </div>
-                          <div class="mt-1">
+                          <div class="mt-1  max-md:text-[12px]">
                             Drag & Drop
                           </div>
                         </ngx-dropzone-label>
@@ -135,7 +135,7 @@
                     </div>
 
                     <!-- Right side -->
-                    <div class="flex flex-row h-full w-1/2">
+                    <div class="flex flex-row h-full w-1/2  max-sm:flex-col max-sm:w-full max-sm:h-[600px] max-sm:space-y-2">
                       <!-- Long img -->
                       <div class="h-full w-1/2 pr-2">
                         <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
@@ -155,6 +155,7 @@
                           </div>
                         </div>
                       </div>
+
                       <!--  2 each -->
                       <div class="h-full w-1/2 flex flex-col">
                         <div class="h-1/2 pb-1">
@@ -198,7 +199,7 @@
                   </div>
 
                   <!-- Down side -->
-                  <div class="flex flex-row h-1/3 w-full">
+                  <div class="flex flex-row h-1/3 w-full max-sm:flex-col max-sm:h-[300px] max-sm:space-y-2">
                     <!-- Left side -->
                     <div class="w-1/2 flex h-full pr-2">
                       <div class="bot-left" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,4)" [multiple]="false">
