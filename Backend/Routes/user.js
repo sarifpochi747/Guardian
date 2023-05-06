@@ -32,8 +32,8 @@ router.put('/UpdateAddProfiles', upload.fields(uploadFields),UpdateAllAddProfile
 
 //AddGoals
 router.get('/addGoals', getAllAddGoals);
-router.post('/CreateAddGoals',upload.single('Images') ,createAllAddGoals);
-router.put('/UpdateAddGoals',upload.single('Images'),UpdateAllAddGoals);
+router.post('/CreateAddGoals',upload.single('img') ,createAllAddGoals);
+router.put('/UpdateAddGoals',upload.single('img'),UpdateAllAddGoals);
 
 //AddStandard
 router.get('/addStandard', getAllAddStandard);

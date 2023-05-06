@@ -32,31 +32,40 @@ AddProfiles.update = function(id,title,descript,img1,img2,img3,img4,img5,img6,im
 };
 
 // Goals
-function AddGoals(id,Title,Descrip,Images) {
+function AddGoals(id,title,descript,img,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6) {
   this.id = id;
-  this.Title = Title;
-  this.Descrip = Descrip;
-  this.Images = Images;
+  this.title = title;
+  this.descript = descript;
+  this.img = img;
+  this.sub_title1= sub_title1;
+  this.sub_descript1 = sub_descript1;
+  this.sub_title2= sub_title2;
+  this.sub_descript2 = sub_descript2;
+  this.sub_title3= sub_title3;
+  this.sub_descript3 = sub_descript3;
+  this.sub_title4= sub_title4;
+  this.sub_descript4 = sub_descript4;
+  this.sub_title5= sub_title5;
+  this.sub_descript5 = sub_descript5;
+  this.sub_title6= sub_title6;
+  this.sub_descript6 = sub_descript6;
 }
 
 AddGoals.fetchAll = function() {
-  return db.execute('SELECT * FROM goals');
+  return db.execute('SELECT * FROM organization');
 };
 
-AddGoals.create = function(id,Title,Descript,Images) {
-  if(Images == undefined){
-    Images = null;
-  }
+AddGoals.create = function(id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6) {
   return db.execute(
-    'INSERT INTO goals (id,Title,Descript,Images) VALUES (?,?, ?, ?)',
-    [id,Title,Descript,Images]
+    'INSERT INTO organization (id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6) VALUES (?,?, ?, ?,?,?, ?, ?,?,?, ?, ?,?,?, ?, ?)',
+    [id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6]
   );
 };
 
-AddGoals.update = function(id,Title,Descript,Images) {
+AddGoals.update = function(id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6) {
     return db.execute(
-      'UPDATE goals SET Title=?, Descript= ?, Images= ? where id = ?',
-      [Title,Descript,Images, id]
+      'UPDATE organization SET title=?, img= ?, descript= ?,sub_title1= ?,sub_descript1= ?,sub_title2= ?,sub_descript2= ?,sub_title3= ?,sub_descript3= ?,sub_title4= ?,sub_descript4= ?,sub_title5= ?,sub_descript5= ?,sub_title6= ?,sub_descript6= ? where id = ?',
+      [title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6,id]
     );
 };
 

@@ -15,7 +15,7 @@ const createAllAddProfiles = async (req, res) => {
     const files = req.files[fieldname];
     if (files && files.length > 0) {
       const image = files[0].buffer.toString('base64');
-      images.push(image);
+      images.push("data:image/jpg;base64,"+image);
     } else {
       images.push(null);
     }
@@ -38,29 +38,25 @@ const getAllAddGoals = async (req, res) => {
 };
 
 const createAllAddGoals = async (req, res) => {
-  const { id,Title,Descript, } = req.body;
+  const { id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6 } = req.body;
+
   if (!req.file) {
-    await AddGoals.create(id,Title,Descript,null);
+    await AddGoals.create(id,title,null,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6);
     res.status(201).send('Profile created successfully');
   }
   else{
-    const Images = req.file.buffer.toString('base64');
-    await AddGoals.create(id,Title,Descript,Images);
+
+    const images = req.file.buffer.toString('base64');
+    const imgs = "data:image/jpg;base64," + images;
+    await AddGoals.create(id,title,imgs,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6);
     res.status(201).send('Profile created successfully');
   }
 };
 
 const UpdateAllAddGoals = async (req, res) => {
-  const { id,Title,Descript, } = req.body;
-  if (!req.file) {
-    await AddGoals.update(id,Title,Descript,null);
+  const { id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6 } = req.body;
+    await AddGoals.update(id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6);
     res.status(201).send('Profile updated successfully');
-  }
-  else{
-    const Images = req.file.buffer.toString('base64');
-    await AddGoals.update(id,Title,Descript,Images);
-    res.status(201).send('Profile updated successfully');
-  }
 }
 
 //AddStandard

@@ -4,11 +4,11 @@
         <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
             ORGANIZATION GOALS
         </div>
-        <form class="overflow-y-scroll max-h-[890px]">
+        <form class="overflow-y-scroll max-h-[890px]" #myForm="ngForm" (ngSubmit)="updateForm()">
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="title" type="text"  [(ngModel)]="heroes[0].title"
                     class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
@@ -88,108 +88,115 @@
                     </div>
                   </div>
                   <!-- Text -->
-                  <input  name="username" type="text"  required
+                  <input  name="descript" type="text"  [(ngModel)]="heroes[0].descript"
                   class="w-full h-[91px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center">
               </div>
           </div>
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">1. Title (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title1"
                     class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript1"
                     class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">2. Title (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title2"
                     class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript2"
                     class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">3. Title (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title3"
                     class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript3"
                     class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
               <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">4. Title (sub)</label>
               <div class="pt-[8px]">
-                  <input  name="username" type="text"  required
+                  <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title4"
                   class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
               </div>
           </div>
           <div class=" pt-[18px]">
               <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
               <div class="pt-[8px]">
-                  <input  name="username" type="text"  required
+                  <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript4"
                   class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
               </div>
           </div>
           <div class=" pt-[18px]">
             <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">5. Title (sub)</label>
             <div class="pt-[8px]">
-                <input  name="username" type="text"  required
+                <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title5"
                 class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
             </div>
         </div>
         <div class=" pt-[18px]">
             <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
             <div class="pt-[8px]">
-                <input  name="username" type="text"  required
+                <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript5"
                 class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
             </div>
         </div>
         <div class=" pt-[18px]">
           <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">6. Title (sub)</label>
           <div class="pt-[8px]">
-              <input  name="username" type="text"  required
+              <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title6"
               class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
           </div>
       </div>
       <div class=" pt-[18px]">
           <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
           <div class="pt-[8px]">
-              <input  name="username" type="text"  required
+              <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript6"
               class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
           </div>
       </div>
           <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
-              <div class="border-dashed border-2 border-[#6F6F6F] rounded-md lg:w-[529px] h-[181px] md:w-[300px] flex flex-col text-center items-center justify-center ">
+              <ngx-dropzone class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
+                <ngx-dropzone-label>
                 <div>
                   <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                 </div>
                 <div class="mt-1">
                   Drag & Drop
                 </div>
+              </ngx-dropzone-label>
+              <div *ngFor="let f of showPrev">
+                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,0)" *ngIf="f == showPrev[0]">
+                  <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                </ngx-dropzone-image-preview>
               </div>
+              </ngx-dropzone>
             </div>
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2">
-                
+
               <button class="bg-white h-[50px] w-[166px]  text-red-1 rounded-md  border-2 border-red-1 text-lg max-md:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
               <button class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]">SAVE</button>
           </div>

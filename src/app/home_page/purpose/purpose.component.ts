@@ -10,18 +10,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./purpose.component.css']
 })
 export class PurposeComponent implements OnInit  {
-  heroes: Hero[] = [];
+  heroes: any[] = [];
   imtemp:any;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit():void {
-    this.http.get<Hero[]>('http://localhost:5000/addGoals')
+    this.http.get<any[]>('http://localhost:5000/addGoals')
     .subscribe(response => {
       this.heroes = response;
-      for (let hero of this.heroes) {
-        this.imtemp = hero.Images;
-        hero.Images = "data:image/jpg;base64," + this.imtemp;
-      }
     })
   }
 }
