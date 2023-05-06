@@ -19,10 +19,16 @@ const storage = multer.memoryStorage();
 const upload = multer({ dest: 'uploads/',storage: storage});
 
 const router = express.Router();
+
+const uploadFields = [];
+for (let i = 1; i <= 7; i++) {
+  uploadFields.push({ name: `img${i}`, maxCount: 1 });
+}
+
 //AddProfiles
 router.get('/addProfiles', getAllAddProfiles);
-router.post('/CreateAddProfiles',upload.single('Images') ,createAllAddProfiles);
-router.put('/UpdateAddProfiles',upload.single('Images'),UpdateAllAddProfiles);
+router.post('/CreateAddProfiles', upload.fields(uploadFields) ,createAllAddProfiles);
+router.put('/UpdateAddProfiles', upload.fields(uploadFields),UpdateAllAddProfiles);
 
 //AddGoals
 router.get('/addGoals', getAllAddGoals);

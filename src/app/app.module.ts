@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon'
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { FormsModule } from '@angular/forms';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -61,7 +62,9 @@ const routes: Routes = [
     MatIconModule,
     [RouterModule.forRoot(routes)],
     NgxPaginationModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent],

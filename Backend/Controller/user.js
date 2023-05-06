@@ -7,29 +7,28 @@ const getAllAddProfiles = async (req, res) => {
 };
 
 const createAllAddProfiles = async (req, res) => {
-  const { id,Title,Descript, } = req.body;
-  if (!req.file) {
-    await AddProfiles.create(id,Title,Descript,null);
-    res.status(201).send('Profile created successfully');
+  const { id,title,descript,img1,img2,img3,img4,img5,img6,img7 } = req.body;
+
+  const images = [];
+  for (let i = 1; i <= 7; i++) {
+    const fieldname = `img${i}`;
+    const files = req.files[fieldname];
+    if (files && files.length > 0) {
+      const image = files[0].buffer.toString('base64');
+      images.push(image);
+    } else {
+      images.push(null);
+    }
   }
-  else{
-    const Images = req.file.buffer.toString('base64');
-    await AddProfiles.create(id,Title,Descript,Images);
+    await AddProfiles.create(id,title,descript,...images);
     res.status(201).send('Profile created successfully');
-  }
+
 };
 
 const UpdateAllAddProfiles = async (req, res) => {
-  const { id,Title,Descript, } = req.body;
-  if (!req.file) {
-    await AddProfiles.update(id,Title,Descript,null);
-    res.status(201).send('Profile updated successfully');
-  }
-  else{
-    const Images = req.file.buffer.toString('base64');
-    await AddProfiles.update(id,Title,Descript,Images);
-    res.status(201).send('Profile updated successfully');
-  }
+  const { id,title,descript,img1,img2,img3,img4,img5,img6,img7 } = req.body;
+  await AddProfiles.update(id,title,descript,img1,img2,img3,img4,img5,img6,img7);
+  res.status(201).send('Profile update successfully');
 }
 
 //AddGoals

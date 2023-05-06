@@ -9,18 +9,21 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./hero-section.component.css']
 })
 export class HeroSectionComponent implements OnInit  {
-  heroes: Hero[] = [];
+  heroes: any[] = [];
   imtemp:any;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit():void {
-    this.http.get<Hero[]>('http://localhost:5000/addProfiles')
+    this.http.get<any[]>('http://localhost:5000/addProfiles')
     .subscribe(response => {
       this.heroes = response;
-      for (let hero of this.heroes) {
-        this.imtemp = hero.Images;
-        hero.Images = "data:image/jpg;base64," + this.imtemp;
-      }
+      // for (let hero of this.heroes) {
+      //   for(let i=1; i<=7;i++){
+      //     const fieldname = `img${i}`;
+      //     this.imtemp = hero[fieldname];
+      //     hero[fieldname] = this.imtemp;
+      //   }
+      // }
     })
   }
 }

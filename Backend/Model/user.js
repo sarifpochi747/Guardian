@@ -1,30 +1,33 @@
 const db = require('../databases');
 
-function AddProfiles(id,Title,Descrip,Images) {
+function AddProfiles(id,title,descript,img1,img2,img3,img4,img5,img6,img7) {
   this.id = id;
-  this.Title = Title;
-  this.Descrip = Descrip;
-  this.Images = Images;
+  this.title = title;
+  this.descript = descript;
+  this.img1 = img1;
+  this.img2 = img2;
+  this.img3 = img3;
+  this.img4 = img4;
+  this.img5 = img5;
+  this.img6 = img6;
+  this.img7 = img7;
 }
 
 AddProfiles.fetchAll = function() {
-  return db.execute('SELECT * FROM addpro');
+  return db.execute('SELECT * FROM profiles');
 };
 
-AddProfiles.create = function(id,Title,Descript,Images) {
-  if(Images == undefined){
-    Images = null;
-  }
+AddProfiles.create = function(id,title,descript,img1,img2,img3,img4,img5,img6,img7) {
   return db.execute(
-    'INSERT INTO addpro (id,Title,Descript,Images) VALUES (?,?, ?, ?)',
-    [id,Title,Descript,Images]
+    'INSERT INTO profiles (id,title,descript,img1,img2,img3,img4,img5,img6,img7) VALUES (?,?, ?, ?,?,?,?,?,?,?)',
+    [id,title,descript,img1,img2,img3,img4,img5,img6,img7]
   );
 };
 
-AddProfiles.update = function(id,Title,Descript,Images) {
+AddProfiles.update = function(id,title,descript,img1,img2,img3,img4,img5,img6,img7) {
     return db.execute(
-      'UPDATE addpro SET Title=?, Descript= ?, Images= ? where id = ?',
-      [Title,Descript,Images, id]
+      'UPDATE profiles SET title=?, descript= ?, img1= ?,img2= ?,img3= ?,img4= ?,img5= ?,img6= ?,img7= ? where id = ?',
+      [title,descript,img1,img2,img3,img4,img5,img6,img7, id]
     );
 };
 
