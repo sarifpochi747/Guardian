@@ -9,18 +9,16 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./standard.component.css']
 })
 export class StandardComponent implements OnInit {
-  heroes: Hero[] = [];
+  heroes: any[] = [];
   imtemp:any;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit():void {
-    this.http.get<Hero[]>('http://localhost:5000/addStandard')
+    this.http.get<any[]>('http://localhost:5000/addStandard')
     .subscribe(response => {
       this.heroes = response;
-      for (let hero of this.heroes) {
-        this.imtemp = hero.Images;
-        hero.Images = "data:image/jpg;base64," + this.imtemp;
-      }
+      console.log(this.heroes);
+
     })
   }
 }

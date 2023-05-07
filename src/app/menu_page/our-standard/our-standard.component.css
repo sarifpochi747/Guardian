@@ -32,8 +32,19 @@
     display: inline-block;
     width: 5px;
   }
-
-
-
-
   }
+
+  .imgs-ngx{
+    border-width: 2px;
+border-style: dashed;
+border-color: #B8C2CC; /* assuming grey-4 is a shade of gray */
+width: 27.552vw;
+height: 181px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 0.375rem; /* assuming rounded-md is equivalent to 0.375rem */
+max-width: 66.667%; /* assuming max-sm:w-2/3 means the element has a maximum width of 2/3 of the parent container when the parent's width is at most the "sm" breakpoint */
+
+    /* the following applies at screen sizes equal or greater than md, but smaller than lg */
+    }

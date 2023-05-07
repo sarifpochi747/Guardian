@@ -4,12 +4,12 @@
         <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
             OUR STANDARD
         </div>
-        <form class="overflow-y-scroll max-h-[890px]">
+        <form class="overflow-y-scroll max-h-[890px]" #myForm="ngForm" (ngSubmit)="updateForm()">
             <div class=" pt-[18px]">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                    <input  name="title" type="text"  [(ngModel)]="heroes[0].title"
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]" >
                 </div>
             </div>
               <!-- Description Input -->
@@ -88,7 +88,7 @@
                       </div>
                     </div>
                     <!-- Text -->
-                    <input  name="username" type="text"  required
+                    <input  name="descript" type="text"  [(ngModel)]="heroes[0].descript"
                     class="w-full h-[91px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center">
                 </div>
             </div>
@@ -96,109 +96,140 @@
             <div class=" pt-[18px]">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">1. Title (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="sub_title1" type="text"  [(ngModel)]="heroes[0].sub_title1"
                     class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
+            <div class=" pt-[18px]">
+              <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
+              <div class="pt-[8px]">
+                  <input  name="sub_descript1" type="text"  [(ngModel)]="heroes[0].sub_descript1"
+                  class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+              </div>
+          </div>
             <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
-              <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
-                  <div class="text-center">
-                      <input type="file" hidden>
-                      <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
-                      <div class="mt-1">
-                        Drag & Drop
-                      </div>
+              <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
+                <ngx-dropzone-label>
+                  <div>
+                    <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                   </div>
+                  <div class="mt-1">
+                    Drag & Drop
+                  </div>
+                </ngx-dropzone-label>
+                <div *ngFor="let f of showPrev">
+                  <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,0)" *ngIf="f == showPrev[0]">
+                    <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                  </ngx-dropzone-image-preview>
+                </div>
               </div>
             </div>
             <!-- Form 2 -->
             <div class=" pt-[18px]">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">2. Title (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="sub_title2" type="text"  [(ngModel)]="heroes[0].sub_title2"
                     class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
             <div class=" pt-[18px]">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
-                    <input  name="username" type="text"  required
+                    <input  name="sub_descript2" type="text"  [(ngModel)]="heroes[0].sub_descript2"
                     class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
                 </div>
             </div>
             <!-- Drag and drop -->
-          <div class="pt-[40px] pr-2">
-            <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
-                <div class="text-center">
-                    <input type="file" hidden>
+            <div class="pt-[40px] pr-2">
+              <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
+                <ngx-dropzone-label>
+                  <div>
                     <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
-                    <div class="mt-1">
-                      Drag & Drop
-                    </div>
+                  </div>
+                  <div class="mt-1">
+                    Drag & Drop
+                  </div>
+                </ngx-dropzone-label>
+                <div *ngFor="let f of showPrev">
+                  <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,1)" *ngIf="f == showPrev[1]">
+                    <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                  </ngx-dropzone-image-preview>
                 </div>
+              </div>
             </div>
-        </div>
           <!-- Form 3 -->
           <div class=" pt-[18px]">
             <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">3. Title (sub)</label>
             <div class="pt-[8px]">
-                <input  name="username" type="text"  required
+                <input  name="sub_title3" type="text"  [(ngModel)]="heroes[0].sub_title3"
                 class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
             </div>
         </div>
         <div class=" pt-[18px]">
             <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
             <div class="pt-[8px]">
-                <input  name="username" type="text"  required
+                <input  name="sub_descript3" type="text"  [(ngModel)]="heroes[0].sub_descript3"
                 class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
             </div>
         </div>
         <!-- Drag and drop -->
         <div class="pt-[40px] pr-2">
-          <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
-              <div class="text-center">
-                  <input type="file" hidden>
-                  <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
-                  <div class="mt-1">
-                    Drag & Drop
-                  </div>
+          <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,2)" [multiple]="false">
+            <ngx-dropzone-label>
+              <div>
+                <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
               </div>
+              <div class="mt-1">
+                Drag & Drop
+              </div>
+            </ngx-dropzone-label>
+            <div *ngFor="let f of showPrev">
+              <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,2)" *ngIf="f == showPrev[2]">
+                <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+              </ngx-dropzone-image-preview>
+            </div>
           </div>
-      </div>
+        </div>
       <!-- Form 4 -->
       <div class=" pt-[18px]">
         <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">4. Title (sub)</label>
         <div class="pt-[8px]">
-            <input  name="username" type="text"  required
+            <input  name="sub_title4" type="text"  [(ngModel)]="heroes[0].sub_title4"
             class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
         </div>
     </div>
     <div class=" pt-[18px]">
         <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
         <div class="pt-[8px]">
-            <input  name="username" type="text"  required
+            <input  name="sub_descript4" type="text"  [(ngModel)]="heroes[0].sub_descript4"
             class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
         </div>
     </div>
     <!-- Drag and drop -->
     <div class="pt-[40px] pr-2">
-      <div class="border-2 border-dashed border-grey-4  w-[27.552vw] h-[181px] flex justify-center items-center rounded-md max-sm:w-2/3 ">
-          <div class="text-center">
-              <input type="file" hidden>
-              <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
-              <div class="mt-1">
-                Drag & Drop
-              </div>
+      <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,3)" [multiple]="false">
+        <ngx-dropzone-label>
+          <div>
+            <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
           </div>
+          <div class="mt-1">
+            Drag & Drop
+          </div>
+        </ngx-dropzone-label>
+        <div *ngFor="let f of showPrev">
+          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,3)" *ngIf="f == showPrev[3]">
+            <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </div>
       </div>
-  </div>
+    </div>
 
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
-                
+
               <button class="bg-white h-[50px] w-[166px]  text-red-1 rounded-md  border-2 border-red-1 text-lg max-md:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
-              <button class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]">SAVE</button>
+              <button class="bg-red-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]" type="submit">SAVE</button>
           </div>
         </form>
     </div>

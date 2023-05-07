@@ -70,31 +70,40 @@ AddGoals.update = function(id,title,img,descript,sub_title1,sub_descript1,sub_ti
 };
 
 //Our standard
-function AddStandard(id,Title,Descrip,Images) {
+function AddStandard(id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4) {
   this.id = id;
-  this.Title = Title;
-  this.Descrip = Descrip;
-  this.Images = Images;
+  this.title = title;
+  this.descript = descript;
+  this.sub_title1 = sub_title1;
+  this.sub_descript1 = sub_descript1;
+  this.img1 = img1;
+  this.sub_title2 = sub_title2;
+  this.sub_descript2 = sub_descript2;
+  this.img2 = img2;
+  this.sub_title3 = sub_title3;
+  this.sub_descript3 = sub_descript3;
+  this.img3 = img3;
+  this.sub_title4 = sub_title4;
+  this.sub_descript4 = sub_descript4;
+  this.img4 = img4;
+
 }
 
 AddStandard.fetchAll = function() {
-  return db.execute('SELECT * FROM our_standard');
+  return db.execute('SELECT * FROM standards');
 };
 
-AddStandard.create = function(id,Title,Descript,Images) {
-  if(Images == undefined){
-    Images = null;
-  }
+AddStandard.create = function(id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4) {
   return db.execute(
-    'INSERT INTO our_standard (id,Title,Descript,Images) VALUES (?,?, ?, ?)',
-    [id,Title,Descript,Images]
+    'INSERT INTO standards (id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4) VALUES (?,?, ?, ?,?,?,?, ?, ?,?,?,?, ?, ?,?)',
+    [id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4]
   );
 };
 
-AddStandard.update = function(id,Title,Descript,Images) {
+AddStandard.update = function(id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4) {
     return db.execute(
-      'UPDATE our_standard SET Title=?, Descript= ?, Images= ? where id = ?',
-      [Title,Descript,Images, id]
+      'UPDATE standards SET title=?,descript=?,sub_title1=?,sub_descript1=?,img1=?,sub_title2=?,sub_descript2=?,img2=?,sub_title3=?,sub_descript3=?,img3=?,sub_title4=?,sub_descript4=?,img4=? where id = ?',
+      [title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4,id]
     );
 };
 

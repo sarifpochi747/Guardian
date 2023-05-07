@@ -66,29 +66,26 @@ const getAllAddStandard = async (req, res) => {
 };
 
 const createAllAddStandard = async (req, res) => {
-  const { id,Title,Descript, } = req.body;
-  if (!req.file) {
-    await AddStandard.create(id,Title,Descript,null);
-    res.status(201).send('Profile created successfully');
+  const { id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4 } = req.body;
+  const images = [];
+  for (let i = 1; i <= 4; i++) {
+    const fieldname = `img${i}`;
+    const files = req.files[fieldname];
+    if (files && files.length > 0) {
+      const image = files[0].buffer.toString('base64');
+      images.push("data:image/jpg;base64,"+image);
+    } else {
+      images.push(null);
+    }
   }
-  else{
-    const Images = req.file.buffer.toString('base64');
-    await AddStandard.create(id,Title,Descript,Images);
+    await AddStandard.create(id,title,descript,sub_title1,sub_descript1,images[0],sub_title2,sub_descript2,images[1],sub_title3,sub_descript3,images[2],sub_title4,sub_descript4,images[3]);
     res.status(201).send('Profile created successfully');
-  }
 };
 
 const UpdateAllAddStandard = async (req, res) => {
-  const { id,Title,Descript, } = req.body;
-  if (!req.file) {
-    await AddStandard.update(id,Title,Descript,null);
+  const { id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4 } = req.body;
+    await AddStandard.update(id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4);
     res.status(201).send('Profile updated successfully');
-  }
-  else{
-    const Images = req.file.buffer.toString('base64');
-    await AddStandard.update(id,Title,Descript,Images);
-    res.status(201).send('Profile updated successfully');
-  }
 }
 
 //Export module

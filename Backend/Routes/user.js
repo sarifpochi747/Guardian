@@ -25,6 +25,11 @@ for (let i = 1; i <= 7; i++) {
   uploadFields.push({ name: `img${i}`, maxCount: 1 });
 }
 
+const uploadFields2 = [];
+for (let i = 1; i <= 4; i++) {
+  uploadFields.push({ name: `img${i}`, maxCount: 1 });
+}
+
 //AddProfiles
 router.get('/addProfiles', getAllAddProfiles);
 router.post('/CreateAddProfiles', upload.fields(uploadFields) ,createAllAddProfiles);
@@ -37,8 +42,8 @@ router.put('/UpdateAddGoals',upload.single('img'),UpdateAllAddGoals);
 
 //AddStandard
 router.get('/addStandard', getAllAddStandard);
-router.post('/CreateAddStandard',upload.single('Images') ,createAllAddStandard);
-router.put('/UpdateAddStandard',upload.single('Images'),UpdateAllAddStandard);
+router.post('/CreateAddStandard',upload.fields(uploadFields) ,createAllAddStandard);
+router.put('/UpdateAddStandard',upload.fields(uploadFields),UpdateAllAddStandard);
 
 
 module.exports = router;
