@@ -19,7 +19,11 @@ export class OurStandardComponent implements OnInit  {
     this.http.get<any[]>('http://localhost:5000/addStandard')
     .subscribe(response => {
       this.heroes = response;
-      console.log(this.heroes[0]);
+      for(let i=1; i<=4;i++){
+        const fieldname:any = `img${i}`;
+        this.imtemp = this.heroes[0][fieldname];
+        this.files[i-1] = this.imtemp;
+      }
     })
 
 
