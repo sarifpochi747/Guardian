@@ -1,47 +1,48 @@
-<div id="BG" class="flex flex-col min-h-[890px] bg-gray-100 pb-7">
-    <div id="HeadSec" class="flex flex-col items-center justify-center mt-[50px] ">
-      <div id="Tite_Head" class="text-4xl text-gray-800">{{ heroes[0].title }}</div>
-      <div id="Sub_Head" class="text-2xl text-red-1">{{ heroes[0].descript }}</div>
-      <div id="Des_Head" class="text-[1.2vw] text-red-1">มุ่งสู่ความเป็นบริษัทชั้นนำด้านงานบริการ</div>
+<div id="BG" class="flex flex-col min-h-[790px] bg-gray-100 pb-7 pt-[50px]  px-10 max-md:px-6 max-sm:px-4 ">
+    <div id="HeadSec" class="flex flex-col items-center justify-center  ">
+      <div id="Tite_Head" class="text-4xl text-gray-800 max-md:text-lg">{{ heroes[0].title }}</div>
+      <div id="Sub_Head" class="text-2xl text-red-1 max-md:text-[20px] max-sm:text-[12px]">{{ heroes[0].descript }}</div>
+      <div id="Des_Head" class="text-lg text-red-1 max-md:text-[16px] max-sm:text-[14px]">มุ่งสู่ความเป็นบริษัทชั้นนำด้านงานบริการ</div>
     </div>
 
-    <div id="ContentSec" class="flex justify-center content-center h-full w-full flex-row">
-        <div id = "L_Content" class="w-1/3 flex flex-col items-center">
+    <div id="ContentSec" class="flex justify-center content-center h-full w-full max-sm:flex-col  max-sm:px-5">
+        <div id = "L_Content" class="w-1/3 flex flex-col items-center max-sm:w-full ">
 
-          <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-28 mt-[72px]">
-              <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title1 }}</div></div>
+          <div id ="Msg_box" class="flex flex-col w-[17vw]  ml-28 mt-[72px]  max-sm:w-full max-sm:ml-0 ">
+              <div id = "Title_box" class="flex">
+                <div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title1 }}</div></div>
               <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[0].sub_descript1 }}</div>
           </div>
 
-          <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-0 mt-[72px] ">
+          <div id ="Msg_box" class="flex flex-col w-[17vw]  ml-0 mt-[72px]  max-sm:w-full max-sm:ml-0">
             <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title2 }}</div></div>
             <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[0].sub_descript2 }}</div>
           </div>
 
-          <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-28 mt-[72px]">
+          <div id ="Msg_box" class="flex flex-col w-[17vw]  ml-28 mt-[72px] max-sm:w-full max-sm:ml-0" >
             <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title3 }}</div></div>
             <div id="Msg_description" class=" text-gray-500 ml-2 text-[1vw]">{{ heroes[0].sub_descript3 }}</div>
           </div>
 
         </div>
 
-      <div id="M_content" class=" mt-[65px] flex items-center">
+      <div id="M_content" class=" mt-[65px] flex items-center max-sm:hidden">
           <img class="w-[100%] h-[100%] px-5 " [src]="heroes[0].img">
       </div>
 
-      <div id = "R_Content" class="w-1/3 flex flex-col items-center">
+      <div id = "R_Content" class="w-1/3 flex flex-col items-center  max-sm:w-full">
 
-          <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-0 mt-[72px]">
+          <div id ="Msg_box" class="flex flex-col w-[17vw]  ml-0 mt-[72px] max-sm:w-full max-sm:ml-0" >
             <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title4 }}</div></div>
             <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[0].sub_descript4 }}</div>
           </div>
 
-          <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-24 mt-[72px]">
+          <div id ="Msg_box" class="flex flex-col w-[17vw]  ml-24 mt-[72px] max-sm:w-full max-sm:ml-0" >
             <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title5 }}</div></div>
             <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[0].sub_descript5 }}</div>
           </div>
 
-          <div id ="Msg_box" class="flex flex-col w-[17vw] h-[10vw] ml-0 mt-[72px]">
+          <div id ="Msg_box" class="flex flex-col w-[17vw]  ml-0 mt-[72px] max-sm:w-full max-sm:ml-0" >
             <div id = "Title_box" class="flex"><div class="w-1 h-8 rounded-full bg-red-700 mr-1"></div><div id = "Msg_title" class="text-[1.2vw] font-bold text-gray-800">{{ heroes[0].sub_title6 }}</div></div>
             <div id="Msg_description" class="text-gray-500 ml-2 text-[1vw]">{{ heroes[0].sub_descript6 }}</div>
           </div>
