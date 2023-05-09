@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -24,6 +25,9 @@ import { OrganizationPageComponent } from './menu_page/organization-page/organiz
 import { ProfileComponent } from './menu_page/profile/profile.component';
 import { UserPageComponent } from './menu_page/user-page/user-page.component';
 import { OurStandardComponent } from './menu_page/our-standard/our-standard.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 const routes: Routes = [
@@ -64,11 +68,14 @@ const routes: Routes = [
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    CarouselModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 
 export class AppModule { }
