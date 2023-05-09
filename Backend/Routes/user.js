@@ -9,7 +9,9 @@ const {
   UpdateAllAddGoals,
   getAllAddStandard,
   createAllAddStandard,
-  UpdateAllAddStandard
+  UpdateAllAddStandard,
+  CreateComment,
+  getAllComment
 } = require('../Controller/user');
 
 const multer = require('multer');
@@ -30,21 +32,24 @@ for (let i = 1; i <= 4; i++) {
   uploadFields.push({ name: `img${i}`, maxCount: 1 });
 }
 
-//AddProfiles
+//Add Profiles
 router.get('/addProfiles', getAllAddProfiles);
 router.post('/CreateAddProfiles', upload.fields(uploadFields) ,createAllAddProfiles);
 router.put('/UpdateAddProfiles', upload.fields(uploadFields),UpdateAllAddProfiles);
 
-//AddGoals
+//Add Goals
 router.get('/addGoals', getAllAddGoals);
 router.post('/CreateAddGoals',upload.single('img') ,createAllAddGoals);
 router.put('/UpdateAddGoals',upload.single('img'),UpdateAllAddGoals);
 
-//AddStandard
+//Add Standard
 router.get('/addStandard', getAllAddStandard);
 router.post('/CreateAddStandard',upload.fields(uploadFields) ,createAllAddStandard);
 router.put('/UpdateAddStandard',upload.fields(uploadFields),UpdateAllAddStandard);
 
 
+//Add Comment User
+router.get("/addComment",getAllComment)
+router.post("/CreateComment",CreateComment)
 module.exports = router;
 

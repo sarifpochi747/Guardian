@@ -107,4 +107,26 @@ AddStandard.update = function(id,title,descript,sub_title1,sub_descript1,img1,su
     );
 };
 
-module.exports = {AddProfiles, AddGoals, AddStandard};
+
+function AddComment(name,brandManager,comment){
+  this.name = name;
+  this.brandManager = brandManager;
+  this.comment = comment;
+}
+
+AddComment.fetchAll = function() {
+  return db.execute('SELECT * FROM comment');
+};
+
+
+AddComment.create = function(name,brandManager,comment){
+  return db.execute(
+    'INSERT INTO comment(name,brandManager,comment) VALUES (?,?,?)',
+    [name,brandManager,comment]
+    ) 
+}
+
+
+
+
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment};

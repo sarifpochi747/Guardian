@@ -1,4 +1,6 @@
-const {AddProfiles, AddGoals, AddStandard} = require('../Model/user');
+const { async } = require('rxjs');
+const {AddProfiles, AddGoals, AddStandard, AddComment} = require('../Model/user');
+const db = require('../databases');
 
 // AddProfiles
 const getAllAddProfiles = async (req, res) => {
@@ -88,6 +90,17 @@ const UpdateAllAddStandard = async (req, res) => {
     res.status(201).send('Profile updated successfully');
 }
 
+//AddComment
+const getAllComment = async (req, res) => {
+  const [ getComment] = await AddComment.fetchAll();
+  res.json(getComment);
+};
+
+const CreateComment = async (req,res)=>{
+  const {comment , name , brandManager} = req.body
+  await AddComment.create(name,brandManager,comment);
+  res.json({msg: "success"})
+}
 //Export module
 module.exports = {
   getAllAddProfiles,
@@ -98,5 +111,7 @@ module.exports = {
   UpdateAllAddGoals,
   getAllAddStandard,
   createAllAddStandard,
-  UpdateAllAddStandard
+  UpdateAllAddStandard,
+  CreateComment,
+  getAllComment
 };

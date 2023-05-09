@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
@@ -10,213 +13,22 @@ export class UserPageComponent {
   page:number = 1;
   count:number = 0;
   tableSize :number = 4;
-  
-  data:any = [
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-                {
-                  comment: "ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delic...",
-                  company:"Savannah Miles",
-                  brandManager:"brand manager"
-                },
-  ];
+  constructor(private http: HttpClient) { }
+
+
 
   onTableDataChange(event : any)
   {
     this.page = event
   }
 
+  //getAll comment
+  allComment:any[] = []
+
+  ngOnInit():void {
+    this.http.get<any[]>('http://localhost:5000/addComment')
+    .subscribe(response => {
+      this.allComment = response;
+    })
+  }
 }

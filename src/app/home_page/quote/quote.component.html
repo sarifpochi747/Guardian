@@ -19,7 +19,7 @@
   -->
   <div class="md:flex-row justify-evenly items-center pt-[60px] pb-[70px] px-[20px] max-md:space-y-4 max-sm:px-9 max-sm:py-[40px]">
     <owl-carousel-o [options]="customOptions" >
-      <ng-template carouselSlide  *ngFor="let data of data">
+      <ng-template carouselSlide  *ngFor="let data of allComment">
         <div class="px-20">
           <p class="w-full  text-[18px] text-black-1 max-md:text-[16px] max-sm:text-[13px]">{{data.comment}}</p>
           <div class="flex mt-[9px] items-center">

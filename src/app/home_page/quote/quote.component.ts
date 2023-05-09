@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,6 +9,19 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent {
+
+  //getAll comment
+  allComment:any[] = []
+
+  constructor(private http: HttpClient) { }
+  ngOnInit():void {
+    this.http.get<any[]>('http://localhost:5000/addComment')
+    .subscribe(response => {
+      this.allComment = response;
+    })
+  }
+
+  // slideShow
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -30,35 +44,10 @@ export class QuoteComponent {
     },
     nav: true
   }
-  data:any =[
-    {
-      name:"Savannah Miles",
-      brandManager:"brand manager",
-      comment: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est."
-    }
-    ,{
-      name:"Savannah Miles",
-      brandManager:"brand manager",
-      comment: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est."
-    }
-    ,{
-      name:"Savannah Miles",
-      brandManager:"brand manager",
-      comment: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est."
-    }
-    ,{
-      name:"Savannah Miles",
-      brandManager:"brand manager",
-      comment: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est."
-    }
-    ,{
-      name:"Savannah Miles",
-      brandManager:"brand manager",
-      comment: "Lorem ipsum dolor sit amet, adhuc nulla definiebas mei ad, ei doming aperiam delicata est."
-    }
+
+
   
-  
-  ] 
+    
 
 
 
