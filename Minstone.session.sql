@@ -79,3 +79,11 @@ CREATE TABLE Organization(
   sub_descript6 TEXT NOT NULL,
   PRIMARY KEY (id)
 );
+
+-- @block
+CREATE TABLE users (
+  id INT NOT NULL auto_increment,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS  } from '@angular/common/http';
+import { AuthInterceptor } from './shared/authconfig.interceptor';
 import { Routes, RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,16 +30,19 @@ import { OurStandardComponent } from './menu_page/our-standard/our-standard.comp
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AuthGuard } from "./shared/auth.guard";
+
+
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'menu', component: MenuPageComponent },
-  { path: 'menu/organization', component: OrganizationPageComponent },
-  { path: 'menu/profile', component: ProfileComponent },
-  { path: 'menu/ourstandard', component: OurStandardComponent },
-  { path: 'menu/user', component: UserPageComponent },
+  { path: 'menu', component: MenuPageComponent,canActivate: [AuthGuard] },
+  { path: 'menu/organization', component: OrganizationPageComponent,canActivate: [AuthGuard] },
+  { path: 'menu/profile', component: ProfileComponent,canActivate: [AuthGuard] },
+  { path: 'menu/ourstandard', component: OurStandardComponent,canActivate: [AuthGuard] },
+  { path: 'menu/user', component: UserPageComponent,canActivate: [AuthGuard] },
 ];
 @NgModule({
   declarations: [
@@ -70,10 +75,17 @@ const routes: Routes = [
     FormsModule,
     NgxDropzoneModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   exports: [RouterModule],
 })

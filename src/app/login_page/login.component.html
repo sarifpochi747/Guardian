@@ -1,31 +1,31 @@
 <div class=" flex justify-center items-center space-x-[120px] py-[124px] pl-[89px] pr-[84px] max-md:flex-col max-md:space-x-[50px] max-md:space-y-5 max-md:px-10 max-md:py-10">
-    <div 
+    <div
         class="px-[41px] pt-[68px] pb-[60px] w-[505px] h-[521px] rounded-[20px]  shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-md:w-[250px] max-md:h-[350px] max-md:py-[30px] max-lg:px-[20px] ">
         <div class="">
             <h2 class=" text-3xl  font-medium max-md:text-lg">LOGIN</h2>
             <h4 class="text-base font-light max-md:text-xs ">CONTENT MANAGEMENT SYSTEM .</h4>
         </div>
-        
-        
+
+
         <div class=" pt-[30px] ">
-            <form class="" >
+            <form class="" (ngSubmit)="loginUser()" [formGroup]="signinForm" >
                 <div>
-                    <label  class="block text-sm font-medium leading-6 text-gray-900 max-md:text-xs">User names</label>
+                    <label  class="block text-sm font-medium leading-6 text-gray-900 max-md:text-xs">Username</label>
                     <div class="pt-[9px]">
-                        <input  name="username" type="text"  placeholder="Enter your user name" required 
+                        <input  name="username" type="text"  placeholder="Enter your user name" required formControlName="username"
                         class="block w-full h-[59px] rounded-md px-[20px] border-2 border-grey-1  max-md:h-[30px] max-md:text-xs">
                     </div>
                 </div>
                 <div class="pt-[20px]">
                     <label for="password" class="block text-sm font-medium leading-6 text-gray-900  max-md:text-xs">Password</label>
                     <div class="pt-[9px]">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Enter your Password" 
+                        <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Enter your Password" formControlName="password"
                         class="block w-full  h-[59px] rounded-md px-[20px] border-2 border-grey-1 max-md:h-[30px] max-md:text-xs">
                     </div>
                 </div>
-        
+
                 <div class="pt-[47px] max-md:pt-10">
-                    <button type="submit" 
+                    <button type="submit"
                     class="flex w-full h-[57px] justify-center items-center rounded-md bg-red-1 py-1.5 font-semibold leading-6 text-white-1 max-md:h-[30px] ">Sign in</button>
                 </div>
             </form>
