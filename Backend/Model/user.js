@@ -108,21 +108,23 @@ AddStandard.update = function(id,title,descript,sub_title1,sub_descript1,img1,su
 };
 
 
-function AddComment(name,brandManager,comment){
+function AddComment(name,brandManager,comment,userIcon,status){
   this.name = name;
   this.brandManager = brandManager;
   this.comment = comment;
+  this.userIcon = userIcon;
+  this.status = status;
 }
 
 AddComment.fetchAll = function() {
-  return db.execute('SELECT * FROM comment');
+  return db.execute('SELECT * FROM comment WHERE status=true');
 };
 
 
-AddComment.create = function(name,brandManager,comment){
+AddComment.create = function(name,brandManager,comment,userIcon,status){
   return db.execute(
-    'INSERT INTO comment(name,brandManager,comment) VALUES (?,?,?)',
-    [name,brandManager,comment]
+    'INSERT INTO comment(name,brandManager,comment,userIcon,status) VALUES (?,?,?,?,?)',
+    [name,brandManager,comment,userIcon,status]
     ) 
 }
 

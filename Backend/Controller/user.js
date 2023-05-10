@@ -97,10 +97,12 @@ const getAllComment = async (req, res) => {
 };
 
 const CreateComment = async (req,res)=>{
-  const {comment , name , brandManager} = req.body
-  await AddComment.create(name,brandManager,comment);
+  const {comment , name , brandManager,userIcon,status} = req.body;
+  await AddComment.create(name,brandManager,comment,userIcon,status);
   res.json({msg: "success"})
 }
+
+
 //Export module
 module.exports = {
   getAllAddProfiles,

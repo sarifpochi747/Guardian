@@ -40,6 +40,11 @@ export class OrganizationPageComponent implements OnInit  {
     this.showPrev.splice(id, 1,null);
 	}
 
+  show() {
+    console.log(this.heroes[0])
+  }
+
+
   updateForm() {
     if(this.heroes[0].title == "" || this.heroes[0].descript == ""){
       alert('Please Type something to your title and description');

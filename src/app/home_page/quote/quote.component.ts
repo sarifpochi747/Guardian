@@ -12,6 +12,7 @@ export class QuoteComponent {
 
   //getAll comment
   allComment:any[] = []
+  
 
   constructor(private http: HttpClient) { }
   ngOnInit():void {
