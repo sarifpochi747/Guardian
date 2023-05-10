@@ -1,5 +1,5 @@
 const { async } = require('rxjs');
-const {AddProfiles, AddGoals, AddStandard, AddComment} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -102,6 +102,52 @@ const CreateComment = async (req,res)=>{
   res.json({msg: "success"})
 }
 
+//Authentication
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+const SignUp = async(req,res) => {
+    const { username, password } = req.body;
+    const pwd = await bcrypt.hash(password, 10);
+    await Users.signup(username, pwd);
+    res.status(201).send('Profile created successfully');
+}
+
+const Signin = async(req, res) => {
+    const { username,password } = req.body;
+    const [Row, Field] = await Users.Signin(username,password);
+    const user = Row[0];
+    if (!user) {
+        return res.send(false);
+    }
+    const response = await bcrypt.compare(req.body.password, user.password);
+    if (!response) {
+      return res.send(false);
+    }
+
+    let jwtToken = jwt.sign(
+        {
+          username: user.username,
+          userId: user.id,
+        },
+        'longer-secret-is-better',
+        {
+          expiresIn: '1h',
+        }
+    );
+    res.status(200).json({
+        token: jwtToken,
+        expiresIn: 3600,
+        _id: user.id,
+    });
+}
+
+const GetUser = async(req, res) => {
+  const _id = req.params.id;
+  let [y] = await Users.GetUser(_id);
+  res.status(201).json(y);
+}
+
 
 //Export module
 module.exports = {
@@ -115,5 +161,8 @@ module.exports = {
   createAllAddStandard,
   UpdateAllAddStandard,
   CreateComment,
-  getAllComment
+  getAllComment,
+  SignUp,
+  Signin,
+  GetUser
 };

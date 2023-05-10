@@ -128,7 +128,27 @@ AddComment.create = function(name,brandManager,comment,userIcon,status){
     ) 
 }
 
+//Authentication
+function Users (id,username,password) {
+  this.id = id;
+  this.username = username;
+  this.password = password;
+}
+
+Users.signup = function (username,password){
+  return db.execute(
+      'INSERT INTO users (username,password) VALUES (?, ?)',
+      [username,password]
+    );
+}
+
+Users.Signin = function (username,password){
+  return db.execute('SELECT * FROM users WHERE username = ?', [username])
+}
+
+Users.GetUser = function(id){
+  return db.execute('SELECT * from users WHERE id=?',[id])
+}
 
 
-
-module.exports = {AddProfiles, AddGoals, AddStandard,AddComment};
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users};

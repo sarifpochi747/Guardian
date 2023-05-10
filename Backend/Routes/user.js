@@ -11,7 +11,10 @@ const {
   createAllAddStandard,
   UpdateAllAddStandard,
   CreateComment,
-  getAllComment
+  getAllComment,
+  SignUp,
+  Signin,
+  GetUser
 } = require('../Controller/user');
 
 const multer = require('multer');
@@ -52,4 +55,9 @@ router.put('/UpdateAddStandard',upload.fields(uploadFields),UpdateAllAddStandard
 router.get("/addComment",getAllComment)
 router.post("/CreateComment",CreateComment)
 module.exports = router;
+
+//Authentication
+router.post('/register-user',SignUp);
+router.post('/signin',Signin);
+router.get('/user-profile/:id',GetUser);
 
