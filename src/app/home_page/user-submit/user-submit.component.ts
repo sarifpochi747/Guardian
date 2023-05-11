@@ -54,7 +54,7 @@ export class UserSubmitComponent {
         console.log('Form updated successfully:', response);
     });
 
-      //window.location.reload();
+      window.location.reload();
   }
 
 }

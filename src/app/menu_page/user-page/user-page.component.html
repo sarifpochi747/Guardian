@@ -6,7 +6,7 @@
             <table class=" w-full text-[19px] text-left ">
                 <thead class="text-lg text-white bg-red-1 border-2 border-red-1 rounded-lg  ">  
                     <tr class="max-md:text-[14px] ">
-                        <td class="px-6 py-3  ">
+                        <td class="px-6 py-3  w-2/3">
                             <div class="flex justify-between items-center">
                                 <div>Comment</div>
                                 <div>
@@ -47,10 +47,10 @@
                         <td class="px-6 py-4">{{post.name}}</td>
                         <td class="px-6 py-4">{{post.brandManager}}</td>
                         <td class="px-6 py-4">
-                            <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-1 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-1"></div>
-                            </label>
+                            <label class="switch" (click)="toggleSwitch(post.idcomment,post.status)">
+                                <input type="checkbox" [checked]="post.status">
+                                <span class="slider" [ngClass]="{'on': post.status, 'off': !post.status}"></span>
+                              </label>
                         </td>
                     </tr>
                 </tbody>

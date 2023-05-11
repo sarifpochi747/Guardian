@@ -16,10 +16,11 @@ export class QuoteComponent {
 
   constructor(private http: HttpClient) { }
   ngOnInit():void {
-    this.http.get<any[]>('http://localhost:5000/addComment')
+    this.http.get<any[]>('http://localhost:5000/getCommentShow')
     .subscribe(response => {
       this.allComment = response;
     })
+    
   }
 
   // slideShow

@@ -95,12 +95,23 @@ const getAllComment = async (req, res) => {
   const [ getComment] = await AddComment.fetchAll();
   res.json(getComment);
 };
+const getCommentShow = async (req, res) => {
+  const [ getCommentShow] = await AddComment.fetchShow();
+  res.json(getCommentShow);
+};
 
 const CreateComment = async (req,res)=>{
   const {comment , name , brandManager,userIcon,status} = req.body;
   await AddComment.create(name,brandManager,comment,userIcon,status);
   res.json({msg: "success"})
 }
+
+const UpdateComment = async (req,res)=>{
+  const {id,status} = req.body;
+  await AddComment.update(id,status);
+  res.json({msg:"success"})
+}
+
 
 //Authentication
 const bcrypt = require('bcrypt');
@@ -161,7 +172,9 @@ module.exports = {
   createAllAddStandard,
   UpdateAllAddStandard,
   CreateComment,
+  getCommentShow,
   getAllComment,
+  UpdateComment,
   SignUp,
   Signin,
   GetUser

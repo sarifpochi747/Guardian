@@ -12,6 +12,8 @@ const {
   UpdateAllAddStandard,
   CreateComment,
   getAllComment,
+  UpdateComment,
+  getCommentShow,
   SignUp,
   Signin,
   GetUser
@@ -52,12 +54,14 @@ router.put('/UpdateAddStandard',upload.fields(uploadFields),UpdateAllAddStandard
 
 
 //Add Comment User
-router.get("/addComment",getAllComment)
+router.get("/getComment",getAllComment)
+router.get("/getCommentShow",getCommentShow)
 router.post("/CreateComment",CreateComment)
-module.exports = router;
+router.put("/UpdateComment",UpdateComment)
 
 //Authentication
 router.post('/register-user',SignUp);
 router.post('/signin',Signin);
 router.get('/user-profile/:id',GetUser);
+module.exports = router;
 
