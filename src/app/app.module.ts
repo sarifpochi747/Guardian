@@ -31,13 +31,14 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthGuard } from "./shared/auth.guard";
+import { AuthGuard2 } from "./shared/auth.guard2";
 
 
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,canActivate: [AuthGuard2] },
   { path: 'menu', component: MenuPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/organization', component: OrganizationPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/profile', component: ProfileComponent,canActivate: [AuthGuard] },
