@@ -13,85 +13,39 @@
                 </div>
             </div>
               <!-- Description Input -->
-              <div class=" pt-[18px] pr-2">
-                <label  class="text-[16px] leading-6 text-grey-5  max-md:text-[14px] ">Description</label>
-                <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
-                    <!-- Tool bar -->
-                    <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
-                      <!-- font -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                        <!-- label -->
-                        <div class="text-[1vw]">
-                          font
-                        </div>
-                        <!-- down button -->
-                        <div class="ml-7">
-                          <i class="fa-solid fa-caret-down"></i>
-                        </div>
+            <div class=" pt-[18px]">
+              <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description</label>
+              <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
+                  <!-- Tool bar -->
+                  <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
+
+                    <!-- undo -->
+                    <!-- <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden"> -->
+                      <!-- label -->
+                      <!-- <div class="flex items-center">
+                        <i class="fa-solid fa-arrow-left mr-1" style="font-size: 1vw;"></i>
+                        <i class="fa-solid fa-arrow-left ml-1 fa-rotate-180" style="font-size: 1vw;"></i>
                       </div>
-                      <!-- normal -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center">
-                        <!-- label -->
-                        <div class="text-[1vw]">
-                          normal
-                        </div>
-                        <!-- down button -->
-                        <div class="ml-7">
-                          <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                      </div>
-                      <!-- size -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:border-0  ">
-                        <!-- label -->
-                        <div class="text-[1vw]">
-                          size
-                        </div>
-                        <!-- down button -->
-                        <div class="ml-7">
-                          <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                      </div>
-                      <!-- undo -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden">
-                        <!-- label -->
-                        <div class="flex items-center">
-                          <i class="fa-solid fa-arrow-left mr-1" style="font-size: 1vw;"></i>
-                          <i class="fa-solid fa-arrow-left ml-1 fa-rotate-180" style="font-size: 1vw;"></i>
-                        </div>
-                      </div>
-                      <!-- font SM -->
-                      <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden">
-                        <!-- label -->
-                        <div class="text-[1vw]">
-                          Aa
-                        </div>
-                      </div>
-                      <!-- font style -->
-                      <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center max-sm:hidden">
-                        <!-- label -->
-                        <div>
-                          <i class="fa-sharp fa-solid fa-bold mr-3" style="font-size: 1vw;"></i>
-                          <i class="fas fa-italic mr-3" style="font-size: 1vw;"></i>
-                          <i class="fa-solid fa-underline mr-3" style="font-size: 1vw;"></i>
-                          <i class="fa-solid fa-strikethrough" style="font-size: 1vw;"></i>
-                        </div>
-                      </div>
-                      <!-- Aling text -->
-                      <div class="flex h-full items-center p-2 border-[#707070] justify-center  max-sm:hidden">
-                        <!-- label -->
-                        <div class="flex flex-wrap">
-                          <i class="fa-solid fa-align-left mr-3 " style="font-size: 1vw;"></i>
-                          <i class="fa-solid fa-align-center mr-3 " style="font-size: 1vw;"></i>
-                          <i class="fa-solid fa-align-right mr-3 " style="font-size: 1vw;"></i>
-                          <i class="fa-solid fa-align-justify " style="font-size: 1vw;"></i>
-                        </div>
+                    </div> -->
+                    <!-- font SM -->
+
+                    <!-- font style -->
+                    <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center max-sm:hidden">
+                      <!-- label -->
+                      <div>
+                        <i class="fa-sharp fa-solid fa-bold mr-3 cursor-pointer" style="font-size: 1vw;" (click)="Bold()"></i>
+                        <i class="fas fa-italic mr-3 cursor-pointer" style="font-size: 1vw;" (click)="Italic()"></i>
+                        <i class="fa-solid fa-underline mr-3 cursor-pointer" style="font-size: 1vw;" (click)="Underline()"></i>
+                        <i class="fa-solid fa-strikethrough cursor-pointer" style="font-size: 1vw;" (click)="Strike()"></i>
                       </div>
                     </div>
-                    <!-- Text -->
-                    <input  name="descript" type="text"  [(ngModel)]="heroes[0].descript"
-                    class="w-full h-[91px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center">
-                </div>
-            </div>
+
+                  </div>
+                  <!-- Text -->
+                  <textarea  name="descript" type="text" #myTextarea
+                  class="w-full h-[130px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center p-5" [(ngModel)]="heroes[0].descript"></textarea>
+              </div>
+          </div>
             <!-- Form 1 -->
             <div class=" pt-[18px]">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">1. Title (sub)</label>

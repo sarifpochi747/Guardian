@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from 'src/app/hero_type';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer,SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hero-section',
@@ -11,19 +11,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HeroSectionComponent implements OnInit  {
   heroes: any[] = [];
   imtemp:any;
+  fetchedText: string = "";
+  sanitizedText!: SafeHtml;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit():void {
     this.http.get<any[]>('http://localhost:5000/addProfiles')
     .subscribe(response => {
       this.heroes = response;
-      // for (let hero of this.heroes) {
-      //   for(let i=1; i<=7;i++){
-      //     const fieldname = `img${i}`;
-      //     this.imtemp = hero[fieldname];
-      //     hero[fieldname] = this.imtemp;
-      //   }
-      // }
+      this.fetchedText = this.heroes[0].descript;
+      this.sanitizedText = this.sanitizer.bypassSecurityTrustHtml(this.fetchedText);
     })
   }
 }

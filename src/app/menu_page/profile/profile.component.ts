@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Hero } from 'src/app/hero_type';
 import { HttpClient } from '@angular/common/http';
@@ -70,5 +70,43 @@ export class ProfileComponent implements OnInit  {
 
       window.location.reload();
     }
+  }
+
+  @ViewChild('myTextarea') myTextarea: any;
+  Bold() {
+    const currentValue = this.myTextarea.nativeElement.value;
+    const selectionStart = this.myTextarea.nativeElement.selectionStart;
+    const selectionEnd = this.myTextarea.nativeElement.selectionEnd;
+
+    const modifiedText = "<b><strong>"+currentValue.substring(selectionStart,selectionEnd)+"</strong></b>";
+    const newText = currentValue.substring(0, selectionStart) + modifiedText + currentValue.substring(selectionEnd);
+    this.heroes[0].descript = newText;
+  }
+  Italic() {
+    const currentValue = this.myTextarea.nativeElement.value;
+    const selectionStart = this.myTextarea.nativeElement.selectionStart;
+    const selectionEnd = this.myTextarea.nativeElement.selectionEnd;
+
+    const modifiedText = "<i>"+currentValue.substring(selectionStart,selectionEnd)+"</i>";
+    const newText = currentValue.substring(0, selectionStart) + modifiedText + currentValue.substring(selectionEnd);
+    this.heroes[0].descript = newText;
+  }
+  Underline() {
+    const currentValue = this.myTextarea.nativeElement.value;
+    const selectionStart = this.myTextarea.nativeElement.selectionStart;
+    const selectionEnd = this.myTextarea.nativeElement.selectionEnd;
+
+    const modifiedText = "<u>"+currentValue.substring(selectionStart,selectionEnd)+"</u>";
+    const newText = currentValue.substring(0, selectionStart) + modifiedText + currentValue.substring(selectionEnd);
+    this.heroes[0].descript = newText;
+  }
+  Strike() {
+    const currentValue = this.myTextarea.nativeElement.value;
+    const selectionStart = this.myTextarea.nativeElement.selectionStart;
+    const selectionEnd = this.myTextarea.nativeElement.selectionEnd;
+
+    const modifiedText = "<strike>"+currentValue.substring(selectionStart,selectionEnd)+"</strike>";
+    const newText = currentValue.substring(0, selectionStart) + modifiedText + currentValue.substring(selectionEnd);
+    this.heroes[0].descript = newText;
   }
 }
