@@ -37,17 +37,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-black-1 border-2 border-red-1 max-md:text-sm" *ngFor="let post of allComment | paginate:{
+                    <tr class="text-black-1 border-2 border-red-1 max-md:text-sm"*ngFor="let post of allComment | paginate:{
                         itemsPerPage: tableSize,
                         currentPage:page,
                         totalItems:count
 
                     }" >
-                        <td scope="row" class="px-6 py-4 font-sm whitespace-nowrap ">{{post.comment}}</td>
+                        <td scope="row" class="px-6 py-4 font-sm ">{{post.comment}}</td>
                         <td class="px-6 py-4">{{post.name}}</td>
                         <td class="px-6 py-4">{{post.brandManager}}</td>
                         <td class="px-6 py-4">
-                            <label class="switch" (click)="toggleSwitch(post.idcomment,post.status)">
+                            <label class="switch" (click)="handleClick($event, post.idcomment, post.status)">
                                 <input type="checkbox" [checked]="post.status">
                                 <span class="slider" [ngClass]="{'on': post.status, 'off': !post.status}"></span>
                               </label>

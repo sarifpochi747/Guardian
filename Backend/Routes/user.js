@@ -13,7 +13,6 @@ const {
   CreateComment,
   getAllComment,
   UpdateComment,
-  getCommentShow,
   SignUp,
   Signin,
   GetUser
@@ -55,7 +54,6 @@ router.put('/UpdateAddStandard',upload.fields(uploadFields),UpdateAllAddStandard
 
 //Add Comment User
 router.get("/getComment",getAllComment)
-router.get("/getCommentShow",getCommentShow)
 router.post("/CreateComment",CreateComment)
 router.put("/UpdateComment",UpdateComment)
 

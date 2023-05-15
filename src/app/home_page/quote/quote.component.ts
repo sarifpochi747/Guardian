@@ -16,7 +16,7 @@ export class QuoteComponent {
 
   constructor(private http: HttpClient) { }
   ngOnInit():void {
-    this.http.get<any[]>('http://localhost:5000/getCommentShow')
+    this.http.get<any[]>('http://localhost:5000/getComment')
     .subscribe(response => {
       this.allComment = response;
     })

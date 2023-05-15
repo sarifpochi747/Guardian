@@ -95,21 +95,23 @@ const getAllComment = async (req, res) => {
   const [ getComment] = await AddComment.fetchAll();
   res.json(getComment);
 };
-const getCommentShow = async (req, res) => {
-  const [ getCommentShow] = await AddComment.fetchShow();
-  res.json(getCommentShow);
-};
 
+// create Comment
 const CreateComment = async (req,res)=>{
   const {comment , name , brandManager,userIcon,status} = req.body;
   await AddComment.create(name,brandManager,comment,userIcon,status);
   res.json({msg: "success"})
 }
 
-const UpdateComment = async (req,res)=>{
-  const {id,status} = req.body;
-  await AddComment.update(id,status);
-  res.json({msg:"success"})
+
+//update status comment
+const UpdateComment = async (req,res)=>{ 
+  //[{},{},{}]
+  const data = req.body
+  for(let i=0;i<data.length;i++)
+  {
+    await AddComment.update(data[i].idcomment,data[i].status)
+  }
 }
 
 
@@ -172,7 +174,6 @@ module.exports = {
   createAllAddStandard,
   UpdateAllAddStandard,
   CreateComment,
-  getCommentShow,
   getAllComment,
   UpdateComment,
   SignUp,

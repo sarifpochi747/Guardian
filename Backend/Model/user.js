@@ -119,9 +119,6 @@ function AddComment(name,brandManager,comment,userIcon,status){
 AddComment.fetchAll = function() {
   return db.execute('SELECT * FROM comment ');
 };
-AddComment.fetchShow = function() {
-  return db.execute('SELECT * FROM comment WHERE status=true');
-};
 
 
 AddComment.create = function(name,brandManager,comment,userIcon,status){
@@ -130,7 +127,6 @@ AddComment.create = function(name,brandManager,comment,userIcon,status){
     [name,brandManager,comment,userIcon,status]
     ) 
 }
-
 AddComment.update = function(id,status){
   return db.execute(
     'UPDATE comment SET status=? where idcomment = ?',
@@ -138,6 +134,8 @@ AddComment.update = function(id,status){
   );
 
 }
+
+
 
 
 
