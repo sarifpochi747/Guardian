@@ -110,19 +110,20 @@
             <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
               <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
-                <ngx-dropzone-label>
+                <!-- <div class="absolute">
                   <div>
                     <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                   </div>
-                  <div class="mt-1">
+                  <div class="mt-1 max-md:text-[12px]">
                     Drag & Drop
                   </div>
-                </ngx-dropzone-label>
-                <div *ngFor="let f of showPrev">
+                </div> -->
+                <!-- <div *ngFor="let f of showPrev">
                   <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,0)" *ngIf="f == showPrev[0]">
                     <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                   </ngx-dropzone-image-preview>
-                </div>
+                </div> -->
+                <img [src] = "files[0]" class="h-full w-1/2 object-cover">
               </div>
             </div>
             <!-- Form 2 -->
@@ -143,7 +144,7 @@
             <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
               <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
-                <ngx-dropzone-label>
+                <!-- <ngx-dropzone-label>
                   <div>
                     <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                   </div>
@@ -155,7 +156,8 @@
                   <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,1)" *ngIf="f == showPrev[1]">
                     <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                   </ngx-dropzone-image-preview>
-                </div>
+                </div> -->
+                <img [src] = "files[1]" class="h-full w-1/2 object-cover">
               </div>
             </div>
           <!-- Form 3 -->
@@ -176,7 +178,7 @@
         <!-- Drag and drop -->
         <div class="pt-[40px] pr-2">
           <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,2)" [multiple]="false">
-            <ngx-dropzone-label>
+            <!-- <ngx-dropzone-label>
               <div>
                 <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
               </div>
@@ -188,7 +190,8 @@
               <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,2)" *ngIf="f == showPrev[2]">
                 <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
               </ngx-dropzone-image-preview>
-            </div>
+            </div> -->
+            <img [src] = "files[2]" class="h-full w-1/2 object-cover">
           </div>
         </div>
       <!-- Form 4 -->
@@ -209,7 +212,7 @@
     <!-- Drag and drop -->
     <div class="pt-[40px] pr-2">
       <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,3)" [multiple]="false">
-        <ngx-dropzone-label>
+        <!-- <ngx-dropzone-label>
           <div>
             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
           </div>
@@ -221,7 +224,8 @@
           <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,3)" *ngIf="f == showPrev[3]">
             <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
           </ngx-dropzone-image-preview>
-        </div>
+        </div> -->
+        <img [src] = "files[3]" class="h-full w-1/2 object-fill">
       </div>
     </div>
 

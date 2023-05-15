@@ -19,6 +19,8 @@ export class OrganizationPageComponent implements OnInit  {
     this.http.get<any[]>('http://localhost:5000/addGoals')
     .subscribe(response => {
       this.heroes = response;
+        this.imtemp = this.heroes[0]['img'];
+        this.files[0] = this.imtemp;
     })
   }
 
