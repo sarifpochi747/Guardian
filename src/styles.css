@@ -3,11 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
 
-html,body,pre{
-    font-size: calc(60% + 0.8vmin);
-    font-family:  Roboto,'Kanit', sans-serif;
-}
 
+html, body {
+    font-family: 'Urbanist', 'IBM Plex Sans Thai', sans-serif; /* for English text with fallback to Thai font */
+  }
+  
 
 html, body { height: 100%; }

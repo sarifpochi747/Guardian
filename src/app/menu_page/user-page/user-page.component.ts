@@ -89,6 +89,7 @@ export class UserPageComponent implements OnInit{
       if (event instanceof NavigationEnd) {
         // The page URL has changed, call your function here
         this.UpdateToDatabase();
+        this.getAllComment()
       }
     });
     

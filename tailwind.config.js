@@ -7,20 +7,23 @@ module.exports = {
 theme: {
   extend: {
     colors:{
-      'white-1':"#FAF9F7",
-      "red-1":"#A61F23",
-      "grey-1":"#282828",
-      "grey-2":"#636363",
-      "grey-3":"#52575C",
-      "grey-4":"#707070",
-      "grey-5":"#626262",
-      "grey-6":"#F0F0F0",
       "black-1":"#25282B",
+      "blue-1":"#57B2D6",
+      "blue-2":"#00478A",
+      "blue-3":"#0F3963",
+      "grey-1":"#848084",
+      "grey-2":"#6F6F6F",
+      "white-1":"#F2F3F3",
+      "white-2":"#F6F6F6",
+      "white-3":"#FAF9F7",
+
     },
   },
   fontFamily: {
     Anuphan: ['Anuphan'],
-    Poppins:['Poppins']
+    Poppins:['Poppins'],
+    urbanist:['Urbanist'],
+    ibm:['IBM Plex Sans Thai']
   },
   screens: {
     sm: "640px",

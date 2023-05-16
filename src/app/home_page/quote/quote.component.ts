@@ -18,7 +18,7 @@ export class QuoteComponent {
   ngOnInit():void {
     this.http.get<any[]>('http://localhost:5000/getComment')
     .subscribe(response => {
-      this.allComment = response;
+      this.allComment = response.filter(commnet=>commnet.status == true);
     })
     
   }

@@ -1,17 +1,17 @@
-<div class="bg-white-1 min-h-[387px] flex flex-col">
+<div class="bg-white-3 min-h-[387px] flex flex-col">
   <div class="text-center mt-[50px]">
-    <h2 class="text-red-1 text-[44px] font-medium max-md:text-[20px] max-sm:text-[16px]">Join 1000+ Happy Premium Users</h2>
+    <h2 class="text-blue-3 text-[44px] font-medium max-md:text-[20px] max-sm:text-[16px]">Join 1000+ Happy Premium Users</h2>
   </div>
   <div class="md:flex-row justify-evenly items-center pt-[60px] pb-[70px] px-[20px] max-md:space-y-4 max-sm:px-9 max-sm:py-[40px]">
     <owl-carousel-o [options]="customOptions" >
       <ng-template carouselSlide  *ngFor="let data of allComment">
         <div class="px-20">
-          <p class="w-full  text-[18px] text-black-1 max-md:text-[16px] max-sm:text-[13px]">{{data.comment}}</p>
+          <p class="w-full  text-[20px] font-normal  text-black max-md:text-[16px] max-sm:text-[13px]">{{data.comment}}</p>
           <div class="flex mt-[9px] items-center">
-            <img class="w-[40px] h-[40px] rounded-[50%] max-sm:w-[25px] max-sm:h-[25px] " src={{data.userIcon}} alt="">
+            <img class="w-[40px] h-[40px] rounded-[50%] max-sm:w-[25px] max-sm:h-[25px] object-cover " src={{data.userIcon}} alt="">
             <div class="ml-[9px]">
               <h3 class="text-[14px] font-medium text-black-1 max-sm:text-[12px]">{{data.name}}</h3>
-              <h4 class="text-[12px] font-light text-grey-3 max-sm:text-[10px]">{{data.brandManager}}</h4>
+              <h4 class="text-[12px] font-light text-grey-1 max-sm:text-[10px]">{{data.brandManager}}</h4>
             </div>
           </div>
         </div>
