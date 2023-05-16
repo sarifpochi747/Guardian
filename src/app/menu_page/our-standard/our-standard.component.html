@@ -6,15 +6,15 @@
         </div>
         <form class="" #myForm="ngForm" (ngSubmit)="updateForm()">
           <div class="overflow-y-scroll max-h-[100%]">
-            <div class=" pt-[18px]">
+            <div class=" pt-[18px] mr-1">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
                     <input  name="title" type="text"  [(ngModel)]="heroes[0].title"
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]" >
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full " >
                 </div>
             </div>
               <!-- Description Input -->
-            <div class=" pt-[18px]">
+            <div class=" pt-[18px] mr-1">
               <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description</label>
               <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
                   <!-- Tool bar -->
@@ -39,18 +39,18 @@
               </div>
           </div>
             <!-- Form 1 -->
-            <div class=" pt-[18px]">
+            <div class=" pt-[18px] mr-1">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">1. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="sub_title1" type="text"  [(ngModel)]="heroes[0].sub_title1"
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
                 </div>
             </div>
-            <div class=" pt-[18px]">
+            <div class=" pt-[18px] mr-1">
               <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
               <div class="pt-[8px]">
                   <input  name="sub_descript1" type="text"  [(ngModel)]="heroes[0].sub_descript1"
-                  class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                  class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
               </div>
           </div>
             <!-- Drag and drop -->
@@ -60,18 +60,18 @@
               </div>
             </div>
             <!-- Form 2 -->
-            <div class=" pt-[18px]">
+            <div class=" pt-[18px] mr-1">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">2. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="sub_title2" type="text"  [(ngModel)]="heroes[0].sub_title2"
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
                 </div>
             </div>
-            <div class=" pt-[18px]">
+            <div class=" pt-[18px] mr-1">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="sub_descript2" type="text"  [(ngModel)]="heroes[0].sub_descript2"
-                    class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                    class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <!-- Drag and drop -->
@@ -81,18 +81,18 @@
               </div>
             </div>
           <!-- Form 3 -->
-          <div class=" pt-[18px]">
+          <div class=" pt-[18px] mr-1">
             <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">3. Title (sub)</label>
             <div class="pt-[8px]">
                 <input  name="sub_title3" type="text"  [(ngModel)]="heroes[0].sub_title3"
-                class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
             </div>
         </div>
-        <div class=" pt-[18px]">
+        <div class=" pt-[18px] mr-1">
             <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
             <div class="pt-[8px]">
                 <input  name="sub_descript3" type="text"  [(ngModel)]="heroes[0].sub_descript3"
-                class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+                class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
             </div>
         </div>
         <!-- Drag and drop -->
@@ -102,18 +102,18 @@
           </div>
         </div>
       <!-- Form 4 -->
-      <div class=" pt-[18px]">
+      <div class=" pt-[18px] mr-1">
         <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">4. Title (sub)</label>
         <div class="pt-[8px]">
             <input  name="sub_title4" type="text"  [(ngModel)]="heroes[0].sub_title4"
-            class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+            class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
         </div>
     </div>
-    <div class=" pt-[18px]">
+    <div class=" pt-[18px] mr-1">
         <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Description (sub)</label>
         <div class="pt-[8px]">
             <input  name="sub_descript4" type="text"  [(ngModel)]="heroes[0].sub_descript4"
-            class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px]">
+            class="w-2/3 h-[51px] rounded-md px-[20px] border-2 border-grey-4 max-md:h-[40px] max-sm:w-full">
         </div>
     </div>
     <!-- Drag and drop -->

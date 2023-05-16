@@ -32,7 +32,11 @@
     display: inline-block;
     width: 5px;
   }
+  .imgs-ngx{
+    width: 100%!important;
+    max-width: unset!important;
   }
+}
 
   .imgs-ngx{
     border-width: 2px;
