@@ -48,7 +48,7 @@ export class QuoteComponent {
       },
 
     },
-    nav: true
+    nav: false
   }
 
 

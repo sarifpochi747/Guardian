@@ -132,7 +132,7 @@
       </div>
           <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
-              <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,3)" [multiple]="false">
+              <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
                 <!-- <ngx-dropzone-label>
                   <div>
                     <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
@@ -146,7 +146,7 @@
                     <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                   </ngx-dropzone-image-preview>
                 </div> -->
-                <img [src] = "files[0]" class="h-full w-1/2 object-cover">
+                <img [src] = "files[0]" class="h-full w-1/2 object-scale-down">
               </div>
             </div>
             <!-- Button Back & Save -->

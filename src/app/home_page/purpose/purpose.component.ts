@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { Hero } from 'src/app/hero_type';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ export class PurposeComponent implements OnInit  {
   heroes: any[] = [];
   imtemp:any;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
-
+  
   ngOnInit():void {
     this.http.get<any[]>('http://localhost:5000/addGoals')
     .subscribe(response => {

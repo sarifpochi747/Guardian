@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Hero } from 'src/app/hero_type';
+import { Component, OnInit,HostListener  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-standard',
@@ -21,4 +21,53 @@ export class StandardComponent implements OnInit {
 
     })
   }
+  
+
+  // slideShow
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    autoplay:false,
+    autoplayTimeout:1000,
+    dots: false,
+    navSpeed: 1000,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      900: {
+        items: 4
+      },
+
+    },
+    nav: false
+  }
+
+
+@HostListener('window:resize', ['$event'])
+  onWindowResize(event: any) {
+    if(window.innerWidth >= 769) {
+      this.customOptions.autoplay = false; // stop autoplay
+      this.customOptions.stagePadding = 0; // set stage padding to 0
+    } else {
+      this.customOptions.autoplay = true; // start autoplay
+      this.customOptions.stagePadding = 50; // set stage padding to 50
+    }
+  }
 }
+
+
+
+
+
+
+
