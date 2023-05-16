@@ -1,15 +1,15 @@
-<div id="BG" class="flex flex-col min-h-[897px] bg-[#FAF9F7] pt-[43px]   max-md:pt-6 max-sm:pt-[18px] max-sm:pb-[30px] ">
+<div id="BG" class="flex flex-col min-h-[897px] bg-[#FAF9F7] pt-[43px]  max-sm:relative max-md:pt-6 max-sm:pt-[18px] max-sm:pb-[30px] ">
     <div id="HeadSec" class="flex flex-col items-center justify-center ">
       <div id="Tite_Head" class="text-[40px] text-black-1 font-medium  max-md:text-[22px]">{{ heroes[0].title }}</div>
       <div id="Sub_Head" class="text-[30px] text-blue-3 md:font-medium  max-md:text-[20px] max-sm:text-[13px] max-sm:font-normal">{{ heroes[0].descript }}</div>
       <div id="Des_Head" class="text-[20px] text-blue-3  max-md:text-[16px] font-light max-sm:text-[13px]">มุ่งสู่ความเป็นบริษัทชั้นนำด้านงานบริการ</div>
     </div>
 
+    <img class="sm:hidden w-full h-[897px]  opacity-20 object-cover" [src]="heroes[0].img">
     <div id="ContentSec" 
-    class="flex justify-center content-center h-full w-full max-sm:relative max-sm:flex-col pt-[20px]  " >
+    class="flex justify-center content-center h-full w-full max-sm:absolute max-sm:top-0 max-ss:top-[5%] max-sm:flex-col pt-[20px]  " >
 
-      <img class="sm:hidden w-full h-[897px] opacity-20 object-cover" [src]="heroes[0].img">
-        <div id = "L_Content" class="w-1/3 flex flex-col items-center max-sm:w-full max-sm:px-[16px] max-sm:absolute max-sm:top-0">
+        <div id = "L_Content" class="w-1/3 flex flex-col items-center max-sm:w-full max-sm:px-[16px] ">
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-1/3  max-sm:w-full max-sm:ml-0 max-sm:mt-4 mb-4 max-sm:mb-0">
             <div id = "Title_box" class="flex">
@@ -41,7 +41,7 @@
           <img class="w-[546px] h-[545px]" [src]="heroes[0].img">
       </div>
 
-      <div id = "R_Content" class="w-1/3 flex flex-col items-start  max-sm:w-full mt-[72px] max-sm:mt-0 max-sm:px-[16px] max-sm:absolute max-sm:top-[500px]">
+      <div id = "R_Content" class="w-1/3 flex flex-col items-start  max-sm:w-full mt-[72px] max-sm:mt-0 max-sm:px-[16px] ">
 
           <div id ="Msg_box" class="flex flex-col w-[17vw] h-1/3 max-sm:w-full max-sm:ml-0 max-sm:mt-4 mb-4 max-sm:mb-0" >
             <div id = "Title_box" class="flex">

@@ -26,6 +26,7 @@ theme: {
     ibm:['IBM Plex Sans Thai']
   },
   screens: {
+    ss:"322px",
     sm: "640px",
     md: "769px",
     lg: "1024px",
