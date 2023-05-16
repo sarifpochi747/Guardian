@@ -55,7 +55,7 @@
             <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
               <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
-                <img [src] = "files[0]" class="h-full w-1/2 object-cover">
+                <img [src] = "files[0]" class="h-full w-1/2 object-scale-down">
               </div>
             </div>
             <!-- Form 2 -->
@@ -76,7 +76,7 @@
             <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">
               <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
-                <img [src] = "files[1]" class="h-full w-1/2 object-cover">
+                <img [src] = "files[1]" class="h-full w-1/2 object-scale-down">
               </div>
             </div>
           <!-- Form 3 -->
@@ -97,7 +97,7 @@
         <!-- Drag and drop -->
         <div class="pt-[40px] pr-2">
           <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,2)" [multiple]="false">
-            <img [src] = "files[2]" class="h-full w-1/2 object-cover">
+            <img [src] = "files[2]" class="h-full w-1/2 object-scale-down">
           </div>
         </div>
       <!-- Form 4 -->
@@ -118,7 +118,7 @@
     <!-- Drag and drop -->
     <div class="pt-[40px] pr-2">
       <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,3)" [multiple]="false">
-        <img [src] = "files[3]" class="h-full w-1/2 object-fill">
+        <img [src] = "files[3]" class="h-full w-1/2 object-scale-down">
       </div>
     </div>
             <!-- Button Back & Save -->
