@@ -1,10 +1,11 @@
 <app-header-user></app-header-user>
-<div class=" py-[40px] px-[103px] overflow-y-hidden max-md:px-[40px] max-sm:px-6">
+<div class=" py-[40px] px-[103px] max-md:px-[40px] max-sm:px-6">
     <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-sm:px-6">
         <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
             ORGANIZATION GOALS
         </div>
-        <form class="overflow-y-scroll max-h-[890px]" #myForm="ngForm" (ngSubmit)="updateForm()">
+        <form  #myForm="ngForm" (ngSubmit)="updateForm()">
+          <div class="overflow-y-scroll max-h-[890px]">
             <div class=" pt-[18px]">
                 <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
@@ -129,6 +130,7 @@
               <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript6"
               class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px]">
           </div>
+      </div>
       </div>
           <!-- Drag and drop -->
             <div class="pt-[40px] pr-2">

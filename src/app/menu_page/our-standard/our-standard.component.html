@@ -4,7 +4,8 @@
         <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
             OUR STANDARD
         </div>
-        <form class="overflow-y-scroll max-h-[890px]" #myForm="ngForm" (ngSubmit)="updateForm()">
+        <form class="" #myForm="ngForm" (ngSubmit)="updateForm()">
+          <div class="overflow-y-scroll max-h-[100%]">
             <div class=" pt-[18px]">
                 <label  class="text-[0.9vw] leading-6 text-grey-5  max-md:text-[14px]">Title</label>
                 <div class="pt-[8px]">
@@ -121,6 +122,7 @@
         <img [src] = "files[3]" class="h-full w-1/2 object-scale-down">
       </div>
     </div>
+  </div>
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
 
