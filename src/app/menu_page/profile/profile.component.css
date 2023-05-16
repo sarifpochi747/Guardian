@@ -96,9 +96,10 @@ justify-content: center;
   .bot-left,.bot-left2
   {
     width: 100%;
-    height: 100px;
+    /* height: 100px; */
   }
   .bot-right{
-    height: 100px;
+    width: 100%;
+    /* height: 100%; */
   }
 }

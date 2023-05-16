@@ -49,22 +49,14 @@
             </div>
 
             <!-- Image Layout -->
-            <div class="flex justify-center px-12 min-h-[805px] py-12 max-md:px-8">
+            <div class="flex justify-center px-12 min-h-[805px] py-12 max-md:px-8 max-sm:px-1">
 
               <div class="flex flex-col w-full">
                   <!-- Upper side  -->
-                  <div class="w-full flex flex-row h-2/3 pb-7  max-sm:flex-col max-sm:h-[600px] max-sm:space-y-2">
+                  <div class="w-full flex flex-row h-2/3 pb-7 max-sm:flex-col max-sm:w-full max-sm:h-full max-sm:pb-0">
                     <!-- Left side -->
-                    <div class="flex flex-col h-full w-1/2 pr-2  max-sm:w-full max-sm:h-[200px] max-sm:pr-0 ">
-                        <div class="subject ">
-
-                        </div>
-
-                        <div class=" text-[1.4vw] font-light text-grey-2 w-full ">
-
-                        </div>
-
-                      <div class="flex justify-end w-full h-full items-end content-end max-sm:items-start">
+                    <div class="flex flex-col h-full w-1/2 pr-2 max-sm:w-full max-sm:mb-2 max-sm:h-full max-sm:pr-0">
+                      <div class="flex justify-end w-full h-full items-end content-end ">
                         <div class="up-left " ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false" >
                           <!-- <img src = "https://cdn-icons-png.flaticon.com/502/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                           <!-- <ngx-dropzone-label> -->
@@ -89,9 +81,9 @@
                     </div>
 
                     <!-- Right side -->
-                    <div class="flex flex-row h-full w-1/2  max-sm:flex-col max-sm:w-full max-sm:h-[600px] max-sm:space-y-2">
+                    <div class="flex flex-row h-full w-1/2 max-sm:w-full max-sm:h-full">
                       <!-- Long img -->
-                      <div class="h-full w-1/2 pr-2 max-sm:w-full max-sm:h-[200px] max-sm:pr-0">
+                      <div class="h-full w-1/2 pr-2 max-sm:h-full">
                         <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
                           <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                           <!-- <ngx-dropzone-label> -->
@@ -114,8 +106,8 @@
                       </div>
 
                       <!--  2 each -->
-                      <div class="h-full w-1/2 flex flex-col max-sm:w-full max-sm:h-[200px]">
-                        <div class="h-1/2 pb-1 max-sm:h-full">
+                      <div class="h-full w-1/2 flex flex-col max-sm:h-full">
+                        <div class="h-1/2 pb-1 ">
                           <div class="two-each" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,2)" [multiple]="false">
                             <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                             <!-- <ngx-dropzone-label> -->
@@ -133,10 +125,10 @@
                               <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                             </ngx-dropzone-image-preview>
                             </div> -->
-                            <img [src] = "files[2]" class="h-full w-full object-cover">
+                            <img [src] = "files[2]" class="h-full w-full object-cover max-sm:h-full">
                           </div>
                         </div>
-                        <div class="h-1/2 pt-1  max-sm:h-[200px]">
+                        <div class="h-1/2 pt-1">
                           <div class="two-each" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,3)" [multiple]="false">
                             <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                             <!-- <ngx-dropzone-label> -->
@@ -154,7 +146,7 @@
                               <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                             </ngx-dropzone-image-preview>
                             </div> -->
-                            <img [src] = "files[3]" class="h-full w-full object-cover">
+                            <img [src] = "files[3]" class="h-full w-full object-cover max-sm:h-full">
                           </div>
                         </div>
                       </div>
@@ -162,10 +154,10 @@
                   </div>
 
                   <!-- Down side -->
-                  <div class="flex flex-row h-1/3 w-full max-sm:flex-col max-sm:h-[300px] max-sm:space-y-2">
+                  <div class="flex flex-row h-1/3 w-full max-sm:flex-col max-sm:h-full">
                     <!-- Left side -->
-                    <div class="w-1/2 flex h-full pr-2 max-sm:flex-col max-sm:w-full max-sm:pr-0 max-sm:space-y-2">
-                      <div class="bot-left" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,4)" [multiple]="false">
+                    <div class="w-1/2 flex h-full pr-2 max-sm:flex-col max-sm:w-full max-sm:mb-2 max-sm:pr-0">
+                      <div class="bot-left max-sm:w-full max-sm:mb-2 max-sm:mt-2" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,4)" [multiple]="false">
                         <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                         <!-- <ngx-dropzone-label> -->
                           <div class="absolute">
