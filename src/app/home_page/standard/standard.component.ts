@@ -25,11 +25,12 @@ export class StandardComponent implements OnInit {
 
   // slideShow
   customOptions: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
-    autoplay:false,
+    stagePadding:0,
+    autoplay:true,
     autoplayTimeout:1000,
     dots: false,
     navSpeed: 1000,
@@ -53,16 +54,7 @@ export class StandardComponent implements OnInit {
   }
 
 
-@HostListener('window:resize', ['$event'])
-  onWindowResize(event: any) {
-    if(window.innerWidth >= 769) {
-      this.customOptions.autoplay = false; // stop autoplay
-      this.customOptions.stagePadding = 0; // set stage padding to 0
-    } else {
-      this.customOptions.autoplay = true; // start autoplay
-      this.customOptions.stagePadding = 50; // set stage padding to 50
-    }
-  }
+
 }
 
 
