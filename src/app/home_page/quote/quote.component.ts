@@ -31,9 +31,10 @@ export class QuoteComponent {
     pullDrag: true,
     autoplay:true,
     autoplayTimeout:3000,
-    stagePadding:50,
+    stagePadding:0,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 1000,
+    
     navText: ['', ''],
     responsive: {
       0: {

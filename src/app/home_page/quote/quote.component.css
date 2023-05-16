@@ -2,3 +2,15 @@ img{
     width: 40px!important;
 
 }
+.owl-theme .owl-nav
+{
+    display: none!important;
+}
+
+@media only screen and (max-width: 640px) {
+    /* Hide the default scrollbar */
+    img{
+        width: 25px!important;
+    
+    }
+  }

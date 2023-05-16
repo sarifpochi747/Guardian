@@ -1,8 +1,8 @@
-<div class=" flex w-full py-6 justify-center ">
-  <form #myForm="ngForm" (ngSubmit)="updateForm()" class="flex justify-center content-center w-full max-sm:flex-col max-sm:px-5">
+<div class=" flex w-full py-6 justify-center md:h-[159px] ">
+  <form #myForm="ngForm" (ngSubmit)="updateForm()" class="flex justify-center content-center w-full max-sm:flex-col max-sm:px-[16px]">
     <!-- Drag and drop -->
-    <div class="w-1/4 justify-end flex px-1 max-sm:w-full max-sm:justify-center max-sm:pb-3">
-      <ngx-dropzone class="py-9 flex flex-col justify-center text-center w-1/2 items-center border-dashed border-2 border-grey-2 rounded-md" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
+    <div class="w-1/4  justify-end flex px-1 max-sm:w-full max-sm:justify-center max-sm:pb-3 ">
+      <ngx-dropzone class="flex flex-col justify-center text-center w-[251px] h-[112px!important] items-center border-dashed border-2 border-grey-2 rounded-md" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
         <ngx-dropzone-label>
         <div>
           <i class="fa-solid fa-arrow-up-from-bracket fa-xl" style="color: #a61f23;"></i>
@@ -18,21 +18,21 @@
       </div>
       </ngx-dropzone>
     </div>
-      <div class="flex flex-col h-full w-1/4 px-1 max-sm:w-full max-sm:justify-center">
-        <div class="h-1/2 py-1 max-sm:h-[50px]">
-          <input type="text" name="title" placeholder="Name" class="w-full rounded-md h-full bg-white-2 pl-3" [(ngModel)]="data.name">
+      <div class="flex flex-col h-full w-1/4 pl-[18px] text-[16px] pr-[12px] md:space-y-[4px] max-sm:w-full max-sm:justify-center max-sm:px-0 ">
+        <div class=" max-sm:h-[50px] max-sm:mt-[8px]">
+          <input type="text" name="title" placeholder="Name" class="w-full rounded-md h-[52px] bg-white-2 pl-3" [(ngModel)]="data.name">
         </div>
-        <div class="h-1/2 py-1 max-sm:h-[50px]">
-          <input type="text" name="brandManager" placeholder="brand manager" class="w-full rounded-md h-full bg-white-2 pl-3" [(ngModel)]="data.brandManager">
+        <div class=" md:py-1 max-sm:h-[50px] max-sm:mt-[8px] ">
+          <input type="text" name="brandManager" placeholder="brand manager" class="w-full rounded-md h-[52px] bg-white-2 pl-3" [(ngModel)]="data.brandManager">
         </div>
       </div>
 
-      <div class="flex flex-col h-full w-1/4 py-1 px-1 max-sm:w-full ">
-        <input type="text" placeholder="comment" name="comment" class="w-full rounded-md h-full bg-white-2 pl-3 max-sm:h-[50px]" [(ngModel)]="data.comment">
+      <div class="flex flex-col  w-1/4  text-[16px] max-sm:w-full max-sm:mt-[8px] ">
+        <input type="text" placeholder="comment" name="comment" class="w-full rounded-md h-[112px] bg-white-2 pl-3" [(ngModel)]="data.comment">
       </div>
 
-      <div class="flex h-full justify-start items-end w-1/4 py-1 px-1 max-sm:w-full max-sm:justify-center">
-        <button class="bg-blue-1 rounded-md text-white p-3 w-1/2">submit</button>
+      <div class="flex h-full text-[16px] justify-start items-end w-1/4 py-1 px-[18px] max-sm:w-full max-sm:justify-center max-sm:mt-[8px] max-sm:px-0 max-sm:py-0 ">
+        <button class="bg-blue-1 rounded-md text-white  w-[157px] h-[52px] max-sm:w-full">submit</button>
       </div>
 
   </form>
