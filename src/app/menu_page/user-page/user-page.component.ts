@@ -19,6 +19,7 @@ export class UserPageComponent implements OnInit{
   status:boolean = true;
   //getAll comment
   allComment:any[] = []
+  //check for sort 
   
   
   onTableDataChange(event : any)
@@ -97,5 +98,55 @@ export class UserPageComponent implements OnInit{
     this.getAllComment()
     console.log("oninit")
   }
+
+
+
+
+  //sort comment
+  sortAscendingComment:boolean = true;  // Indicates whether to sort in ascending order (A-Z)
+  sortAscendingCompany:boolean = true;  // Indicates whether to sort in ascending order (A-Z)
+  sortAscendingBrandManager:boolean = true;  // Indicates whether to sort in ascending order (A-Z)
+  sortComment(){
+    if(this.sortAscendingComment)
+    {
+      this.allComment.sort((a, b) => a.comment.charAt(0).localeCompare(b.comment.charAt(0)));
+    }
+    else
+    {
+      this.allComment.sort((a, b) => b.comment.charAt(0).localeCompare(a.comment.charAt(0)));
+    }
+    this.sortAscendingComment = !this.sortAscendingComment
+
+  }
+  //sort Company
+  sortCompany(){
+    if(this.sortAscendingCompany)
+    {
+      this.allComment.sort((a, b) => a.name.charAt(0).localeCompare(b.name.charAt(0)));
+    }
+    else
+    {
+      this.allComment.sort((a, b) => b.name.charAt(0).localeCompare(a.name.charAt(0)));
+    }
+    this.sortAscendingCompany= !this.sortAscendingCompany
+
+  }
+  
+    //sort BrandManager
+  sortBrandManager(){
+    if(this.sortAscendingBrandManager)
+    {
+      this.allComment.sort((a, b) => a.brandManager.charAt(0).localeCompare(b.brandManager.charAt(0)));
+    }
+    else
+    {
+      this.allComment.sort((a, b) => b.brandManager.charAt(0).localeCompare(a.brandManager.charAt(0)));
+    }
+    this.sortAscendingBrandManager= !this.sortAscendingBrandManager
+
+  }
+
+
+
 
 }

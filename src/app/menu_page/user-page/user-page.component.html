@@ -9,7 +9,7 @@
                         <td class="px-6 py-3  w-2/3">
                             <div class="flex justify-between items-center">
                                 <div>Comment</div>
-                                <div class=" cursor-pointer">
+                                <div class=" cursor-pointer" (click)="sortComment()">
                                     <i class="ri-arrow-up-down-fill"></i>
                                 </div>
                             </div>
@@ -17,7 +17,7 @@
                         <td class="px-6 py-3 ">
                             <div class="flex justify-between">
                                 <div>Company</div>                         
-                                <div class="max-md:mx-3 cursor-pointer">
+                                <div class="max-md:mx-3 cursor-pointer " (click)="sortCompany()">
                                     <i class="ri-arrow-up-down-fill"></i>
                                 </div>
                             </div>
@@ -25,7 +25,7 @@
                         <td class="px-6 py-3 ">
                             <div class="flex justify-between items-center">
                                 <div>Brand Manager</div>
-                                <div class="max-md:mx-3  cursor-pointer">
+                                <div class="max-md:mx-3  cursor-pointer" (click)="sortBrandManager()">
                                     <i class="ri-arrow-up-down-fill"></i>
                                 </div>
                             </div>
