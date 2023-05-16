@@ -109,11 +109,11 @@ export class UserPageComponent implements OnInit{
   sortComment(){
     if(this.sortAscendingComment)
     {
-      this.allComment.sort((a, b) => a.comment.charAt(0).localeCompare(b.comment.charAt(0)));
+      this.allComment.sort((a, b) => a.comment.charAt(0).localeCompare(b.comment.charAt(0),undefined, { sensitivity: 'base' }));
     }
     else
     {
-      this.allComment.sort((a, b) => b.comment.charAt(0).localeCompare(a.comment.charAt(0)));
+      this.allComment.sort((a, b) => b.comment.charAt(0).localeCompare(a.comment.charAt(0),undefined, { sensitivity: 'base' }));
     }
     this.sortAscendingComment = !this.sortAscendingComment
 
@@ -122,11 +122,11 @@ export class UserPageComponent implements OnInit{
   sortCompany(){
     if(this.sortAscendingCompany)
     {
-      this.allComment.sort((a, b) => a.name.charAt(0).localeCompare(b.name.charAt(0)));
+      this.allComment.sort((a, b) => a.name.charAt(0).localeCompare(b.name.charAt(0),undefined, { sensitivity: 'base' }));
     }
     else
     {
-      this.allComment.sort((a, b) => b.name.charAt(0).localeCompare(a.name.charAt(0)));
+      this.allComment.sort((a, b) => b.name.charAt(0).localeCompare(a.name.charAt(0),undefined, { sensitivity: 'base' }));
     }
     this.sortAscendingCompany= !this.sortAscendingCompany
 
@@ -136,11 +136,11 @@ export class UserPageComponent implements OnInit{
   sortBrandManager(){
     if(this.sortAscendingBrandManager)
     {
-      this.allComment.sort((a, b) => a.brandManager.charAt(0).localeCompare(b.brandManager.charAt(0)));
+      this.allComment.sort((a, b) => a.brandManager.charAt(0).localeCompare(b.brandManager.charAt(0),undefined, { sensitivity: 'base' }));
     }
     else
     {
-      this.allComment.sort((a, b) => b.brandManager.charAt(0).localeCompare(a.brandManager.charAt(0)));
+      this.allComment.sort((a, b) => b.brandManager.charAt(0).localeCompare(a.brandManager.charAt(0),undefined, { sensitivity: 'base' }));
     }
     this.sortAscendingBrandManager= !this.sortAscendingBrandManager
 
