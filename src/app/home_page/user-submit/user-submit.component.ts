@@ -47,14 +47,21 @@ export class UserSubmitComponent {
 
 
   updateForm() {
-    this.data.userIcon = this.files[0];
-    console.log(this.data)
-    this.http.post('http://localhost:5000/CreateComment',this.data )
-      .subscribe((response) => {
-        console.log('Form updated successfully:', response);
-    });
-
+    if(this.data.name.lenght > 0 && this.data.comment.lenght > 0 && this.data.brandManager.lenght > 0 && this.files[0] != null)
+    {
+      this.data.userIcon = this.files[0];
+      console.log(this.data)
+      this.http.post('http://localhost:5000/CreateComment',this.data )
+        .subscribe((response) => {
+          console.log('Form updated successfully:', response);
+      });
       window.location.reload();
+    }
+    else
+    {
+      alert("input something")
+    }
+
   }
 
 }
