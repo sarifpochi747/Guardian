@@ -79,6 +79,7 @@ export class UserPageComponent implements OnInit{
       this.UpdateToDatabase();
       this.getAllComment()
     }
+    console.log("refress")
   }
 
   ngOnInit():void {
