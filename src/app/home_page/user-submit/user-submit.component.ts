@@ -47,7 +47,6 @@ export class UserSubmitComponent {
 
 
   updateForm() {
-    console.log(this.data.name.length)
     if(this.data.name.length > 0 && this.data.comment.length > 0 && this.data.brandManager.length > 0 &&  this.files[0] != null)
     {
       this.data.userIcon = this.files[0];
