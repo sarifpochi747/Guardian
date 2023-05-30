@@ -14,11 +14,12 @@ export class UserSubmitComponent {
   //form user submit
   data: any = {
     userIcon: "",
-    name: '',
-    brandManager: '',
-    comment: '',
+    name: "",
+    brandManager: "",
+    comment: "",
     status: true,
   };
+
   
 
   files: any[] = [];
@@ -35,7 +36,6 @@ export class UserSubmitComponent {
     };
 
     this.showPrev.splice(id,1,...event.addedFiles);
-    console.log(this.files);
   }
 
   onRemove(event:any,id:any) {
@@ -47,7 +47,8 @@ export class UserSubmitComponent {
 
 
   updateForm() {
-    if(this.data.name.lenght > 0 && this.data.comment.lenght > 0 && this.data.brandManager.lenght > 0 && this.files[0] != null)
+    console.log(this.data.name.length)
+    if(this.data.name.length > 0 && this.data.comment.length > 0 && this.data.brandManager.length > 0 &&  this.files[0] != null)
     {
       this.data.userIcon = this.files[0];
       console.log(this.data)
