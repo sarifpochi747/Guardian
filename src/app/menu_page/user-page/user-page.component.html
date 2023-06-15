@@ -6,23 +6,24 @@
             <table class=" w-full text-[19px] text-left ">
                 <thead class="text-lg text-white bg-blue-2 border-[1px] border-blue-2 rounded-lg  ">  
                     <tr class="max-md:text-[14px] font-urbanist">
-                        <td class="px-6 py-3  w-2/3">
-                            <div class="flex justify-between items-center">
-                                <div>Comment</div>
-                                <div class=" cursor-pointer" (click)="sortComment()">
-                                    <i class="ri-arrow-up-down-fill"></i>
-                                </div>
+                        <th scope="col" class="px-6 py-3">
+                            <div>Comment</div>
+                        </th >
+                        <th>
+                            <div class=" cursor-pointer px-6 py-3" (click)="sortComment()">
+                                <i class="ri-arrow-up-down-fill"></i>
                             </div>
-                        </td>
-                        <td class="px-6 py-3 ">
-                            <div class="flex justify-between">
+
+                        </th>
+                        <th scope="col" class="px-6 py-3 ">
+                            <div class="flex justify-between items-center">
                                 <div>Company</div>                         
                                 <div class="max-md:mx-3 cursor-pointer " (click)="sortCompany()">
                                     <i class="ri-arrow-up-down-fill"></i>
                                 </div>
                             </div>
-                        </td>
-                        <td class="px-6 py-3 ">
+                        </th >
+                        <th scope="col" class="px-6 py-3 ">
                             <div class="flex justify-between items-center">
                                 <div>Brand Manager</div>
                                 <div class="max-md:mx-3  cursor-pointer" (click)="sortBrandManager()">
@@ -30,10 +31,10 @@
                                 </div>
                             </div>
                             
-                        </td>
-                        <td class="px-6 py-3">
+                        </th >
+                        <th scope="col" class="px-6 py-3">
                             <span class="sr-only">Action</span>
-                        </td>
+                        </th >
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +44,7 @@
                         totalItems:count
 
                     }" >
-                        <td scope="row" class="px-6 py-4 font-sm ">{{post.comment}}</td>
+                        <td scope="row" class="px-6 py-4 font-sm " colspan="2">{{post.comment}}</td>
                         <td class="px-6 py-4">{{post.name}}</td>
                         <td class="px-6 py-4">{{post.brandManager}}</td>
                         <td class="px-6 py-4">

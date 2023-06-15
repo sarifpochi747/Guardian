@@ -25,7 +25,7 @@ export class StandardComponent implements OnInit {
 
   // slideShow
   customOptions: OwlOptions = {
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
