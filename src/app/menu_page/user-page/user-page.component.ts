@@ -1,4 +1,4 @@
-import { Component,OnInit,ChangeDetectorRef,HostListener   } from '@angular/core';
+import { Component,OnInit,HostListener   } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -89,6 +89,7 @@ export class UserPageComponent implements OnInit{
     // update to database when url change
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
+
         // The page URL has changed, call your function here
         this.UpdateToDatabase();
         this.getAllComment()
@@ -97,7 +98,6 @@ export class UserPageComponent implements OnInit{
     
     // get all comment
     this.getAllComment()
-    console.log("oninit")
   }
 
 

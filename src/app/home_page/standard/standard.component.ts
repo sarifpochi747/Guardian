@@ -29,9 +29,8 @@ export class StandardComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
-    stagePadding:0,
     autoplay:true,
-    autoplayTimeout:1000,
+    autoplayTimeout:3000,
     dots: false,
     navSpeed: 1000,
     navText: ['', ''],
@@ -39,13 +38,7 @@ export class StandardComponent implements OnInit {
       0: {
         items: 1
       },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      900: {
+      1024: {
         items: 4
       },
 

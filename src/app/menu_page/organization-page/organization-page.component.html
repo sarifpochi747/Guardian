@@ -1,24 +1,24 @@
 <app-header-user></app-header-user>
-<div class=" py-[40px] px-[103px] max-md:px-[40px] max-sm:px-6">
+<div class=" py-[40px] px-[103px] max-lg:px-[40px] max-sm:px-6">
     <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-sm:px-6">
-        <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
+        <div class="text-[26px] max-lg:text-[18px] max-sm:text-[14px]">
             ORGANIZATION GOALS
         </div>
         <form  #myForm="ngForm" (ngSubmit)="updateForm() ">
           <div class="overflow-y-scroll max-h-[890px]">
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Title</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Title</label>
                 <div class="pt-[8px] mr-1">
                     <input  name="title" type="text"  [(ngModel)]="heroes[0].title"
-                    class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                    class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <!-- Description Input -->
             <div class=" pt-[18px]  mr-1">
-              <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description</label>
-              <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
+              <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description</label>
+              <div class="pt-[8px] w-3/4 max-lg:w-[500px] max-sm:w-full">
                   <!-- Tool bar -->
-                  <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
+                  <div class="border-[#707070] rounded-t-lg border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
 
                     <!-- undo -->
                     <!-- <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden"> -->
@@ -44,91 +44,91 @@
                   </div>
                   <!-- Text -->
                   <textarea  name="descript" type="text" #myTextarea
-                  class="w-full h-[130px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center p-5" [(ngModel)]="heroes[0].descript"></textarea>
+                  class="w-full h-[130px] rounded-b-lg px-[20px] border-2 border-[#707070] justify-center p-5" [(ngModel)]="heroes[0].descript"></textarea>
               </div>
           </div>
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">1. Title (sub)</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">1. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title1"
-                    class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full ">
+                    class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full ">
                 </div>
             </div>
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript1"
-                    class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                    class="w-2/3 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">2. Title (sub)</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">2. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title2"
-                    class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                    class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript2"
-                    class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                    class="w-2/3 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">3. Title (sub)</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">3. Title (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title3"
-                    class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                    class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <div class=" pt-[18px] mr-1">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
                 <div class="pt-[8px]">
                     <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript3"
-                    class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                    class="w-2/3 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
                 </div>
             </div>
             <div class=" pt-[18px] mr-1">
-              <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">4. Title (sub)</label>
+              <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">4. Title (sub)</label>
               <div class="pt-[8px]">
                   <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title4"
-                  class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                  class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
               </div>
           </div>
           <div class=" pt-[18px] mr-1">
-              <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
+              <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
               <div class="pt-[8px]">
                   <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript4"
-                  class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                  class="w-2/3 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
               </div>
           </div>
           <div class=" pt-[18px] mr-1">
-            <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">5. Title (sub)</label>
+            <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">5. Title (sub)</label>
             <div class="pt-[8px]">
                 <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title5"
-                class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
             </div>
         </div>
         <div class=" pt-[18px] mr-1">
-            <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
+            <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
             <div class="pt-[8px]">
                 <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript5"
-                class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+                class="w-2/3 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
             </div>
         </div>
         <div class=" pt-[18px] mr-1">
-          <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">6. Title (sub)</label>
+          <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">6. Title (sub)</label>
           <div class="pt-[8px]">
               <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_title6"
-              class="w-1/2 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+              class="w-1/2 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
           </div>
       </div>
       <div class=" pt-[18px] mr-1">
-          <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description (sub)</label>
+          <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
           <div class="pt-[8px]">
               <input  name="username" type="text"  [(ngModel)]="heroes[0].sub_descript6"
-              class="w-2/3 h-[51px] rounded-md px-[20px]  border-2 border-[#707070] max-md:h-[40px] max-sm:w-full">
+              class="w-2/3 h-[51px] rounded-lg px-[20px]  border-2 border-[#707070] max-lg:h-[40px] max-sm:w-full">
           </div>
       </div>
       </div>
@@ -154,8 +154,8 @@
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2">
 
-              <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-md  border-[1px] border-blue-1 text-lg max-md:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
-              <button class="bg-blue-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]">SAVE</button>
+              <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-lg  border-[1px] border-blue-1 text-lg max-lg:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+              <button class="bg-blue-1 h-[50px] w-[166px]  rounded-lg text-white text-lg max-lg:h-[40px]">SAVE</button>
           </div>
         </form>
     </div>

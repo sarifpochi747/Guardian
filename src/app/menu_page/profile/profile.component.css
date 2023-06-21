@@ -86,7 +86,7 @@ justify-content: center;
 }
 
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 769px) {
   /* Hide the default scrollbar */
   .up-left{
     width: 100%;

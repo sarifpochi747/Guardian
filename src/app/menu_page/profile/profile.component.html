@@ -1,37 +1,37 @@
 <app-header-user></app-header-user>
-<div class=" py-[40px] px-[103px] max-md:px-[40px] max-sm:px-6">
-    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-sm:px-[24px]">
-        <div class="text-[26px] max-md:text-[18px] max-sm:text-[14px]">
+<div class=" py-[40px] px-[103px]  max-lg:px-6">
+    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-lg:px-[24px]">
+        <div class="text-[26px] max-lg:text-[18px] max-sm:text-[14px]">
             Profile
         </div>
         <form #myForm="ngForm" (ngSubmit)="updateForm()">
           <!-- Title Input -->
             <div class=" pt-[18px]">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Title</label>
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Title</label>
                 <div class="pt-[8px]">
                     <input  name="title" type="text"
-                    class="w-1/2 h-[51px] rounded-md px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].title">
+                    class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].title">
                 </div>
             </div>
             <!-- Description Input -->
             <div class=" pt-[18px]">
-                <label  class="text-[16px] leading-6 text-grey-5 max-md:text-[14px]">Description</label>
-                <div class="pt-[8px] w-3/4 max-md:w-[500px] max-sm:w-full">
+                <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Description</label>
+                <div class="pt-[8px] w-3/4  max-lg:w-full">
                     <!-- Tool bar -->
-                    <div class="border-[#707070] rounded-t-md border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
+                    <div class="border-[#707070] rounded-t-lg border-2 border-b-0 w-full h-[35px] flex flex-row items-center">
 
                       <!-- undo -->
-                      <!-- <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-sm:hidden"> -->
+                      <!-- <div class="flex h-full items-center border-r-2 p-2 border-[#707070] justify-center max-lg:hidden"> -->
                         <!-- label -->
                         <!-- <div class="flex items-center">
                           <i class="fa-solid fa-arrow-left mr-1" style="font-size: 1vw;"></i>
                           <i class="fa-solid fa-arrow-left ml-1 fa-rotate-180" style="font-size: 1vw;"></i>
                         </div>
                       </div> -->
-                      <!-- font SM -->
+                      <!-- font lg -->
 
                       <!-- font style -->
-                      <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center max-sm:hidden">
+                      <div class="flex h-full items-center border-r-2 p-2 min-w-[120px] border-[#707070] justify-center max-lg:hidden">
                         <!-- label -->
                         <div>
                           <i class="fa-sharp fa-solid fa-bold mr-3 cursor-pointer" style="font-size: 1vw;" (click)="Bold()"></i>
@@ -44,18 +44,18 @@
                     </div>
                     <!-- Text -->
                     <textarea  name="descript" type="text" #myTextarea
-                    class="w-full h-[130px] rounded-b-md px-[20px] border-2 border-[#707070] justify-center p-5" [(ngModel)]="heroes[0].descript"></textarea>
+                    class="w-full h-[130px] rounded-b-lg px-[20px] border-2 border-[#707070] justify-center p-5" [(ngModel)]="heroes[0].descript"></textarea>
                 </div>
             </div>
 
             <!-- Image Layout -->
-            <div class="flex justify-center px-12 min-h-[805px] py-12 max-md:px-8 max-sm:px-1">
+            <div class="flex justify-center px-12 min-h-[805px] py-12 max-lg:px-8 max-sm:px-1">
 
               <div class="flex flex-col w-full">
                   <!-- Upper side  -->
-                  <div class="w-full flex flex-row h-2/3 pb-7 max-sm:flex-col max-sm:w-full max-sm:h-full max-sm:pb-0">
+                  <div class="w-full flex flex-row h-2/3 pb-7 max-lg:flex-col max-lg:w-full max-lg:h-full max-lg:pb-0">
                     <!-- Left side -->
-                    <div class="flex flex-col h-full w-1/2 pr-2 max-sm:w-full max-sm:mb-2 max-sm:h-full max-sm:pr-0">
+                    <div class="flex flex-col h-full w-1/2 pr-2 max-lg:w-full max-lg:mb-2 max-lg:h-full max-lg:pr-0">
                       <div class="flex justify-end w-full h-full items-end content-end ">
                         <div class="up-left " ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false" >
                           <!-- <img src = "https://cdn-icons-png.flaticon.com/502/8017/8017414.png" class="h-[36px] w-[37px]"> -->
@@ -64,7 +64,7 @@
                               <div>
                                 <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                               </div>
-                              <div class="mt-1 max-md:text-[12px]">
+                              <div class="mt-1 max-lg:text-[12px]">
                                 Drag & Drop
                               </div>
                             </div>
@@ -81,9 +81,9 @@
                     </div>
 
                     <!-- Right side -->
-                    <div class="flex flex-row h-full w-1/2 max-sm:w-full max-sm:h-full">
+                    <div class="flex flex-row h-full w-1/2 max-lg:w-full max-lg:h-full">
                       <!-- Long img -->
-                      <div class="h-full w-1/2 pr-2 max-sm:h-full">
+                      <div class="h-full w-1/2 pr-2 max-lg:h-full">
                         <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,1)" [multiple]="false">
                           <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                           <!-- <ngx-dropzone-label> -->
@@ -91,7 +91,7 @@
                               <div>
                                 <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                               </div>
-                              <div class="mt-1 max-md:text-[12px]">
+                              <div class="mt-1 max-lg:text-[12px]">
                                 Drag & Drop
                               </div>
                             </div>
@@ -106,7 +106,7 @@
                       </div>
 
                       <!--  2 each -->
-                      <div class="h-full w-1/2 flex flex-col max-sm:h-full">
+                      <div class="h-full w-1/2 flex flex-col max-lg:h-full">
                         <div class="h-1/2 pb-1 ">
                           <div class="two-each" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,2)" [multiple]="false">
                             <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
@@ -115,7 +115,7 @@
                               <div>
                                 <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                               </div>
-                              <div class="mt-1 max-md:text-[12px]">
+                              <div class="mt-1 max-lg:text-[12px]">
                                 Drag & Drop
                               </div>
                             </div>
@@ -125,7 +125,7 @@
                               <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                             </ngx-dropzone-image-preview>
                             </div> -->
-                            <img [src] = "files[2]" class="h-full w-full object-cover max-sm:h-full">
+                            <img [src] = "files[2]" class="h-full w-full object-cover max-lg:h-full">
                           </div>
                         </div>
                         <div class="h-1/2 pt-1">
@@ -136,7 +136,7 @@
                                 <div>
                                   <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                                 </div>
-                                <div class="mt-1 max-md:text-[12px]">
+                                <div class="mt-1 max-lg:text-[12px]">
                                   Drag & Drop
                                 </div>
                               </div>
@@ -146,7 +146,7 @@
                               <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                             </ngx-dropzone-image-preview>
                             </div> -->
-                            <img [src] = "files[3]" class="h-full w-full object-cover max-sm:h-full">
+                            <img [src] = "files[3]" class="h-full w-full object-cover max-lg:h-full">
                           </div>
                         </div>
                       </div>
@@ -154,17 +154,17 @@
                   </div>
 
                   <!-- Down side -->
-                  <div class="flex flex-row h-1/3 w-full max-sm:flex-col max-sm:h-full">
+                  <div class="flex flex-row h-1/3 w-full max-lg:flex-col max-lg:h-full">
                     <!-- Left side -->
-                    <div class="w-1/2 flex h-full pr-2 max-sm:flex-col max-sm:w-full max-sm:mb-2 max-sm:pr-0">
-                      <div class="bot-left max-sm:w-full max-sm:mb-2 max-sm:mt-2" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,4)" [multiple]="false">
+                    <div class="w-1/2 flex h-full pr-2 max-lg:flex-col max-lg:w-full max-lg:mb-2 max-lg:pr-0">
+                      <div class="bot-left max-lg:w-full max-lg:mb-2 max-lg:mt-2" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,4)" [multiple]="false">
                         <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                         <!-- <ngx-dropzone-label> -->
                           <div class="absolute">
                             <div>
                               <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                             </div>
-                            <div class="mt-1 max-md:text-[12px]">
+                            <div class="mt-1 max-lg:text-[12px]">
                               Drag & Drop
                             </div>
                           </div>
@@ -183,7 +183,7 @@
                           <div>
                             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                           </div>
-                          <div class="mt-1 max-md:text-[12px]">
+                          <div class="mt-1 max-lg:text-[12px]">
                             Drag & Drop
                           </div>
                         </div>
@@ -197,14 +197,14 @@
                       </div>
                     </div>
                     <!-- right side -->
-                    <div class="w-1/2 h-full max-sm:w-full">
+                    <div class="w-1/2 h-full max-lg:w-full">
                       <div class="bot-right" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,6)" [multiple]="false">
                         <!-- <img src = "https://cdn-icons-png.flaticon.com/512/8017/8017414.png" class="h-[36px] w-[37px]"> -->
                         <div class="absolute">
                           <div>
                             <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
                           </div>
-                          <div class="mt-1 max-md:text-[12px]">
+                          <div class="mt-1 max-lg:text-[12px]">
                             Drag & Drop
                           </div>
                         </div>
@@ -224,8 +224,8 @@
              <!-- Button Back & Save -->
              <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
 
-              <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-md  border-2 border-blue-1 text-lg max-md:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
-              <button class="bg-blue-1 h-[50px] w-[166px]  rounded-md text-white text-lg max-md:h-[40px]">SAVE</button>
+              <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-lg  border-2 border-blue-1 text-lg max-lg:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+              <button class="bg-blue-1 h-[50px] w-[166px]  rounded-lg text-white text-lg max-lg:h-[40px]">SAVE</button>
           </div>
         </form>
     </div>

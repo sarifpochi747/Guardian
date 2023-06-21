@@ -34,16 +34,12 @@ export class QuoteComponent {
     stagePadding:0,
     dots: false,
     navSpeed: 1000,
-    
     navText: ['', ''],
     responsive: {
       0: {
         items: 1
       },
-      400: {
-        items: 2
-      },
-      740: {
+      1024: {
         items: 3
       },
 

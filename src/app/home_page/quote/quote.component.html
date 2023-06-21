@@ -1,12 +1,12 @@
 <div class="bg-white-3  flex flex-col">
   <div class="text-center pt-[63px] max-sm:pt-[18px]">
-    <h2 class="text-blue-3 text-[44px] font-medium max-md:text-[20px] max-sm:text-[16px]">Join 1000+ Happy Premium Users</h2>
+    <h2 class="text-blue-3 text-[44px] font-medium max-lg:text-[20px] max-sm:text-[16px]">Join 1000+ Happy Premium Users</h2>
   </div>
-  <div class="md:flex-row justify-evenly items-center pt-[60px] pb-[65px] px-[20px] max-md:space-y-4 max-sm:px-9 max-sm:pt-[28px] max-sm:pb-[30px]">
+  <div class="lg:flex-row justify-evenly items-center pt-[60px] pb-[65px] px-[20px] max-lg:space-y-4 max-sm:px-9 max-sm:pt-[28px] max-sm:pb-[30px]">
     <owl-carousel-o [options]="customOptions" >
       <ng-template carouselSlide  *ngFor="let data of allComment">
         <div class="px-20 max-sm:px-0">
-          <p class="w-full  text-[20px] font-normal  text-black max-md:text-[16px] max-sm:text-[13px]">{{data.comment}}</p>
+          <p class="w-full  text-[20px] font-normal  text-black max-lg:text-[16px] max-sm:text-[13px]">{{data.comment}}</p>
           <div class="flex mt-[9px] items-center">
             <img class="w-[40px] h-[40px] rounded-[50%] max-sm:w-[25px] max-sm:h-[25px] object-cover " src={{data.userIcon}} alt="">
             <div class="ml-[9px]">
