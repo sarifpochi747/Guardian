@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthGuard } from "./shared/auth.guard";
 import { AuthGuard2 } from "./shared/auth.guard2";
+import { CustomerComponent } from './home_page/customer/customer.component';
 
 
 
@@ -63,6 +64,7 @@ const routes: Routes = [
     ProfileComponent,
     UserPageComponent,
     OurStandardComponent,
+    CustomerComponent,
   ],
 
   imports: [
