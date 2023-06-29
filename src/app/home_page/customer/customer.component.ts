@@ -1,6 +1,4 @@
 import { Component, OnInit,HostListener  } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-customer',
@@ -8,9 +6,6 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent {
-
-
-
   
   // slideShow
   customOptions: OwlOptions = {
