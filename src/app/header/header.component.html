@@ -1,9 +1,22 @@
 <header class="bg-white" >
-   <nav class= "flex justify-between items-center h-[110px] pt-[17px] pb-[13px] pl-[103px] max-lg:px-5   max-lg:justify-center">
+   <nav class= "flex items-center h-[110px] pt-[17px] pb-[13px] pl-[103px] max-lg:px-5   max-lg:justify-center">
     <a routerLink="">
       <div class="w-[155px] h-[110]">
         <img src = "../../assets/Image/Logo.png" class="object-cover">
       </div>
-     </a>
+    </a>
+    <div class="right-0 text-black-1 w-full flex justify-end">
+      <div class="menu" (click)="smoothScrollTo('Home')">หน้าหลัก</div>
+      <div class="menu" (click)="smoothScrollTo('Purpose')">เป้าหมายขององค์กร</div>
+      <div class="menu" (click)="smoothScrollTo('Standard')">มาตรฐานของเรา</div>
+      <div class="menu" (click)="smoothScrollTo('Customer')">ลูกค้าของเรา</div>
+      <div class="menu" (click)="smoothScrollTo('Comment')">Comment</div>
+      <div class="menu" (click)="smoothScrollTo('Contact')">Contact us</div>
+    </div>
    </nav>
 </header>
+
+
+
+
+
