@@ -14,6 +14,10 @@ export class HeroSectionComponent implements OnInit  {
   numbers: number[] = [];
   img:any[] = [];
   imtemp:any;
+  images:any[] = [];
+  showImages:any[] = [];
+  videos: any[] = [];
+  showVideos:any[] = [];
   fetchedText: string = "";
   sanitizedText!: SafeHtml;
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
@@ -36,6 +40,36 @@ export class HeroSectionComponent implements OnInit  {
         {imgs: this.heroes[0].img6},
         {imgs: this.heroes[0].img7}
       ]
+    })
+    //images
+    this.http.get<any[]>('http://localhost:5000/getImages')
+    .subscribe(response => {
+      this.images = response;
+      if(this.images.length > 7){
+        for (let i = this.images.length-1; i >= this.images.length-7; i--) {
+          this.showImages.push(this.images[i]);
+        }
+      }
+      else if(this.images.length <= 7){
+        for (let i = this.images.length-1; i >= 0; i--) {
+          this.showImages.push(this.images[i]);
+        }
+      }
+    })
+    //videos
+    this.http.get<any[]>('http://localhost:5000/getAllVideos')
+    .subscribe(response => {
+      this.videos = response;
+      if(this.videos.length > 3){
+        for (let i = this.videos.length-1; i >= this.videos.length-3; i--) {
+          this.showVideos.push(this.videos[i]);
+        }
+      }
+      else if(this.videos.length <= 3){
+        for (let i = this.videos.length-1; i >= 0; i--) {
+          this.showVideos.push(this.videos[i]);
+        }
+      }
     })
   }
   // slideShow

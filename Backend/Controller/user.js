@@ -1,5 +1,5 @@
 const { async } = require('rxjs');
-const {AddProfiles, AddGoals, AddStandard, AddComment,Users} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -105,7 +105,7 @@ const CreateComment = async (req,res)=>{
 
 
 //update status comment
-const UpdateComment = async (req,res)=>{ 
+const UpdateComment = async (req,res)=>{
   //[{},{},{}]
   const data = req.body
   for(let i=0;i<data.length;i++)
@@ -113,6 +113,30 @@ const UpdateComment = async (req,res)=>{
     await AddComment.update(data[i].idcomment,data[i].status)
   }
 }
+
+//Images
+const getAllImages = async (req, res) => {
+  const [ alladdimages ] = await AddImage.fetchAll();
+  res.json(alladdimages);
+};
+
+const createAllAddImages = async (req, res) => {
+  const { img } = req.body;
+  await AddImage.create(img);
+  res.status(201).send('Images uploaedd successfully');
+};
+
+//Video
+const getAllVideos = async (req, res) => {
+  const [ alladdVideos ] = await AddVideo.fetchAll();
+  res.json(alladdVideos);
+};
+
+const createAllAddVideos = async (req, res) => {
+  const { video } = req.body;
+  await AddVideo.create(video);
+  res.status(201).send('Videos uploaedd successfully');
+};
 
 
 //Authentication
@@ -178,5 +202,9 @@ module.exports = {
   UpdateComment,
   SignUp,
   Signin,
-  GetUser
+  GetUser,
+  getAllImages,
+  createAllAddImages,
+  getAllVideos,
+  createAllAddVideos
 };

@@ -15,7 +15,11 @@ const {
   UpdateComment,
   SignUp,
   Signin,
-  GetUser
+  GetUser,
+  getAllImages,
+  createAllAddImages,
+  getAllVideos,
+  createAllAddVideos
 } = require('../Controller/user');
 
 const multer = require('multer');
@@ -56,6 +60,14 @@ router.put('/UpdateAddStandard',upload.fields(uploadFields),UpdateAllAddStandard
 router.get("/getComment",getAllComment)
 router.post("/CreateComment",CreateComment)
 router.put("/UpdateComment",UpdateComment)
+
+//Add Images
+router.get("/getImages",getAllImages)
+router.post("/createAllAddImages",createAllAddImages)
+
+//Add Videos
+router.get("/getAllVideos",getAllVideos)
+router.post("/createAllAddVideos",createAllAddVideos)
 
 //Authentication
 router.post('/register-user',SignUp);
