@@ -107,6 +107,7 @@ AddStandard.update = function(id,title,descript,sub_title1,sub_descript1,img1,su
     );
 };
 
+//comment
 
 function AddComment(name,brandManager,comment,userIcon,status){
   this.name = name;
@@ -134,6 +135,28 @@ AddComment.update = function(id,status){
   );
 
 }
+
+//customer
+
+function AddCustomer(title,descript,customerIcon){
+  this.title = title;
+  this.descript = descript;
+  this.customerIcon = customerIcon;
+}
+
+
+AddCustomer.fetchAll = function() {
+  return db.execute('SELECT * FROM customer ');
+};
+
+
+AddCustomer.create = function(title,description,customerIcon){
+  return db.execute(
+    'INSERT INTO customer(title,description,customerIcon) VALUES (?,?,?)',
+    [title,description,customerIcon]
+    ) 
+}
+
 
 //Images
 function AddImage(img){
@@ -193,4 +216,4 @@ Users.GetUser = function(id){
 }
 
 
-module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users,AddImage,AddVideo};
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users,AddImage,AddVideo,AddCustomer};

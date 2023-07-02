@@ -19,7 +19,9 @@ const {
   getAllImages,
   createAllAddImages,
   getAllVideos,
-  createAllAddVideos
+  createAllAddVideos,
+  getCustomer,
+  createCustomer
 } = require('../Controller/user');
 
 const multer = require('multer');
@@ -64,6 +66,11 @@ router.put("/UpdateComment",UpdateComment)
 //Add Images
 router.get("/getImages",getAllImages)
 router.post("/createAllAddImages",createAllAddImages)
+
+
+//Add Customer 
+router.get("/getCustomer",getCustomer)
+router.post("/createCustomer",createCustomer)
 
 //Add Videos
 router.get("/getAllVideos",getAllVideos)

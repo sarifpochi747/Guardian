@@ -5,56 +5,13 @@
     </div>
     <div class=" pt-[28px] ">
         <owl-carousel-o [options]="customOptions" >
-            <ng-template carouselSlide  >
+            <ng-template carouselSlide *ngFor="let data of allCustomer" >
                 <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
+                    <div class="w-[177px] h-[177px] max-lg:w-[130px] max-lg:h-[130px]">
+                        <img class="w-full h-full object-cover rounded-[33px] " src={{data.customerIcon}} alt="">
                     </div>
                 </div>
             </ng-template>
-            <ng-template carouselSlide  >
-                <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide  >
-                <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide  >
-                <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide  >
-                <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide  >
-                <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide  >
-                <div class="p-6 flex justify-center">
-                    <div class="w-[177px] h-[177px]">
-                        <img class="w-full h-full" src="../../../assets/Image/test1.png" alt="">
-                    </div>
-                </div>
-            </ng-template>
-
           </owl-carousel-o>
     </div>
 </div>

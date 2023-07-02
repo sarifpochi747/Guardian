@@ -1,5 +1,5 @@
 const { async } = require('rxjs');
-const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -114,6 +114,26 @@ const UpdateComment = async (req,res)=>{
   }
 }
 
+
+//get customer
+const getCustomer = async(req,res)=>{
+  const [getCustomer] = await AddCustomer.fetchAll();
+  res.status(200).json(getCustomer)
+}
+
+//create customer 
+const createCustomer = async(req,res)=>{
+  const {title,description,customerIcon} = req.body
+  await AddCustomer.create(title,description,customerIcon)
+  res.status(200).json({msg:"success"})
+}
+
+
+//update customer
+const UpdateAddCustomer = async(req,res)=>{
+
+}
+
 //Images
 const getAllImages = async (req, res) => {
   const [ alladdimages ] = await AddImage.fetchAll();
@@ -206,5 +226,8 @@ module.exports = {
   getAllImages,
   createAllAddImages,
   getAllVideos,
-  createAllAddVideos
+  createAllAddVideos,
+  getCustomer,
+  UpdateAddCustomer,
+  createCustomer
 };
