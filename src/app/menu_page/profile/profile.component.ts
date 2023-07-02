@@ -18,6 +18,9 @@ export class ProfileComponent implements OnInit  {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
   files: any[] = [];
   showPrev: any[] = [];
+  imgFiles: any[] = [];
+  imgNames: any[] = [];
+  vidFiles: any[] = [];
 
   ngOnInit():void {
     this.http.get<any[]>('http://localhost:5000/addProfiles')
@@ -28,11 +31,48 @@ export class ProfileComponent implements OnInit  {
           this.imtemp = this.heroes[0][fieldname];
           this.files[i-1] = this.imtemp;
         }
-        // this.heroes[0].title = "";
-        // this.heroes[0].descript = "";
     })
+
+    // this.http.get<any[]>('http://localhost:5000/getImages')
+    // .subscribe(response => {
+    //   this.imgFiles = response
+    //   console.log(this.imgFiles);
+    // })
   }
 
+  onSelectNew(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+
+    if (files && files.length > 0) {
+      if(files[0].type === 'video/mp4') {
+        const file = files[0];
+        this.imgNames.push(file.name);
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          const base64String = reader.result as string;
+          this.vidFiles.push({"video":base64String})
+          console.log(this.vidFiles);
+        }
+      }
+      if(files[0].size > 5000000 && files[0].type.startsWith('image/')){
+        alert("File must not large than 5MB. size of this file is: " + files[0].size + "bytes")
+      }
+      else if(files[0].type === 'image/png' || files[0].type === 'image/jpeg'){
+        const file = files[0];
+        this.imgNames.push(file.name);
+        // Convert the selected file to base64
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+        const base64String = reader.result as string;
+        this.imgFiles.push({"img":base64String})
+        console.log(this.imgFiles);
+      }
+      };
+    }
+  }
 
 	onSelect(event: any,id:any) {
     const file = event.addedFiles[0];
@@ -67,6 +107,20 @@ export class ProfileComponent implements OnInit  {
         .subscribe((response) => {
           console.log('Form updated successfully:', response);
       });
+
+      for(let i = 0; i < this.imgFiles.length; i++){
+        this.http.post('http://localhost:5000/createAllAddImages', this.imgFiles[i])
+          .subscribe((response) => {
+            console.log('Form updated successfully:', response);
+        });
+      }
+
+      for(let i = 0; i < this.vidFiles.length; i++){
+        this.http.post('http://localhost:5000/createAllAddVideos', this.vidFiles[i])
+          .subscribe((response) => {
+            console.log('Form updated successfully:', response);
+        });
+      }
 
       window.location.reload();
     }

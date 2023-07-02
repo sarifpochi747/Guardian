@@ -87,3 +87,8 @@ CREATE TABLE users (
   password VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 );
+
+-- @block
+CREATE TABLE videos (
+  video LONGTEXT NULL
+);

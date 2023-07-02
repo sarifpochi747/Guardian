@@ -125,7 +125,7 @@ AddComment.create = function(name,brandManager,comment,userIcon,status){
   return db.execute(
     'INSERT INTO comment(name,brandManager,comment,userIcon,status) VALUES (?,?,?,?,?)',
     [name,brandManager,comment,userIcon,status]
-    ) 
+    )
 }
 AddComment.update = function(id,status){
   return db.execute(
@@ -135,27 +135,37 @@ AddComment.update = function(id,status){
 
 }
 
-
-function AddCustomer(title,descript,customerIcon){
-  this.title = title;
-  this.descript = descript;
-  this.customerIcon = customerIcon;
+//Images
+function AddImage(img){
+  this.img = img;
 }
 
-
-AddCustomer.fetchAll = function() {
-  return db.execute('SELECT * FROM customer ');
+AddImage.fetchAll = function() {
+  return db.execute('SELECT * FROM images');
 };
 
-
-AddCustomer.create = function(title,description,customerIcon){
+AddImage.create = function(img) {
   return db.execute(
-    'INSERT INTO customer(title,description,customerIcon) VALUES (?,?,?)',
-    [title,description,customerIcon]
-    ) 
+    'INSERT INTO images(img) VALUES (?)',
+    [img]
+  );
+};
+
+//Video
+function AddVideo(video){
+  this.video = video;
 }
 
+AddVideo.fetchAll = function() {
+  return db.execute('SELECT * FROM videos');
+};
 
+AddVideo.create = function(video) {
+  return db.execute(
+    'INSERT INTO videos(video) VALUES (?)',
+    [video]
+  );
+};
 
 
 
@@ -183,4 +193,4 @@ Users.GetUser = function(id){
 }
 
 
-module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,AddCustomer,Users};
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users};

@@ -22,19 +22,24 @@
               </div>
             </div>
             <!-- Drag and drop -->
-            <div class="pt-[40px] pr-2">
-              <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" [multiple]="false">
-                <img src="" class="h-full w-1/2 object-scale-down">
-              </div>
-              <!-- <ngx-dropzone-label> -->
-                <div class="absolute">
-                  <div>
-                    <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
-                  </div>
-                  <div class="mt-1 max-lg:text-[12px]">
-                    Drag & Drop
-                  </div>
+            <div class="w-1/4  justify-end flex px-1 max-lg:w-full max-lg:justify-center max-lg:pb-3 ">
+              <ngx-dropzone class="flex flex-col justify-center text-center w-[251px] h-[112px!important] items-center border-dashed border-2 border-grey-2 rounded-lg" 
+              ngx-dropzone [accept]="'image/*'"
+              >
+                <ngx-dropzone-label>
+                <div>
+                  <i class="fa-solid fa-arrow-up-from-bracket fa-xl" style="color: #a61f23;"></i>
                 </div>
+                <div class="mt-5 max-lg:text-sm text-black">
+                  Drag & Drop
+                </div>
+              </ngx-dropzone-label>
+              <div >
+                <ngx-dropzone-image-preview  >
+                  <ngx-dropzone-label ></ngx-dropzone-label>
+                </ngx-dropzone-image-preview>
+              </div>
+              </ngx-dropzone>
             </div>
           </div>
           <div>

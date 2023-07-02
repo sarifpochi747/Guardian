@@ -1,5 +1,5 @@
 const { async } = require('rxjs');
-const {AddProfiles, AddGoals, AddStandard, AddComment,Users, AddCustomer} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -105,7 +105,7 @@ const CreateComment = async (req,res)=>{
 
 
 //update status comment
-const UpdateComment = async (req,res)=>{ 
+const UpdateComment = async (req,res)=>{
   //[{},{},{}]
   const data = req.body
   for(let i=0;i<data.length;i++)
@@ -113,28 +113,6 @@ const UpdateComment = async (req,res)=>{
     await AddComment.update(data[i].idcomment,data[i].status)
   }
 }
-
-
-
-//get customer
-const getCustomer = async(req,res)=>{
-  const [getCustomer] = await AddCustomer.fetchAll();
-  res.status(200).json(getCustomer)
-}
-
-//create customer 
-const createCustomer = async(req,res)=>{
-  const {title,descript,customerIcon} = req.body
-  await AddCustomer.create(title,descript,customerIcon)
-  res.status(200).json({msg:"success"})
-}
-
-
-//update customer
-const UpdateAddCustomer = async(req,res)=>{
-
-}
-
 
 
 //Authentication
@@ -206,8 +184,5 @@ module.exports = {
   UpdateComment,
   SignUp,
   Signin,
-  GetUser,
-  getCustomer,
-  UpdateAddCustomer,
-  createCustomer
+  GetUser
 };
