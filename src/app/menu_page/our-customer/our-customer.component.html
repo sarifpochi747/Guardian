@@ -1,0 +1,51 @@
+<app-header-user></app-header-user>
+<div class=" py-[40px] px-[103px] max-lg:px-[40px] max-sm:px-6 ">
+    <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-sm:px-6">
+        <div class="text-[26px] max-lg:text-[18px] max-sm:text-[14px]">
+            OUR CUSTOMER
+        </div>
+        <form class="" #myForm="ngForm" >
+          <div class="overflow-y-scroll max-h-[100%]" *ngFor="let i of n" >
+            <!-- Form  -->
+            <div class="pt-[18px] mr-1">
+              <label class="text-[0.9vw] leading-6 text-grey-5 max-lg:text-[14px]">Title (sub)</label>
+              <div class="pt-[8px] flex ">
+                <input name="sub_title1" type="text" class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-grey-4 max-lg:h-[40px] max-sm:w-full">
+                  <button (click)="addElement()" class="ml-[10px] w-[51px] h-[51px] text-green-1 text-[21px] rounded-lg   border-[1px] border-green-1 max-lg:h-[40px] max-lg:text-[15px]" >
+                    <i class="ri-add-circle-line"></i></button>
+              </div>
+            </div>
+            <div class="pt-[18px] mr-1">
+              <label class="text-[0.9vw] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
+              <div class="pt-[8px]">
+                <input name="sub_descript1" type="text" class="w-2/3 h-[51px] rounded-lg px-[20px] border-2 border-grey-4 max-lg:h-[40px] max-sm:w-full">
+              </div>
+            </div>
+            <!-- Drag and drop -->
+            <div class="pt-[40px] pr-2">
+              <div class="imgs-ngx" ngx-dropzone [accept]="'image/*'" [multiple]="false">
+                <img src="" class="h-full w-1/2 object-scale-down">
+              </div>
+              <!-- <ngx-dropzone-label> -->
+                <div class="absolute">
+                  <div>
+                    <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
+                  </div>
+                  <div class="mt-1 max-lg:text-[12px]">
+                    Drag & Drop
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div>
+            <button (click)="addElement()"></button>
+          </div>
+            <!-- Button Back & Save -->
+            <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
+
+              <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-lg   border-[1px] border-blue-1 text-lg max-lg:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+              <button class="bg-blue-1 h-[50px] w-[166px]  rounded-lg text-white text-lg max-lg:h-[40px]" type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>

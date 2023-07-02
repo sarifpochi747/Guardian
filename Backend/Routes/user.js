@@ -15,7 +15,10 @@ const {
   UpdateComment,
   SignUp,
   Signin,
-  GetUser
+  GetUser,
+  getCustomer,
+  createCustomer,
+  UpdateAddCustomer
 } = require('../Controller/user');
 
 const multer = require('multer');
@@ -57,9 +60,19 @@ router.get("/getComment",getAllComment)
 router.post("/CreateComment",CreateComment)
 router.put("/UpdateComment",UpdateComment)
 
+//Add Customer 
+router.get("/getCustomer",getCustomer)
+router.post("/createCustomer",createCustomer)
+
+
 //Authentication
 router.post('/register-user',SignUp);
 router.post('/signin',Signin);
 router.get('/user-profile/:id',GetUser);
+
+
+
+
+
 module.exports = router;
 

@@ -136,6 +136,26 @@ AddComment.update = function(id,status){
 }
 
 
+function AddCustomer(title,descript,customerIcon){
+  this.title = title;
+  this.descript = descript;
+  this.customerIcon = customerIcon;
+}
+
+
+AddCustomer.fetchAll = function() {
+  return db.execute('SELECT * FROM customer ');
+};
+
+
+AddCustomer.create = function(title,description,customerIcon){
+  return db.execute(
+    'INSERT INTO customer(title,description,customerIcon) VALUES (?,?,?)',
+    [title,description,customerIcon]
+    ) 
+}
+
+
 
 
 
@@ -163,4 +183,4 @@ Users.GetUser = function(id){
 }
 
 
-module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users};
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,AddCustomer,Users};

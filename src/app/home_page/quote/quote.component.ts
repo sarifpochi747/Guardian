@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class QuoteComponent {
 
   //getAll comment
-  allComment:any[] = []
+  allComment:any[] = [];
   
 
   constructor(private http: HttpClient) { }
@@ -19,6 +19,7 @@ export class QuoteComponent {
     this.http.get<any[]>('http://localhost:5000/getComment')
     .subscribe(response => {
       this.allComment = response.filter(commnet=>commnet.status == true);
+      console.log(this.allComment)
     })
     
   }

@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from "./shared/auth.guard";
 import { AuthGuard2 } from "./shared/auth.guard2";
 import { CustomerComponent } from './home_page/customer/customer.component';
+import { OurCustomerComponent } from './menu_page/our-customer/our-customer.component';
 
 
 
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'menu/organization', component: OrganizationPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/profile', component: ProfileComponent,canActivate: [AuthGuard] },
   { path: 'menu/ourstandard', component: OurStandardComponent,canActivate: [AuthGuard] },
+  { path: 'menu/ourcustomer', component: OurCustomerComponent,canActivate: [AuthGuard] },
   { path: 'menu/user', component: UserPageComponent,canActivate: [AuthGuard] },
 ];
 @NgModule({
@@ -65,6 +67,7 @@ const routes: Routes = [
     UserPageComponent,
     OurStandardComponent,
     CustomerComponent,
+    OurCustomerComponent,
   ],
 
   imports: [

@@ -16,6 +16,7 @@ theme: {
       "white-1":"#F2F3F3",
       "white-2":"#F6F6F6",
       "white-3":"#FAF9F7",
+      "green-1":"#0EA552"
 
     },
   },

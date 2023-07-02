@@ -1,5 +1,5 @@
 const { async } = require('rxjs');
-const {AddProfiles, AddGoals, AddStandard, AddComment,Users} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users, AddCustomer} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -115,6 +115,28 @@ const UpdateComment = async (req,res)=>{
 }
 
 
+
+//get customer
+const getCustomer = async(req,res)=>{
+  const [getCustomer] = await AddCustomer.fetchAll();
+  res.status(200).json(getCustomer)
+}
+
+//create customer 
+const createCustomer = async(req,res)=>{
+  const {title,descript,customerIcon} = req.body
+  await AddCustomer.create(title,descript,customerIcon)
+  res.status(200).json({msg:"success"})
+}
+
+
+//update customer
+const UpdateAddCustomer = async(req,res)=>{
+
+}
+
+
+
 //Authentication
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -162,6 +184,12 @@ const GetUser = async(req, res) => {
 }
 
 
+
+
+
+
+
+
 //Export module
 module.exports = {
   getAllAddProfiles,
@@ -178,5 +206,8 @@ module.exports = {
   UpdateComment,
   SignUp,
   Signin,
-  GetUser
+  GetUser,
+  getCustomer,
+  UpdateAddCustomer,
+  createCustomer
 };
