@@ -11,7 +11,7 @@
               <label class="text-[0.9vw] leading-6 text-grey-5 max-lg:text-[14px]">Title (sub)</label>
               <div class="pt-[8px] flex ">
                 <input name="title" type="text" [(ngModel)]="data.title" class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-grey-4 max-lg:h-[40px] max-sm:w-full">
-                  <button (click)="addElement()" class="ml-[10px] w-[51px] h-[51px] text-green-1 text-[21px] rounded-lg   border-[1px] border-green-1 max-lg:h-[40px] max-lg:text-[15px]" >
+                  <button type="button" (click)="addElement()" class="ml-[10px] w-[51px] h-[51px] text-green-1 text-[21px] rounded-lg   border-[1px] border-green-1 max-lg:h-[40px] max-lg:text-[15px]" >
                     <i class="ri-add-circle-line"></i></button>
               </div>
             </div>
@@ -40,9 +40,6 @@
                 </ngx-dropzone>
             </div>
     
-          </div>
-          <div>
-            <button (click)="addElement()"></button>
           </div>
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
