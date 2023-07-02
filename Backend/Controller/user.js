@@ -129,10 +129,8 @@ const createCustomer = async(req,res)=>{
 }
 
 
-//update customer
-const UpdateAddCustomer = async(req,res)=>{
 
-}
+
 
 //Images
 const getAllImages = async (req, res) => {
@@ -206,6 +204,12 @@ const GetUser = async(req, res) => {
 }
 
 
+
+
+
+
+
+
 //Export module
 module.exports = {
   getAllAddProfiles,
@@ -228,6 +232,5 @@ module.exports = {
   getAllVideos,
   createAllAddVideos,
   getCustomer,
-  UpdateAddCustomer,
   createCustomer
 };

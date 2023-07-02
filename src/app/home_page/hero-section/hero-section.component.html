@@ -19,7 +19,7 @@
 
   <!-- only one clip  -->
   <div *ngIf="showVideos.length <= 1">
-  <div class="flex w-full min-h-[550px] justify-center mt-9" *ngFor="let data of showVideos">
+  <div class="flex w-full min-h-[550px] justify-center mt-0" *ngFor="let data of showVideos">
     <video width="800" height="600" controls  >
       <source [src]="data.video" type="video/mp4">
     </video>

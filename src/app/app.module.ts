@@ -45,6 +45,7 @@ const routes: Routes = [
   { path: 'menu/organization', component: OrganizationPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/profile', component: ProfileComponent,canActivate: [AuthGuard] },
   { path: 'menu/ourstandard', component: OurStandardComponent,canActivate: [AuthGuard] },
+  { path: 'menu/ourcustomer', component: OurCustomerComponent,canActivate: [AuthGuard] },
   { path: 'menu/user', component: UserPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/ourcustomer', component: OurCustomerComponent,canActivate: [AuthGuard] },
 ];
