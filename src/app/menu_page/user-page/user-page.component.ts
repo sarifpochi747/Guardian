@@ -19,7 +19,6 @@ export class UserPageComponent implements OnInit{
   status:boolean = true;
   //getAll comment
   allComment:any[] = []
-  //check for sort 
   
   
   onTableDataChange(event : any)
