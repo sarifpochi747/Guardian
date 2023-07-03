@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit  {
   imgFiles: any[] = [];
   imgNames: any[] = [];
   vidFiles: any[] = [];
-
+  selectedFile: File | null = null;
   ngOnInit():void {
     this.http.get<any[]>('http://localhost:5000/addProfiles')
     .subscribe(response => {
@@ -32,12 +32,6 @@ export class ProfileComponent implements OnInit  {
           this.files[i-1] = this.imtemp;
         }
     })
-
-    // this.http.get<any[]>('http://localhost:5000/getImages')
-    // .subscribe(response => {
-    //   this.imgFiles = response
-    //   console.log(this.imgFiles);
-    // })
   }
 
   onSelectNew(event: Event) {
@@ -46,16 +40,11 @@ export class ProfileComponent implements OnInit  {
 
     if (files && files.length > 0) {
       if(files[0].type === 'video/mp4') {
-        const file = files[0];
-        this.imgNames.push(file.name);
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          const base64String = reader.result as string;
-          this.vidFiles.push({"video":base64String})
-          console.log(this.vidFiles);
-        }
+        this.selectedFile = files[0];
+        this.imgNames.push(this.selectedFile.name);
+
       }
+
       if(files[0].size > 5000000 && files[0].type.startsWith('image/')){
         alert("File must not large than 5MB. size of this file is: " + files[0].size + "bytes")
       }
@@ -73,25 +62,6 @@ export class ProfileComponent implements OnInit  {
       };
     }
   }
-
-	onSelect(event: any,id:any) {
-    const file = event.addedFiles[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const base64String = reader.result as string;
-      this.files.splice(id,1,base64String);
-    };
-
-
-    this.showPrev.splice(id,1,...event.addedFiles);
-    console.log(this.showPrev);
-  }
-
-	onRemove(event:any,id:any) {
-		this.files.splice(id, 1,null);
-    this.showPrev.splice(id, 1,null);
-	}
 
   updateForm() {
     if(this.heroes[0].title == "" || this.heroes[0].descript == ""){
@@ -115,14 +85,23 @@ export class ProfileComponent implements OnInit  {
         });
       }
 
-      for(let i = 0; i < this.vidFiles.length; i++){
-        this.http.post('http://localhost:5000/createAllAddVideos', this.vidFiles[i])
-          .subscribe((response) => {
-            console.log('Form updated successfully:', response);
-        });
-      }
+      if (this.selectedFile) {
+        const formData = new FormData();
+        formData.set('video', this.selectedFile);
+        console.log(formData);
 
-      window.location.reload();
+        this.http.post<any>('http://localhost:5000/createAllNewAddVideos', formData).subscribe(
+          (response) => {
+            // Handle response from the server after successful upload
+            console.log('Upload successful:', response);
+          },
+          (error) => {
+            // Handle error response from the server
+            console.error('Upload error:', error);
+          }
+        );
+      }
+      alert('Form updated successfully')
     }
   }
 

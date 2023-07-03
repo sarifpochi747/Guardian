@@ -21,14 +21,30 @@ const {
   getAllVideos,
   createAllAddVideos,
   getCustomer,
-  createCustomer
+  createCustomer,
+  getAllNewVideos,
+  createAllNewAddVideos
 } = require('../Controller/user');
 
 const multer = require('multer');
 const path = require('path');
 
-const storage = multer.memoryStorage();
-const upload = multer({ dest: 'uploads/',storage: storage});
+// Create a multer storage instance
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    // Specify the destination folder where the file should be saved
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    // Generate a unique file name for the uploaded file
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const fileName = file.fieldname + '-' + uniqueSuffix + '.mp4';
+    cb(null, fileName);
+  }
+});
+
+// Create a multer upload instance
+const upload = multer({ storage });
 
 const router = express.Router();
 
@@ -68,13 +84,17 @@ router.get("/getImages",getAllImages)
 router.post("/createAllAddImages",createAllAddImages)
 
 
-//Add Customer 
+//Add Customer
 router.get("/getCustomer",getCustomer)
 router.post("/createCustomer",createCustomer)
 
 //Add Videos
 router.get("/getAllVideos",getAllVideos)
 router.post("/createAllAddVideos",createAllAddVideos)
+
+//New videos
+router.get("/getAllNewVideos",getAllNewVideos)
+router.post("/createAllNewAddVideos",upload.single('video'),createAllNewAddVideos)
 
 //Authentication
 router.post('/register-user',SignUp);

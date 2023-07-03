@@ -19,9 +19,9 @@
 
   <!-- only one clip  -->
   <div *ngIf="showVideos.length <= 1">
-  <div class="flex w-full min-h-[550px] justify-center mt-0" *ngFor="let data of showVideos">
-    <video width="800" height="600" controls  >
-      <source [src]="data.video" type="video/mp4">
+  <div class="flex w-full min-h-[550px] justify-center mt-0">
+    <video width="800" height="600" controls  *ngFor="let data of showVideos">
+      <source [src]="'http://localhost:5000/videos/' + data.video" type="video/mp4">
     </video>
   </div>
 </div>
@@ -30,7 +30,7 @@
   <div class="flex h-full mt-9 justify-center w-full max-lg:flex-col max-lg:item-center" *ngIf="showVideos.length > 1">
     <div class="mr-3 w-1/3 max-lg:w-full max-lg:item-center max-lg:justify-center max-lg:flex max-lg:mt-[8px]" *ngFor="let data of showVideos">
       <video width="500" height="300" controls  >
-        <source [src]="data.video" type="video/mp4">
+        <source [src]="'http://localhost:5000/videos/' + data.video" type="video/mp4">
       </video>
     </div>
   </div>

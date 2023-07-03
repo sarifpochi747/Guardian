@@ -57,7 +57,7 @@ export class HeroSectionComponent implements OnInit  {
       }
     })
     //videos
-    this.http.get<any[]>('http://localhost:5000/getAllVideos')
+    this.http.get<any[]>('http://localhost:5000/getAllNewVideos')
     .subscribe(response => {
       this.videos = response;
       if(this.videos.length > 3){

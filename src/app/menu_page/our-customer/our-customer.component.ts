@@ -53,9 +53,9 @@ export class OurCustomerComponent {
       console.log(this.data)
       this.http.post('http://localhost:5000/createCustomer',this.data )
         .subscribe((response) => {
+          alert('Form added successfully')
           console.log('Form updated successfully:', response);
       });
-      window.location.reload();
     }
     else
     {
@@ -63,7 +63,7 @@ export class OurCustomerComponent {
     }
 
   }
-  
+
 
 
 

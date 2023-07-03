@@ -89,6 +89,8 @@ CREATE TABLE users (
 );
 
 -- @block
-CREATE TABLE videos (
-  video LONGTEXT NULL
+CREATE TABLE Newvideos (
+  id INT NOT NULL auto_increment,
+  video LONGTEXT NULL,
+  PRIMARY KEY (id)
 );
