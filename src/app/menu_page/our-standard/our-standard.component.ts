@@ -60,9 +60,12 @@ export class OurStandardComponent implements OnInit  {
       this.http.put('http://localhost:5000/UpdateAddStandard', this.heroes[0])
         .subscribe((response) => {
           console.log('Form updated successfully:', response);
-      });
-
-      window.location.reload();
+      },
+      (error) => {
+        console.error('Error updating form:', error);
+      }
+      );
+      alert('Form updated successfully')
     }
   }
   @ViewChild('myTextarea') myTextarea: any;

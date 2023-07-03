@@ -154,7 +154,7 @@ AddCustomer.create = function(title,description,customerIcon){
   return db.execute(
     'INSERT INTO customer(title,description,customerIcon) VALUES (?,?,?)',
     [title,description,customerIcon]
-    ) 
+    )
 }
 
 
@@ -190,6 +190,21 @@ AddVideo.create = function(video) {
   );
 };
 
+//edit videos
+function AddNewVideo(video){
+  this.video = video;
+}
+
+AddNewVideo.fetchAll = function() {
+  return db.execute('SELECT * FROM newvideos');
+};
+
+AddNewVideo.create = function(video) {
+  return db.execute(
+    'INSERT INTO newvideos(video) VALUES (?)',
+    [video]
+  );
+};
 
 
 
@@ -216,4 +231,4 @@ Users.GetUser = function(id){
 }
 
 
-module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users,AddImage,AddVideo,AddCustomer};
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo};

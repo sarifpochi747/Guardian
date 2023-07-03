@@ -1,5 +1,5 @@
 const { async } = require('rxjs');
-const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -121,7 +121,7 @@ const getCustomer = async(req,res)=>{
   res.status(200).json(getCustomer)
 }
 
-//create customer 
+//create customer
 const createCustomer = async(req,res)=>{
   const {title,description,customerIcon} = req.body
   await AddCustomer.create(title,description,customerIcon)
@@ -154,6 +154,24 @@ const createAllAddVideos = async (req, res) => {
   const { video } = req.body;
   await AddVideo.create(video);
   res.status(201).send('Videos uploaedd successfully');
+};
+
+//edit videos
+const getAllNewVideos = async (req, res) => {
+  const [ alladdnewVideos ] = await AddNewVideo.fetchAll();
+  res.json(alladdnewVideos);
+};
+
+const createAllNewAddVideos = async (req, res) => {
+  try {
+    const fileName = req.file.filename;
+    console.log(fileName);
+    await AddNewVideo.create(fileName);
+    res.status(200).json({ message: 'File uploaded successfully', fileName });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred' });
+  }
 };
 
 
@@ -232,5 +250,7 @@ module.exports = {
   getAllVideos,
   createAllAddVideos,
   getCustomer,
-  createCustomer
+  createCustomer,
+  getAllNewVideos,
+  createAllNewAddVideos
 };

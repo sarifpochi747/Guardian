@@ -57,8 +57,7 @@ export class OrganizationPageComponent implements OnInit  {
         .subscribe((response) => {
           console.log('Form updated successfully:', response);
       });
-
-      window.location.reload();
+      alert('Form updated successfully')
     }
   }
   @ViewChild('myTextarea') myTextarea: any;
