@@ -19,8 +19,8 @@ export class UserPageComponent implements OnInit{
   status:boolean = true;
   //getAll comment
   allComment:any[] = []
-  
-  
+  //check for sort
+
   onTableDataChange(event : any)
   {
     this.page = event
@@ -32,18 +32,15 @@ export class UserPageComponent implements OnInit{
     if (event.defaultPrevented) {
       return;
     }
-  
+
     // Prevent the event from being handled again
     event.preventDefault();
-  
+
     // Call toggleSwitch()
     this.toggleSwitch(commentId, status);
   }
-  
 
-
-
-  // update to sql when web reload 
+  // update to sql when web reload
   UpdateToDatabase(){
     console.log("update to database()")
     this.http.put('http://localhost:5000/UpdateComment', this.allComment)//[{},{},{}]
@@ -51,7 +48,7 @@ export class UserPageComponent implements OnInit{
           console.log("PUT : ",response);
       });
   }
-  
+
 
   toggleSwitch(commentId: number, status: boolean): void {
     const commentIndex = this.allComment.findIndex(comment => comment.idcomment === commentId); // find the index of the comment with matching comment ID
@@ -61,45 +58,25 @@ export class UserPageComponent implements OnInit{
     console.log(this.allComment)
 
   }
-  
-  
-    
+
   getAllComment(): void {
 
-    this.http.get<any[]>('http://localhost:5000/getComment').subscribe(response => {  
+    this.http.get<any[]>('http://localhost:5000/getComment').subscribe(response => {
       this.allComment = response
       console.log(this.allComment);
     });
   }
 
-  @HostListener('window:beforeunload', ['$event'])
-  detectPageRefresh(event?: Event) {
-    if (!event || event.type === 'beforeunload') {
-      this.UpdateToDatabase();
-      this.getAllComment()
-    }
-    console.log("refress")
-  }
-
   ngOnInit():void {
-
-    this.detectPageRefresh();
-
-    // update to database when url change
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-
-        // The page URL has changed, call your function here
-        this.UpdateToDatabase();
-        this.getAllComment()
-      }
-    });
-    
     // get all comment
     this.getAllComment()
   }
 
-
+  //Final edit comment
+  SubmitButton = () => {
+    this.UpdateToDatabase();
+    alert("Form updated successfully")
+  }
 
 
   //sort comment
@@ -131,7 +108,7 @@ export class UserPageComponent implements OnInit{
     this.sortAscendingCompany= !this.sortAscendingCompany
 
   }
-  
+
     //sort BrandManager
   sortBrandManager(){
     if(this.sortAscendingBrandManager)

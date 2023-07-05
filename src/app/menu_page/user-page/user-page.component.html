@@ -4,7 +4,7 @@
         <div class="text-[26px] text-blue-3 font-medium font-urbanist max-md:text-[16px]">USER</div>
         <div class="relative overflow-x-auto py-[18px] max-md:overflow-scroll ">
             <table class=" w-full text-[19px] text-left ">
-                <thead class="text-lg text-white bg-blue-2 border-[1px] border-blue-2 rounded-lg  ">  
+                <thead class="text-lg text-white bg-blue-2 border-[1px] border-blue-2 rounded-lg  ">
                     <tr class="max-md:text-[14px] font-urbanist">
                         <th scope="col" class="px-6 py-3">
                             <div>Comment</div>
@@ -17,7 +17,7 @@
                         </th>
                         <th scope="col" class="px-6 py-3 ">
                             <div class="flex justify-between items-center">
-                                <div>Company</div>                         
+                                <div>Company</div>
                                 <div class="max-md:mx-3 cursor-pointer " (click)="sortCompany()">
                                     <i class="ri-arrow-up-down-fill"></i>
                                 </div>
@@ -30,7 +30,7 @@
                                     <i class="ri-arrow-up-down-fill"></i>
                                 </div>
                             </div>
-                            
+
                         </th >
                         <th scope="col" class="px-6 py-3">
                             <span class="sr-only">Action</span>
@@ -59,7 +59,7 @@
         </div>
         <div class="pagination pt-[2px] pb-[51px] flex justify-end max-md:pb-3 max-md:justify-center">
             <pagination-controls
-                
+
                 previousLabel="Prev"
                 nextLabel="Next"
                 (pageChange)="onTableDataChange($event)"
@@ -67,6 +67,11 @@
 
             </pagination-controls>
         </div>
-        
+
     </div>
+    <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
+
+      <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-lg   border-[1px] border-blue-1 text-lg max-lg:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+      <button class="bg-blue-1 h-[50px] w-[166px]  rounded-lg text-white text-lg max-lg:h-[40px]" type="submit" (click)="SubmitButton()">SAVE</button>
+  </div>
 </div>
