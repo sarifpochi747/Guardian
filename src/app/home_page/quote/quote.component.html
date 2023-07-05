@@ -6,7 +6,7 @@
     <owl-carousel-o [options]="customOptions" >
       <ng-template carouselSlide  *ngFor="let data of allComment">
         <div class="px-20 max-sm:px-0">
-          <p class="w-full  text-[20px] font-normal  text-black max-lg:text-[16px] max-sm:text-[13px]">{{data.comment}}</p>
+          <p class="w-full  text-[20px] font-normal  text-black max-lg:text-[16px] max-sm:text-[13px] line-clamp-3 hover:line-clamp-none">{{data.comment}}</p>
           <div class="flex mt-[9px] items-center">
             <img class="w-[40px] h-[40px] rounded-[50%] max-sm:w-[25px] max-sm:h-[25px] object-cover " src={{data.userIcon}} alt="">
             <div class="ml-[9px]">

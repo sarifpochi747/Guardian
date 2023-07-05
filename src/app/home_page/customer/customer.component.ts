@@ -25,12 +25,13 @@ export class CustomerComponent {
   
   // slideShow
   customOptions: OwlOptions = {
+    rtl:true,
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     autoplay:true,
-    autoplayTimeout:3000,
+    autoplayTimeout:2000,
     dots: false,
     navSpeed: 1000,
     navText: ['', ''],

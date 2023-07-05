@@ -19,6 +19,7 @@ theme: {
       "green-1":"#0EA552"
 
     },
+    
   },
   fontFamily: {
     Anuphan: ['Anuphan'],
@@ -30,11 +31,17 @@ theme: {
     ss:"322px",
     sm: "640px",
     md: "769px",
-    lg: "1024px",
+    lg: "1025px",
     xl: "1280px",
     "2xl": "1536px",
   }
 },
-plugins: [],
+
+variants: {
+  extend: {
+    lineClamp: ["hover"],
+  },
+},
+plugins: [require("@tailwindcss/line-clamp")],
 }
 

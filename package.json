@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@ionic/angular": "^7.0.5",
     "@syncfusion/ej2-angular-navigations": "^22.1.36-ngcc",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "buffer": "^6.0.3",
     "domsanitizer": "^0.1.0",
     "mysql": "^2.18.1",

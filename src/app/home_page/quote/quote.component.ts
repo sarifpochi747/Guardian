@@ -31,7 +31,7 @@ export class QuoteComponent {
     touchDrag: true,
     pullDrag: true,
     autoplay:true,
-    autoplayTimeout:3000,
+    autoplayTimeout:2500,
     stagePadding:0,
     dots: false,
     navSpeed: 1000,
