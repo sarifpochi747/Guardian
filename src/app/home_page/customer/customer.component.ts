@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
-export class CustomerComponent {
+export class CustomerComponent implements OnInit{
 
   //get All Customer
   allCustomer:any[] = [];
 
   constructor(private http: HttpClient) { }
   ngOnInit():void {
-    this.http.get<any[]>('http://localhost:5000/getCustomer')
+    this.http.get<any[]>('http://localhost:5000/getCustomerAll')
     .subscribe(response => {
       this.allCustomer = response
       console.log(this.allCustomer)

@@ -150,13 +150,24 @@ AddCustomer.fetchAll = function() {
 };
 
 
-AddCustomer.create = function(title,description,customerIcon){
+
+AddCustomer.create = (title,description,customerIcon)=>{
   return db.execute(
     'INSERT INTO customer(title,description,customerIcon) VALUES (?,?,?)',
     [title,description,customerIcon]
     )
 }
 
+AddCustomer.getCustomerId=(idCustomer) =>{
+  return db.execute('SELECT * FROM customer WHERE idcustomer = ? ',[idCustomer]);
+}
+
+AddCustomer.update = (idcustomer,title,description,customerIcon)=>{
+  return db.execute(
+    'UPDATE customer SET title=? ,description=?,customerIcon=? where idcustomer = ?',
+    [title,description,customerIcon,idcustomer]
+  );
+}
 
 //Images
 function AddImage(img){

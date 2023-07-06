@@ -22,9 +22,13 @@ const {
   createAllAddVideos,
   getCustomer,
   createCustomer,
+  getCustomerId,
   getAllNewVideos,
+  updateCustomer,
   createAllNewAddVideos
 } = require('../Controller/user');
+
+
 
 const multer = require('multer');
 const path = require('path');
@@ -85,8 +89,11 @@ router.post("/createAllAddImages",createAllAddImages)
 
 
 //Add Customer
-router.get("/getCustomer",getCustomer)
+router.get("/getCustomerAll",getCustomer)
+router.get("/getCustomer/:idCustomer",getCustomerId)
 router.post("/createCustomer",createCustomer)
+router.put("/updateCustomer",updateCustomer)
+
 
 //Add Videos
 router.get("/getAllVideos",getAllVideos)

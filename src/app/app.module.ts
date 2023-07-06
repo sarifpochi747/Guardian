@@ -34,6 +34,7 @@ import { AuthGuard } from "./shared/auth.guard";
 import { AuthGuard2 } from "./shared/auth.guard2";
 import { CustomerComponent } from './home_page/customer/customer.component';
 import { OurCustomerComponent } from './menu_page/our-customer/our-customer.component';
+import { CustomerFormComponent } from './menu_page/our-customer/customer-form/customer-form.component';
 
 
 
@@ -69,6 +70,7 @@ const routes: Routes = [
     OurStandardComponent,
     CustomerComponent,
     OurCustomerComponent,
+    CustomerFormComponent,
   ],
 
   imports: [

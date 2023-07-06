@@ -129,6 +129,23 @@ const createCustomer = async(req,res)=>{
 }
 
 
+//get customer by id
+const getCustomerId = async(req,res)=>{
+  const _idCustomer = req.params.idCustomer
+  const customer  = await AddCustomer.getCustomerId(_idCustomer)
+  res.json(customer)
+}
+
+// update customer
+const updateCustomer = async(req,res)=>{
+  const data = req.body
+  //console.log(data[0])
+ // console.log(data[0].title)
+ /*  for(let i=0;i<data.length;i++)
+  {
+   // await AddCustomer.update(data[i].idcustomer,data[i].title,data[i].description,data[i].customerIcon)
+  } */
+}
 
 
 
@@ -252,5 +269,7 @@ module.exports = {
   getCustomer,
   createCustomer,
   getAllNewVideos,
-  createAllNewAddVideos
+  createAllNewAddVideos,
+  getCustomerId,
+  updateCustomer
 };

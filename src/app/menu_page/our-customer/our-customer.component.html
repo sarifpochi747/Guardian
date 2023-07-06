@@ -4,42 +4,10 @@
         <div class="text-[26px] max-lg:text-[18px] max-sm:text-[14px]">
             OUR CUSTOMER
         </div>
-        <form class="" #myForm="ngForm" (ngSubmit)="updateForm()">
-          <div class="overflow-y-scroll max-h-[100%]" *ngFor="let i of n" >
-            <!-- Form  -->
-            <div class="pt-[18px] mr-1">
-              <label class="text-[0.9vw] leading-6 text-grey-5 max-lg:text-[14px]">Title (sub)</label>
-              <div class="pt-[8px] flex ">
-                <input name="title" type="text" [(ngModel)]="data.title" class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-grey-4 max-lg:h-[40px] max-sm:w-full">
-                  <button type="button" (click)="addElement()" class="ml-[10px] w-[51px] h-[51px] text-green-1 text-[21px] rounded-lg   border-[1px] border-green-1 max-lg:h-[40px] max-lg:text-[15px]" >
-                    <i class="ri-add-circle-line"></i></button>
-              </div>
-            </div>
-            <div class="pt-[18px] mr-1">
-              <label class="text-[0.9vw] leading-6 text-grey-5 max-lg:text-[14px]">Description (sub)</label>
-              <div class="pt-[8px]">
-                <input name="description" type="text"  [(ngModel)]="data.description" class="w-2/3 h-[51px] rounded-lg px-[20px] border-2 border-grey-4 max-lg:h-[40px] max-sm:w-full">
-              </div>
-            </div>
-             <!-- Drag and drop -->
-            <div class="w-[260px] pt-[18px] justify-end flex px-1 max-lg:w-full max-lg:justify-center max-lg:pb-3 ">
-                <ngx-dropzone class="flex flex-col justify-center text-center w-[260px] h-[160px!important] items-center border-dashed border-2 border-grey-2 rounded-lg" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false">
-                <ngx-dropzone-label>
-                <div>
-                    <i class="fa-solid fa-arrow-up-from-bracket fa-xl" style="color: #a61f23;"></i>
-                </div>
-                <div class="mt-5 max-mก:text-sm text-black">
-                    Drag & Drop
-                </div>
-                </ngx-dropzone-label>
-                <div *ngFor="let f of showPrev">
-                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,0)" *ngIf="f == showPrev[0]">
-                    <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-                </ngx-dropzone-image-preview>
-                </div>
-                </ngx-dropzone>
-            </div>
-    
+        <form  #myForm="ngForm" (ngSubmit)="updateForm()">
+          <!-- Form  -->
+          <div *ngFor="let i of countOfCustomer">
+            <app-customer-form  (updateCount)="addElement()" [allCustomer] = "allCustomer"  [idCustomer] = "idCustomerArray[i]"></app-customer-form>
           </div>
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">
@@ -48,5 +16,6 @@
               <button class="bg-blue-1 h-[50px] w-[166px]  rounded-lg text-white text-lg max-lg:h-[40px]" type="submit">SAVE</button>
             </div>
         </form>
+
     </div>
 </div>

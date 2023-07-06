@@ -1,6 +1,7 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, AfterContentChecked } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -8,60 +9,49 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './our-customer.component.html',
   styleUrls: ['./our-customer.component.css']
 })
-export class OurCustomerComponent {
+export class OurCustomerComponent  implements OnInit {
 
+  
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
-  title:string = "";
-  //form customer submit
-  data: any = {
-    title: "",
-    description: "",
-    customerIcon: "",
-  };
 
-  n: number[] = [0];
-  files: any[] = [];
-  showPrev: any[] = [];
+ 
+
+   //get All Customer
+  allCustomer:any[] = [];
+  countOfCustomer:number[] = [];
+  idCustomerArray:number[] = [];
+
+  ngOnInit():void {
+    this.http.get<any[]>('http://localhost:5000/getCustomerAll')
+    .subscribe(response => {
+      this.allCustomer = response
+      for(let i=0;i<this.allCustomer.length;i++)
+      {
+        this.idCustomerArray.push(this.allCustomer[i].idcustomer)
+        this.countOfCustomer.push(i);
+      }
+    })
+    
+  }
+
 
 
   addElement():void{
-    //add to n
-    this.n.push(this.n.length);
+    this.countOfCustomer.push(this.countOfCustomer.length);
+    this.idCustomerArray.push(-1);
   }
-  onSelect(event: any,id:any) {
-    const file = event.addedFiles[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      const base64String = reader.result as string;
-      this.files.splice(id,1,base64String);
-    };
+  
 
-    this.showPrev.splice(id,1,...event.addedFiles);
-  }
-
-  onRemove(event:any,id:any) {
-		this.files.splice(id, 1,null);
-    this.showPrev.splice(id, 1,null);
-    console.log(this.showPrev)
-	}
+  
 
   updateForm() {
-    if(this.data.title.length > 0 && this.data.description.length > 0 &&  this.files[0] != null)
-    {
-      this.data.customerIcon = this.files[0];
-      console.log(this.data)
-      this.http.post('http://localhost:5000/createCustomer',this.data )
+    console.log(this.allCustomer[0])
+    console.log(this.allCustomer[0].title)
+    this.http.put('http://localhost:5000/updateCustomer',this.allCustomer)
         .subscribe((response) => {
-          alert('Form added successfully')
           console.log('Form updated successfully:', response);
       });
-    }
-    else
-    {
-      alert("input something")
-    }
-
+      alert('Form updated successfully')
   }
 
 
