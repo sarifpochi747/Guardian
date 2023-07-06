@@ -32,7 +32,8 @@ export class CustomerFormComponent implements OnInit,DoCheck {
   
   
   ngDoCheck(): void {
-    this.allCustomer[this.index] = this.data;
+    this.data[0].customerIcon = this.files[0];
+    this.allCustomer[this.index] = this.data[0];
   }
 
 

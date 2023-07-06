@@ -139,12 +139,10 @@ const getCustomerId = async(req,res)=>{
 // update customer
 const updateCustomer = async(req,res)=>{
   const data = req.body
-  //console.log(data[0])
- // console.log(data[0].title)
- /*  for(let i=0;i<data.length;i++)
+  for(let i=0;i<data.length;i++)
   {
-   // await AddCustomer.update(data[i].idcustomer,data[i].title,data[i].description,data[i].customerIcon)
-  } */
+   await AddCustomer.update(data[i].idcustomer,data[i].title,data[i].description,data[i].customerIcon)
+  }
 }
 
 

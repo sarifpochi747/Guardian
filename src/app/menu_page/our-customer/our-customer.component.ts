@@ -1,6 +1,5 @@
-import { Component,OnInit, AfterContentChecked } from '@angular/core';
+import { AfterContentChecked, Component,OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -9,13 +8,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './our-customer.component.html',
   styleUrls: ['./our-customer.component.css']
 })
-export class OurCustomerComponent  implements OnInit {
+export class OurCustomerComponent  implements OnInit{
 
   
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
-
+  constructor(private http: HttpClient) { }
  
-
    //get All Customer
   allCustomer:any[] = [];
   countOfCustomer:number[] = [];
@@ -34,7 +31,7 @@ export class OurCustomerComponent  implements OnInit {
     
   }
 
-
+  
 
   addElement():void{
     this.countOfCustomer.push(this.countOfCustomer.length);
@@ -45,8 +42,6 @@ export class OurCustomerComponent  implements OnInit {
   
 
   updateForm() {
-    console.log(this.allCustomer[0])
-    console.log(this.allCustomer[0].title)
     this.http.put('http://localhost:5000/updateCustomer',this.allCustomer)
         .subscribe((response) => {
           console.log('Form updated successfully:', response);
