@@ -25,7 +25,8 @@ const {
   getCustomerId,
   getAllNewVideos,
   updateCustomer,
-  createAllNewAddVideos
+  createAllNewAddVideos,
+  removeAllAddImages
 } = require('../Controller/user');
 
 
@@ -86,6 +87,7 @@ router.put("/UpdateComment",UpdateComment)
 //Add Images
 router.get("/getImages",getAllImages)
 router.post("/createAllAddImages",createAllAddImages)
+router.put("/removeAllAddImages",removeAllAddImages)
 
 
 //Add Customer

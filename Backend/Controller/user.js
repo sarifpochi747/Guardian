@@ -162,6 +162,12 @@ const createAllAddImages = async (req, res) => {
   res.status(201).send('Images uploaedd successfully');
 };
 
+const removeAllAddImages = async (req, res) => {
+  const { id } = req.body;
+  await AddImage.remove(id);
+  res.status(201).send('Images remove successfully');
+};
+
 //Video
 const getAllVideos = async (req, res) => {
   const [ alladdVideos ] = await AddVideo.fetchAll();
@@ -272,5 +278,6 @@ module.exports = {
   getAllNewVideos,
   createAllNewAddVideos,
   getCustomerId,
-  updateCustomer
+  updateCustomer,
+  removeAllAddImages
 };

@@ -185,6 +185,13 @@ AddImage.create = function(img) {
   );
 };
 
+AddImage.remove = function(id){
+  return db.execute(
+    'DELETE FROM images WHERE id = ?',
+    [id]
+  )
+}
+
 //Video
 function AddVideo(video){
   this.video = video;

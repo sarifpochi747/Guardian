@@ -35,6 +35,7 @@ import { AuthGuard2 } from "./shared/auth.guard2";
 import { CustomerComponent } from './home_page/customer/customer.component';
 import { OurCustomerComponent } from './menu_page/our-customer/our-customer.component';
 import { CustomerFormComponent } from './menu_page/our-customer/customer-form/customer-form.component';
+import { ImagesOrganizationComponent } from './menu_page/images-organization/images-organization.component';
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'menu', component: MenuPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/organization', component: OrganizationPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/profile', component: ProfileComponent,canActivate: [AuthGuard] },
+  { path: 'menu/profile/images', component: ImagesOrganizationComponent,canActivate: [AuthGuard] },
   { path: 'menu/ourstandard', component: OurStandardComponent,canActivate: [AuthGuard] },
   { path: 'menu/ourcustomer', component: OurCustomerComponent,canActivate: [AuthGuard] },
   { path: 'menu/user', component: UserPageComponent,canActivate: [AuthGuard] },
@@ -71,6 +73,7 @@ const routes: Routes = [
     CustomerComponent,
     OurCustomerComponent,
     CustomerFormComponent,
+    ImagesOrganizationComponent,
   ],
 
   imports: [
