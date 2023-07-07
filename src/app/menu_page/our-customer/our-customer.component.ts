@@ -45,9 +45,8 @@ export class OurCustomerComponent  implements OnInit{
   createNewCutomer(){
      this.http.post('http://localhost:5000/createCustomer',this.newCustomer )
        .subscribe((response) => {
-         alert('Form added successfully')
          console.log('Form updated successfully:', response);
-     });
+        });
 
   }
 
@@ -63,10 +62,13 @@ export class OurCustomerComponent  implements OnInit{
 
   //delete customer
   deleteCustomer(idcustomer:number) {
-    this.http.delete(`http://localhost:5000/deleteCustomer/${idcustomer}`)
+    console.log(idcustomer)
+    this.http.delete<any[]>(`http://localhost:5000/deleteCustomer/${idcustomer}`)
       .subscribe((response) => {
-        alert("Delete customer success");
       });
+      console.log("dd")
+      window.location.reload()
+      
   }
   
 
@@ -81,8 +83,9 @@ export class OurCustomerComponent  implements OnInit{
     {
       this.createNewCutomer()
     }
-
-    if (JSON.stringify(this.tempAllCustomer) !== JSON.stringify(this.allCustomer)) {
+    //console.log(this.tempAllCustomer)
+    //console.log(this.allCustomer)
+    if (JSON.stringify(this.tempAllCustomer) != JSON.stringify(this.allCustomer)) {
       this.UpadateCustomer();
     }
     else

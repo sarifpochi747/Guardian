@@ -171,6 +171,12 @@ const createAllAddImages = async (req, res) => {
   res.status(201).send('Images uploaedd successfully');
 };
 
+const removeAllAddImages = async (req, res) => {
+  const { id } = req.body;
+  await AddImage.remove(id);
+  res.status(201).send('Images remove successfully');
+};
+
 //Video
 const getAllVideos = async (req, res) => {
   const [ alladdVideos ] = await AddVideo.fetchAll();
@@ -199,6 +205,12 @@ const createAllNewAddVideos = async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'An error occurred' });
   }
+};
+
+const removeAllNewAddVideos = async (req, res) => {
+  const { id } = req.body;
+  await AddNewVideo.remove(id);
+  res.status(201).send('videos remove successfully');
 };
 
 
@@ -282,5 +294,7 @@ module.exports = {
   createAllNewAddVideos,
   getCustomerId,
   updateCustomer,
-  deleteCustomer
+  deleteCustomer,
+  removeAllAddImages,
+  removeAllNewAddVideos
 };

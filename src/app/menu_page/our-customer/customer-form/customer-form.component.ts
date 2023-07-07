@@ -59,7 +59,7 @@ export class CustomerFormComponent implements OnInit,DoCheck {
     this.updateCount.emit();
   }
   
-  deleteCustomerToParent(idcustomer:number){
+  deleteCustomerToParent(){
     this.deleteCustomer.emit();
   }
 

@@ -193,6 +193,13 @@ AddImage.create = function(img) {
   );
 };
 
+AddImage.remove = function(id){
+  return db.execute(
+    'DELETE FROM images WHERE id = ?',
+    [id]
+  )
+}
+
 //Video
 function AddVideo(video){
   this.video = video;
@@ -224,6 +231,13 @@ AddNewVideo.create = function(video) {
     [video]
   );
 };
+
+AddNewVideo.remove = function(id){
+  return db.execute(
+    'DELETE FROM newvideos WHERE id = ?',
+    [id]
+  )
+}
 
 
 
