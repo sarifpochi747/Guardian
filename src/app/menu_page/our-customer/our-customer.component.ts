@@ -60,6 +60,18 @@ export class OurCustomerComponent  implements OnInit{
       alert('Form updated successfully')
   }
 
+
+  //delete customer
+  deleteCustomer(idcustomer:number) {
+    this.http.delete(`http://localhost:5000/deleteCustomer/${idcustomer}`)
+      .subscribe((response) => {
+        alert("Delete customer success");
+      });
+  }
+  
+
+  
+
   updateForm() {
     this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0)); 
     this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);

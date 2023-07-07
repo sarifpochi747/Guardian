@@ -169,6 +169,14 @@ AddCustomer.update = (idcustomer,title,description,customerIcon)=>{
   );
 }
 
+AddCustomer.delete = (idcustomer)=>{
+  return db.execute(
+    "DELETE FROM customer WHERE idcustomer=?",[idcustomer]
+  )
+}
+
+
+
 //Images
 function AddImage(img){
   this.img = img;

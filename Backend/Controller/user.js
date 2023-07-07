@@ -1,4 +1,3 @@
-const { async } = require('rxjs');
 const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo} = require('../Model/user');
 const db = require('../databases');
 
@@ -149,6 +148,16 @@ const updateCustomer = async(req,res)=>{
 }
 
 
+//delete cutomer
+const deleteCustomer = async (req,res)=>{
+  const _idCustomer  =  req.params.idcustomer
+  console.log(_idCustomer)
+  await AddCustomer.delete(_idCustomer);
+  
+}
+
+
+
 
 //Images
 const getAllImages = async (req, res) => {
@@ -272,5 +281,6 @@ module.exports = {
   getAllNewVideos,
   createAllNewAddVideos,
   getCustomerId,
-  updateCustomer
+  updateCustomer,
+  deleteCustomer
 };

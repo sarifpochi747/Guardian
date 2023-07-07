@@ -7,7 +7,7 @@
         <form  #myForm="ngForm" (ngSubmit)="updateForm()">
           <!-- Form  -->
           <div *ngFor="let i of countOfCustomer">
-            <app-customer-form  (updateCount)="addElement()" [allCustomer] = "allCustomer"  [idCustomer] = "idCustomerArray[i]"  [countOfCustomer] = "countOfCustomer.length" ></app-customer-form>
+            <app-customer-form  (updateCount)="addElement()" (deleteCustomer) = "deleteCustomer(idCustomerArray[i])" [allCustomer] = "allCustomer"  [idCustomer] = "idCustomerArray[i]"  [countOfCustomer] = "countOfCustomer.length" ></app-customer-form>
           </div>
             <!-- Button Back & Save -->
             <div class="pt-[25px] flex items-center space-x-[18px] pr-2 ">

@@ -13,6 +13,7 @@ export class CustomerFormComponent implements OnInit,DoCheck {
   @Input() allCustomer:any [] = [];
   @Input() countOfCustomer:number=0;
   @Output("updateCount") updateCount = new EventEmitter<void>()
+  @Output("deleteCustomer") deleteCustomer = new EventEmitter<void>()
 
   constructor(private http:HttpClient){}
   
@@ -56,6 +57,10 @@ export class CustomerFormComponent implements OnInit,DoCheck {
 
   updateCountToParent(){
     this.updateCount.emit();
+  }
+  
+  deleteCustomerToParent(idcustomer:number){
+    this.deleteCustomer.emit();
   }
 
   onSelect(event: any,id:any) {
