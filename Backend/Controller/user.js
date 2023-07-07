@@ -123,8 +123,11 @@ const getCustomer = async(req,res)=>{
 
 //create customer
 const createCustomer = async(req,res)=>{
-  const {title,description,customerIcon} = req.body
-  await AddCustomer.create(title,description,customerIcon)
+  const data = req.body
+  for(let i=0;i<data.length;i++)
+  {
+    await AddCustomer.create(data[i].title,data[i].description,data[i].customerIcon)
+  }
   res.status(200).json({msg:"success"})
 }
 

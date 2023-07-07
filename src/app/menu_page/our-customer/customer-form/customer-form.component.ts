@@ -9,16 +9,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomerFormComponent implements OnInit,DoCheck {
 
-  @Input() idCustomer:number=0;
+  @Input() idCustomer:number=-1;
   @Input() allCustomer:any [] = [];
+  @Input() countOfCustomer:number=0;
   @Output("updateCount") updateCount = new EventEmitter<void>()
 
   constructor(private http:HttpClient){}
   
   
   //form customer submit
-  data: any[] = [];
-  files: any[] = [];
+   data: any[] = [{
+    idcustomer:this.idCustomer,
+    title: "",
+    description: "",
+    customerIcon: "",
+  }];
+  files: any[] = [null];
   showPrev: any[] = [];
   index:number = this.allCustomer.length;
   
@@ -27,18 +33,26 @@ export class CustomerFormComponent implements OnInit,DoCheck {
       this.data = this.allCustomer.filter(customer => customer.idcustomer == this.idCustomer)
       this.index = this.allCustomer.findIndex(customer=> customer.idcustomer== this.idCustomer)
       this.files[0] = this.data[0].customerIcon;
+    }else
+    {
+      
+      console.log(this.countOfCustomer)
     }
   }
   
   
   ngDoCheck(): void {
-    this.data[0].customerIcon = this.files[0];
-    this.allCustomer[this.index] = this.data[0];
+    if(this.idCustomer != -1)
+    {
+      this.data[0].customerIcon = this.files[0];
+      this.allCustomer[this.index] = this.data[0];
+    }
+    else
+    {
+      this.data[0].customerIcon = this.files[0];
+      this.allCustomer[this.countOfCustomer] = this.data[0];
+    }
   }
-
-
-
-
 
   updateCountToParent(){
     this.updateCount.emit();

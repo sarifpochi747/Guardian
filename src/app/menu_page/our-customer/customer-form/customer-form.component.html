@@ -16,22 +16,15 @@
      <!-- Drag and drop -->
     <div class="w-[260px] pt-[18px] justify-end flex px-1 max-lg:w-full max-lg:justify-center max-lg:pb-3 ">
       <div class="flex flex-col justify-center text-center w-[260px] h-[160px!important] items-center border-dashed border-2 border-grey-2 rounded-lg" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event,0)" [multiple]="false" >
-        <!-- <ngx-dropzone-label> -->
           <div class="absolute">
-            <div>
-              <i class="fa-solid fa-arrow-up-from-bracket fa-2xl" style="color: #a61f23;"></i>
+            <div class="text-blue-3">
+              <i class=" fa-solid fa-arrow-up-from-bracket fa-2xl" ></i>
             </div>
-            <div class="mt-1 max-md:text-[12px]">
+            <div class="mt-1 text-[12px] text-black ">
               Drag & Drop
             </div>
           </div>
-      <!-- </ngx-dropzone-label> -->
-      <!-- <div *ngFor="let f of files"> -->
-      <!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" [file]="f" [removable]="true" (removed)="onRemove(f,0)" *ngIf="f == showPrev[0]">
-        <ngx-dropzone-label >{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-      </ngx-dropzone-image-preview> -->
-      <img [src] = "files[0]" class="h-full w-full object-cover">
-    <!-- </div> -->
+      <img [src] = "files[0]" class="h-full w-full object-contain">
       </div>
     </div>
   </div>
