@@ -26,7 +26,8 @@ const {
   getAllNewVideos,
   updateCustomer,
   createAllNewAddVideos,
-  removeAllAddImages
+  removeAllAddImages,
+  removeAllNewAddVideos
 } = require('../Controller/user');
 
 
@@ -104,6 +105,8 @@ router.post("/createAllAddVideos",createAllAddVideos)
 //New videos
 router.get("/getAllNewVideos",getAllNewVideos)
 router.post("/createAllNewAddVideos",upload.single('video'),createAllNewAddVideos)
+router.put("/removeAllNewAddVideos",removeAllNewAddVideos)
+
 
 //Authentication
 router.post('/register-user',SignUp);

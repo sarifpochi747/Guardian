@@ -198,6 +198,12 @@ const createAllNewAddVideos = async (req, res) => {
   }
 };
 
+const removeAllNewAddVideos = async (req, res) => {
+  const { id } = req.body;
+  await AddNewVideo.remove(id);
+  res.status(201).send('videos remove successfully');
+};
+
 
 //Authentication
 const bcrypt = require('bcrypt');
@@ -279,5 +285,6 @@ module.exports = {
   createAllNewAddVideos,
   getCustomerId,
   updateCustomer,
-  removeAllAddImages
+  removeAllAddImages,
+  removeAllNewAddVideos
 };

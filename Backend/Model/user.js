@@ -224,6 +224,13 @@ AddNewVideo.create = function(video) {
   );
 };
 
+AddNewVideo.remove = function(id){
+  return db.execute(
+    'DELETE FROM newvideos WHERE id = ?',
+    [id]
+  )
+}
+
 
 
 //Authentication
