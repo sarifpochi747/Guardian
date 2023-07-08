@@ -58,14 +58,16 @@ export class OurStandardComponent implements OnInit  {
       this.heroes[0]['img3'] = this.files[2];
       this.heroes[0]['img4'] = this.files[3];
       this.http.put('http://localhost:5000/UpdateAddStandard', this.heroes[0])
-        .subscribe((response) => {
-          console.log('Form updated successfully:', response);
-      },
-      (error) => {
-        console.error('Error updating form:', error);
-      }
-      );
-      alert('Form updated successfully')
+      .subscribe({
+        next: data => {
+            console.log('success');
+            alert('Updated successfully')
+            window.location.reload()
+        },
+        error: error => {
+            console.log('failure',error);
+        }
+      });
     }
   }
   @ViewChild('myTextarea') myTextarea: any;

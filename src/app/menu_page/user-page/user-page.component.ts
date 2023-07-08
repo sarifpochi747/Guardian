@@ -44,9 +44,16 @@ export class UserPageComponent implements OnInit{
   UpdateToDatabase(){
     console.log("update to database()")
     this.http.put('http://localhost:5000/UpdateComment', this.allComment)//[{},{},{}]
-        .subscribe((response) => {
-          console.log("PUT : ",response);
-      });
+    .subscribe({
+      next: data => {
+          console.log('success');
+          alert('Updated successfully')
+          window.location.reload()
+      },
+      error: error => {
+          console.log('failure',error);
+      }
+    });
   }
 
 

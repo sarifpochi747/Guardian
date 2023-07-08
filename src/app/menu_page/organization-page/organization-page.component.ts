@@ -54,10 +54,16 @@ export class OrganizationPageComponent implements OnInit  {
     else{
       this.heroes[0]['img'] = this.files[0];
       this.http.put('http://localhost:5000/UpdateAddGoals', this.heroes[0])
-        .subscribe((response) => {
-          console.log('Form updated successfully:', response);
+      .subscribe({
+        next: data => {
+            console.log('success');
+            alert('Updated successfully')
+            window.location.reload()
+        },
+        error: error => {
+            console.log('failure',error);
+        }
       });
-      alert('Form updated successfully')
     }
   }
   @ViewChild('myTextarea') myTextarea: any;
