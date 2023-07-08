@@ -28,10 +28,16 @@ export class LocationOrgComponent {
     }
     else{
       this.http.put('http://localhost:5000/UpdateAllAddLocation', this.heroes[0])
-        .subscribe((response) => {
-          console.log('Form updated successfully:', response);
+      .subscribe({
+        next: data => {
+            console.log('success');
+            alert('Updated successfully')
+            window.location.reload()
+        },
+        error: error => {
+            console.log('failure',error);
+        }
       });
     }
-    alert('Updated successfully')
   }
 }

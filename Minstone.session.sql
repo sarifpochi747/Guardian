@@ -94,3 +94,14 @@ CREATE TABLE Newvideos (
   video LONGTEXT NULL,
   PRIMARY KEY (id)
 );
+
+-- @block
+CREATE TABLE location (
+  id INT NOT NULL auto_increment,
+  company TEXT NOT NULL,
+  lo1 TEXT NOT NULL,
+  lo2 TEXT NOT NULL,
+  tax TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  PRIMARY KEY (id)
+);

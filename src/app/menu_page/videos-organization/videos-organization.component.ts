@@ -30,8 +30,15 @@ export class VideosOrganizationComponent {
 
   deleted(ids:Number){
     this.http.put<any[]>('http://localhost:5000/removeAllNewAddVideos',{id: ids})
-    .subscribe(response => {
-      console.log('Form remove successfully:', response);
-    })
+    .subscribe({
+      next: data => {
+          console.log('success');
+          alert('Updated successfully')
+          window.location.reload()
+      },
+      error: error => {
+          console.log('failure',error);
+      }
+    });
   }
 }

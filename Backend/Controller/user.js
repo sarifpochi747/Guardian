@@ -22,14 +22,14 @@ const createAllAddProfiles = async (req, res) => {
     }
   }
     await AddProfiles.create(id,title,descript,...images);
-    res.status(201).send('Profile created successfully');
+    res.status(201).json({ message: 'successfully' });
 
 };
 
 const UpdateAllAddProfiles = async (req, res) => {
   const { id,title,descript,img1,img2,img3,img4,img5,img6,img7 } = req.body;
   await AddProfiles.update(id,title,descript,img1,img2,img3,img4,img5,img6,img7);
-  res.status(201).send('Profile update successfully');
+  res.status(201).json({ message: 'successfully' });
 }
 
 //AddGoals
@@ -43,21 +43,21 @@ const createAllAddGoals = async (req, res) => {
 
   if (!req.file) {
     await AddGoals.create(id,title,null,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6);
-    res.status(201).send('Profile created successfully');
+    res.status(201).json({ message: 'successfully' });
   }
   else{
 
     const images = req.file.buffer.toString('base64');
     const imgs = "data:image/jpg;base64," + images;
     await AddGoals.create(id,title,imgs,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6);
-    res.status(201).send('Profile created successfully');
+    res.status(201).json({ message: 'successfully' });
   }
 };
 
 const UpdateAllAddGoals = async (req, res) => {
   const { id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6 } = req.body;
     await AddGoals.update(id,title,img,descript,sub_title1,sub_descript1,sub_title2,sub_descript2,sub_title3,sub_descript3,sub_title4,sub_descript4,sub_title5,sub_descript5,sub_title6,sub_descript6);
-    res.status(201).send('Profile updated successfully');
+    res.status(201).json({ message: 'successfully' });
 }
 
 //AddStandard
@@ -80,13 +80,13 @@ const createAllAddStandard = async (req, res) => {
     }
   }
     await AddStandard.create(id,title,descript,sub_title1,sub_descript1,images[0],sub_title2,sub_descript2,images[1],sub_title3,sub_descript3,images[2],sub_title4,sub_descript4,images[3]);
-    res.status(201).send('Profile created successfully');
+    res.status(201).json({ message: 'successfully' });
 };
 
 const UpdateAllAddStandard = async (req, res) => {
   const { id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4 } = req.body;
     await AddStandard.update(id,title,descript,sub_title1,sub_descript1,img1,sub_title2,sub_descript2,img2,sub_title3,sub_descript3,img3,sub_title4,sub_descript4,img4);
-    res.status(201).send('Profile updated successfully');
+    res.status(201).json({ message: 'successfully' });
 }
 
 //AddComment
@@ -168,13 +168,13 @@ const getAllImages = async (req, res) => {
 const createAllAddImages = async (req, res) => {
   const { img } = req.body;
   await AddImage.create(img);
-  res.status(201).send('Images uploaedd successfully');
+  res.status(201).json({ message: 'successfully' });
 };
 
 const removeAllAddImages = async (req, res) => {
   const { id } = req.body;
   await AddImage.remove(id);
-  res.status(201).send('Images remove successfully');
+  res.status(201).json({ message: 'successfully' });
 };
 
 //Video
@@ -210,7 +210,7 @@ const createAllNewAddVideos = async (req, res) => {
 const removeAllNewAddVideos = async (req, res) => {
   const { id } = req.body;
   await AddNewVideo.remove(id);
-  res.status(201).send('videos remove successfully');
+  res.status(201).json({ message: 'successfully' });
 };
 
 //Location
@@ -223,7 +223,7 @@ const getAllLocation = async (req, res) => {
 const UpdateAllAddLocation = async (req, res) => {
   const { id,company,lo1,lo2,tax,phone } = req.body;
     await getLocation.update(id,company,lo1,lo2,tax,phone);
-    res.status(201).send('Profile updated successfully');
+    res.status(201).json({ message: 'Profile updated successfully' });
 }
 
 //Authentication

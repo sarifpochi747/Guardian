@@ -73,15 +73,10 @@ export class ProfileComponent implements OnInit  {
         this.heroes[0][r] = this.files[i];
       }
 
-      this.http.put('http://localhost:5000/UpdateAddProfiles', this.heroes[0])
-        .subscribe((response) => {
-          console.log('Form updated successfully:', response);
-      });
-
       for(let i = 0; i < this.imgFiles.length; i++){
         this.http.post('http://localhost:5000/createAllAddImages', this.imgFiles[i])
           .subscribe((response) => {
-            console.log('Form updated successfully:', response);
+
         });
       }
 
@@ -90,18 +85,23 @@ export class ProfileComponent implements OnInit  {
         formData.set('video', this.selectedFile);
         console.log(formData);
 
-        this.http.post<any>('http://localhost:5000/createAllNewAddVideos', formData).subscribe(
-          (response) => {
-            // Handle response from the server after successful upload
-            console.log('Upload successful:', response);
-          },
-          (error) => {
-            // Handle error response from the server
-            console.error('Upload error:', error);
-          }
-        );
+        this.http.post<any>('http://localhost:5000/createAllNewAddVideos', formData)
+        .subscribe({
+
+        });
       }
-      alert('Form updated successfully')
+
+      this.http.put('http://localhost:5000/UpdateAddProfiles', this.heroes[0])
+      .subscribe({
+        next: data => {
+            console.log('success');
+            alert('Updated successfully')
+            window.location.reload()
+        },
+        error: error => {
+            console.log('failure',error);
+        }
+      });
     }
   }
 
