@@ -28,8 +28,8 @@ export class VideosOrganizationComponent {
     })
   }
 
-  deleted(ids:Number){
-    this.http.put<any[]>('http://localhost:5000/removeAllNewAddVideos',{id: ids})
+  deleted(ids:Number, vdo:any){
+    this.http.put<any[]>('http://localhost:5000/removeAllNewAddVideos',{id: ids, video: vdo})
     .subscribe({
       next: data => {
           console.log('success');

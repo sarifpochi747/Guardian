@@ -1,5 +1,6 @@
 const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo,getLocation} = require('../Model/user');
 const db = require('../databases');
+const fs = require('fs');
 
 // AddProfiles
 const getAllAddProfiles = async (req, res) => {
@@ -208,7 +209,16 @@ const createAllNewAddVideos = async (req, res) => {
 };
 
 const removeAllNewAddVideos = async (req, res) => {
-  const { id } = req.body;
+  const { id, video } = req.body;
+  const filePath = `uploads/${video}`;
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      // Handle error
+      console.error('Error deleting file:', err);
+    } else {
+      console.log('File deleted successfully');
+    }
+  });
   await AddNewVideo.remove(id);
   res.status(201).json({ message: 'successfully' });
 };
