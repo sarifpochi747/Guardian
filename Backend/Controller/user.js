@@ -153,7 +153,7 @@ const deleteCustomer = async (req,res)=>{
   const _idCustomer  =  req.params.idcustomer
   console.log(_idCustomer)
   await AddCustomer.delete(_idCustomer);
-
+  res.status(201).json({ message: 'successfully' });
 }
 
 

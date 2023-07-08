@@ -10,10 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OurCustomerComponent  implements OnInit{
 
-  
+
   constructor(private http: HttpClient) { }
 
- 
+
    //get All Customer
   newCustomer:any[]=[];
   allCustomer:any[] = [];
@@ -32,14 +32,14 @@ export class OurCustomerComponent  implements OnInit{
         this.countOfCustomer.push(i);
       }
     })
-    
+
   }
 
   addElement():void{
     this.countOfCustomer.push(this.countOfCustomer.length);
     this.idCustomerArray.push(-1);
   }
-  
+
 
 
   createNewCutomer(){
@@ -62,20 +62,24 @@ export class OurCustomerComponent  implements OnInit{
 
   //delete customer
   deleteCustomer(idcustomer:number) {
-    console.log(idcustomer)
     this.http.delete<any[]>(`http://localhost:5000/deleteCustomer/${idcustomer}`)
-      .subscribe((response) => {
-      });
-      console.log("dd")
-      window.location.reload()
-      
+    .subscribe({
+      next: data => {
+          console.log('success');
+          alert('Updated successfully')
+          window.location.reload()
+      },
+      error: error => {
+          console.log('failure',error);
+      }
+    });
   }
-  
 
-  
+
+
 
   updateForm() {
-    this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0)); 
+    this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
     this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
     console.log(this.allCustomer)
     console.log(this.newCustomer)
