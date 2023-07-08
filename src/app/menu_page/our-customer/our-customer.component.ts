@@ -64,10 +64,15 @@ export class OurCustomerComponent  implements OnInit{
   deleteCustomer(idcustomer:number) {
     console.log(idcustomer)
     this.http.delete<any[]>(`http://localhost:5000/deleteCustomer/${idcustomer}`)
-      .subscribe((response) => {
+      .subscribe({
+        next: data=>{
+          alert("delete customer successfully");
+          window.location.reload();
+        },
+        error: error =>{
+          console.log(error);
+        }
       });
-      console.log("dd")
-      window.location.reload()
       
   }
   
@@ -85,13 +90,7 @@ export class OurCustomerComponent  implements OnInit{
     }
     //console.log(this.tempAllCustomer)
     //console.log(this.allCustomer)
-    if (JSON.stringify(this.tempAllCustomer) != JSON.stringify(this.allCustomer)) {
-      this.UpadateCustomer();
-    }
-    else
-    {
-      alert("already upadate ")
-    }
+    this.UpadateCustomer();
   }
 
 
