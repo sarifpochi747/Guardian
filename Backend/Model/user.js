@@ -239,7 +239,25 @@ AddNewVideo.remove = function(id){
   )
 }
 
+//location
+function getLocation(id,company,lo1,lo2,tax,phone){
+  this.id = id;
+  this.company = company;
+  this.lo1 = lo1;
+  this.lo2 = lo2;
+  this.tax = tax;
+  this.phone = phone;
+}
 
+getLocation.fetchAll = function(){
+  return db.execute('SELECT * FROM location');
+}
+
+getLocation.update = function(id,company,lo1,lo2,tax,phone){
+  return db.execute('UPDATE location SET company=?, lo1=?, lo2=?,tax=?,phone=? where id =?',
+  [company,lo1,lo2,tax,phone,id]
+  )
+}
 
 //Authentication
 function Users (id,username,password) {
@@ -264,4 +282,4 @@ Users.GetUser = function(id){
 }
 
 
-module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo};
+module.exports = {AddProfiles, AddGoals, AddStandard,AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo,getLocation};

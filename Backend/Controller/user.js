@@ -1,4 +1,4 @@
-const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo} = require('../Model/user');
+const {AddProfiles, AddGoals, AddStandard, AddComment,Users,AddImage,AddVideo,AddCustomer,AddNewVideo,getLocation} = require('../Model/user');
 const db = require('../databases');
 
 // AddProfiles
@@ -153,7 +153,7 @@ const deleteCustomer = async (req,res)=>{
   const _idCustomer  =  req.params.idcustomer
   console.log(_idCustomer)
   await AddCustomer.delete(_idCustomer);
-  
+
 }
 
 
@@ -213,6 +213,18 @@ const removeAllNewAddVideos = async (req, res) => {
   res.status(201).send('videos remove successfully');
 };
 
+//Location
+
+const getAllLocation = async (req, res) => {
+  const [ alladdlocation ] = await getLocation.fetchAll();
+  res.status(200).json(alladdlocation);
+};
+
+const UpdateAllAddLocation = async (req, res) => {
+  const { id,company,lo1,lo2,tax,phone } = req.body;
+    await getLocation.update(id,company,lo1,lo2,tax,phone);
+    res.status(201).send('Profile updated successfully');
+}
 
 //Authentication
 const bcrypt = require('bcrypt');
@@ -296,5 +308,7 @@ module.exports = {
   updateCustomer,
   deleteCustomer,
   removeAllAddImages,
-  removeAllNewAddVideos
+  removeAllNewAddVideos,
+  getAllLocation,
+  UpdateAllAddLocation
 };

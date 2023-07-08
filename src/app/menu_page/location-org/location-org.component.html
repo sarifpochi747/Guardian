@@ -1,0 +1,55 @@
+<app-header-user></app-header-user>
+<div class=" py-[40px] px-[103px]  max-lg:px-6">
+  <div class="bg-white px-[46px] pt-[16px] pb-[50px] rounded-[20px] w-full shadow-[0_4px_4px_rgba(0,0,0,0.25)] max-lg:px-[24px]">
+    <div class="text-[26px] max-lg:text-[18px] max-sm:text-[14px]">
+      Location
+    </div>
+    <form #myForm="ngForm" (ngSubmit)="updateForm()">
+      <!-- Company's name Input -->
+      <div class=" pt-[18px]">
+        <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Company's name</label>
+        <div class="pt-[8px]">
+            <input  name="company" type="text"
+            class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].company">
+        </div>
+      </div>
+      <!-- Title Input -->
+      <div class=" pt-[18px]">
+        <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">NO. & Moo</label>
+        <div class="pt-[8px]">
+            <input  name="lo1" type="text"
+            class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].lo1">
+        </div>
+      </div>
+      <!-- Title Input -->
+      <div class=" pt-[18px]">
+        <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">District, Subdistrict, City & zip code</label>
+        <div class="pt-[8px]">
+            <input  name="lo2" type="text"
+            class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].lo2">
+        </div>
+      </div>
+      <!-- Title Input -->
+      <div class=" pt-[18px]">
+        <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Taxpayer identification number</label>
+        <div class="pt-[8px]">
+            <input  name="tax" type="text"
+            class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].tax">
+        </div>
+      </div>
+      <!-- Title Input -->
+      <div class=" pt-[18px]">
+        <label  class="text-[16px] leading-6 text-grey-5 max-lg:text-[14px]">Phone number</label>
+        <div class="pt-[8px]">
+            <input  name="phone" type="text"
+            class="w-1/2 h-[51px] rounded-lg px-[20px] border-2 border-[#707070] " required minlength="4" [(ngModel)]="heroes[0].phone">
+        </div>
+      </div>
+      <!-- Button Back & Save -->
+      <div class="pt-[25px] flex items-center space-x-[18px] pr-2 mt-[35px]">
+        <button class="bg-white h-[50px] w-[166px]  text-blue-1 rounded-lg  border-2 border-blue-1 text-lg max-lg:h-[40px]" routerLink="../"><i class="ri-arrow-left-circle-line"></i>BACK</button>
+        <button class="bg-blue-1 h-[50px] w-[166px]  rounded-lg text-white text-lg max-lg:h-[40px]">SAVE</button>
+      </div>
+    </form>
+  </div>
+</div>

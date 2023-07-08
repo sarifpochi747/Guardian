@@ -37,6 +37,7 @@ import { OurCustomerComponent } from './menu_page/our-customer/our-customer.comp
 import { CustomerFormComponent } from './menu_page/our-customer/customer-form/customer-form.component';
 import { ImagesOrganizationComponent } from './menu_page/images-organization/images-organization.component';
 import { VideosOrganizationComponent } from './menu_page/videos-organization/videos-organization.component';
+import { LocationOrgComponent } from './menu_page/location-org/location-org.component';
 
 
 
@@ -53,6 +54,8 @@ const routes: Routes = [
   { path: 'menu/ourcustomer', component: OurCustomerComponent,canActivate: [AuthGuard] },
   { path: 'menu/user', component: UserPageComponent,canActivate: [AuthGuard] },
   { path: 'menu/ourcustomer', component: OurCustomerComponent,canActivate: [AuthGuard] },
+  { path: 'menu/location', component: LocationOrgComponent,canActivate: [AuthGuard] },
+
 ];
 @NgModule({
   declarations: [
@@ -77,6 +80,7 @@ const routes: Routes = [
     CustomerFormComponent,
     ImagesOrganizationComponent,
     VideosOrganizationComponent,
+    LocationOrgComponent,
   ],
 
   imports: [

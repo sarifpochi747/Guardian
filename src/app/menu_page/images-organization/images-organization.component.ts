@@ -1,6 +1,7 @@
 import { Component, OnInit,ElementRef, ViewChild } from '@angular/core';
 import { Hero } from 'src/app/hero_type';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { DomSanitizer,SafeHtml } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -10,7 +11,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./images-organization.component.css']
 })
 export class ImagesOrganizationComponent {
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) {
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer,private router: Router) {
 
   }
   images:any[] = [];
@@ -31,7 +32,7 @@ export class ImagesOrganizationComponent {
   deleted(ids:Number){
     this.http.put<any[]>('http://localhost:5000/removeAllAddImages',{id: ids})
     .subscribe(response => {
-      console.log('Form remove successfully:', response);
+      console.log('Form remove successfully:');
     })
   }
 }
