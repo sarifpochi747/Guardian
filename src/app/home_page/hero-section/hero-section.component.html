@@ -20,7 +20,7 @@
   <!-- only one clip  -->
   <div *ngIf="showVideos.length == 1">
   <div class="flex w-full min-h-[550px] justify-center mt-0">
-    <video width="800" height="600" controls  *ngFor="let data of showVideos">
+    <video width="800" height="600" controls autoplay *ngFor="let data of showVideos">
       <source [src]="'http://localhost:5000/videos/' + data.video" type="video/mp4">
     </video>
   </div>
