@@ -144,14 +144,15 @@ const updateCustomer = async(req,res)=>{
   const data = req.body
   for(let i=0;i<data.length;i++)
   {
-   await AddCustomer.update(data[i].idcustomer,data[i].title,data[i].description,data[i].customerIcon)
+    console.log(data[i].idcustomer)
+    await AddCustomer.update(data[i].idcustomer,data[i].title,data[i].description,data[i].customerIcon)
   }
 }
 
 
 //delete cutomer
 const deleteCustomer = async (req,res)=>{
-  const _idCustomer  =  req.params.idcustomer
+  const _idCustomer  =  req.params.idcustomer 
   console.log(_idCustomer)
   await AddCustomer.delete(_idCustomer);
   res.status(201).json({ message: 'successfully' });

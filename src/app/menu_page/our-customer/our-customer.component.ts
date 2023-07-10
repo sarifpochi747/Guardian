@@ -46,12 +46,12 @@ export class OurCustomerComponent  implements OnInit{
      this.http.post('http://localhost:5000/createCustomer',this.newCustomer )
      .subscribe({
       next: data => {
-          console.log('success');
-          this.UpadateCustomer();
-          // window.location.reload()
+        this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
+        this.UpadateCustomer();
+        // window.location.reload()
       },
       error: error => {
-          console.log('failure',error);
+        console.log('failure',error);
       }
     });
 
@@ -86,15 +86,13 @@ export class OurCustomerComponent  implements OnInit{
 
 
   updateForm() {
+    this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
+    console.log(this.allCustomer);
     if(this.newCustomer.length > 0)
     {
-      this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
-      this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
       this.createNewCutomer()
     }
     else{
-      this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
-      this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
       this.UpadateCustomer();
     }
   }
