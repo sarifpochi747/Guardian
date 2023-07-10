@@ -81,8 +81,19 @@ export class UserPageComponent implements OnInit{
 
   //Final edit comment
   SubmitButton = () => {
-    this.UpdateToDatabase();
-    alert("Form updated successfully")
+    // this.UpdateToDatabase();
+    // alert("Form updated successfully")
+    this.http.put('http://localhost:5000/UpdateComment', this.allComment)//[{},{},{}]
+    .subscribe({
+      next: data => {
+          console.log('success');
+          alert('Updated successfully')
+          window.location.reload()
+      },
+      error: error => {
+          console.log('failure',error);
+      }
+    });
   }
 
 

@@ -112,6 +112,7 @@ const UpdateComment = async (req,res)=>{
   {
     await AddComment.update(data[i].idcomment,data[i].status)
   }
+  res.json({msg: "success"})
 }
 
 
@@ -152,7 +153,7 @@ const updateCustomer = async(req,res)=>{
 
 //delete cutomer
 const deleteCustomer = async (req,res)=>{
-  const _idCustomer  =  req.params.idcustomer 
+  const _idCustomer  =  req.params.idcustomer
   console.log(_idCustomer)
   await AddCustomer.delete(_idCustomer);
   res.status(201).json({ message: 'successfully' });
