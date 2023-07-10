@@ -86,15 +86,15 @@ export class OurCustomerComponent  implements OnInit{
 
 
   updateForm() {
-    this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
-    this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
-    console.log(this.allCustomer)
-    console.log(this.newCustomer)
     if(this.newCustomer.length > 0)
     {
+      this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
+      this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
       this.createNewCutomer()
     }
     else{
+      this.newCustomer = this.allCustomer.filter(customer => (customer.idcustomer == -1 && customer.title.length > 0 && customer.customerIcon.length > 0 && customer.description.length > 0));
+      this.allCustomer = this.allCustomer.filter(customer => customer.idcustomer != -1);
       this.UpadateCustomer();
     }
   }
