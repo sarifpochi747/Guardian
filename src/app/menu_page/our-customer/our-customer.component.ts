@@ -44,9 +44,16 @@ export class OurCustomerComponent  implements OnInit{
 
   createNewCutomer(){
      this.http.post('http://localhost:5000/createCustomer',this.newCustomer )
-       .subscribe((response) => {
-         console.log('Form updated successfully:', response);
-        });
+     .subscribe({
+      next: data => {
+          console.log('success');
+          this.UpadateCustomer();
+          // window.location.reload()
+      },
+      error: error => {
+          console.log('failure',error);
+      }
+    });
 
   }
 
@@ -87,9 +94,9 @@ export class OurCustomerComponent  implements OnInit{
     {
       this.createNewCutomer()
     }
-    //console.log(this.tempAllCustomer)
-    //console.log(this.allCustomer)
-    this.UpadateCustomer();
+    else{
+      this.UpadateCustomer();
+    }
   }
 
 
