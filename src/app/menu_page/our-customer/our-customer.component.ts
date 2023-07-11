@@ -60,10 +60,14 @@ export class OurCustomerComponent  implements OnInit{
   UpadateCustomer(){
     //update
     this.http.put('http://localhost:5000/updateCustomer',this.allCustomer)
-        .subscribe((response) => {
-          console.log('Form updated successfully:', response);
-      });
-      alert('Form updated successfully')
+    .subscribe({
+      next: data => {
+        window.location.reload()
+      },
+      error: error => {
+        console.log('failure',error);
+      }
+    });
   }
 
 

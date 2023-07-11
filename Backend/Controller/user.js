@@ -145,9 +145,9 @@ const updateCustomer = async(req,res)=>{
   const data = req.body
   for(let i=0;i<data.length;i++)
   {
-    console.log(data[i].idcustomer)
     await AddCustomer.update(data[i].idcustomer,data[i].title,data[i].description,data[i].customerIcon)
   }
+  res.status(200).json({msg:"success"})
 }
 
 
